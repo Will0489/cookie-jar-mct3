@@ -62,7 +62,7 @@ class CreateUsersTable extends Migration {
             $table->increments('id');
             $table->string('title');
             $table->string('description');
-            $table->boolean('finished')->default('FALSE');
+            $table->boolean('finished')->default(0);
             $table->dateTime('date_created');
             $table->dateTime('date_deadline');
             $table->integer('user_id')->unsigned();
@@ -96,14 +96,14 @@ class CreateUsersTable extends Migration {
             $table->foreign('creator_id')->references('id')->on('users')->onDelete('cascade');;
             $table->integer('collaborator_id')->unsigned();
             $table->foreign('collaborator_id')->references('id')->on('users')->onDelete('cascade');;
-            $table->boolean('creator_accepted')->default('FALSE');
+            $table->boolean('creator_accepted')->default(0);
         });
 
         Schema::create('conversations', function($table)
         {
             $table->increments('id');
             $table->dateTime('started_on');
-            $table->boolean('archived')->default('FALSE');
+            $table->boolean('archived')->default(0);
             $table->integer('collaboration_id')->unsigned();
             $table->foreign('collaboration_id')->references('id')->on('collaborations')->onDelete('cascade');;
         });
