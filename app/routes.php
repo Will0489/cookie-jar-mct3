@@ -1,4 +1,7 @@
 <?php
+Route::get('login', 'SessionController@create');
+Route::get('logout', 'SessionController@destroy');
+Route::resource('sessions', 'SessionController');
 
 // Home routes
 Route::get('/', function() { return View::make('hello'); });
@@ -9,9 +12,8 @@ Route::get('search/results', 'SearchController@results');
 
 // User routes
 Route::get('profile', 'UserController@profile');
-Route::get('settings', 'UserController@settings');
+Route::get('settings', 'UserController@settings')->before('auth');
 Route::get('register', 'UserController@register');
-Route::get('logon', 'UserController@logon');
 
 // Project routes
 Route::get('projects', 'ProjectController@home');

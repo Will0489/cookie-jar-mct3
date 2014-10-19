@@ -1,10 +1,10 @@
 <?php
 
-class UserController extends \BaseController {
+class SessionController extends \BaseController {
 
 	/**
 	 * Display a listing of the resource.
-	 * GET /user
+	 * GET /session
 	 *
 	 * @return Response
 	 */
@@ -13,36 +13,38 @@ class UserController extends \BaseController {
 		//
 	}
 
-    public function profile()
-    {
-        return 'Profile page (logged on)';
-    }
-
 	/**
 	 * Show the form for creating a new resource.
-	 * GET /user/create
+	 * GET /session/create
 	 *
 	 * @return Response
 	 */
 	public function create()
 	{
-		//
+        if (Auth::check()) return Redirect::to('/profile');
+
+		return View::make('sessions.create');
 	}
 
 	/**
 	 * Store a newly created resource in storage.
-	 * POST /user
+	 * POST /session
 	 *
 	 * @return Response
 	 */
 	public function store()
 	{
-		//
-	}
+		if (Auth::attempt(Input::only('username', 'password')))
+        {
+            return Auth::user();
+        }
+
+        return Redirect::back()->withInput()->withErrors(['Invalid username/password.']);
+    }
 
 	/**
 	 * Display the specified resource.
-	 * GET /user/{id}
+	 * GET /session/{id}
 	 *
 	 * @param  int  $id
 	 * @return Response
@@ -54,7 +56,7 @@ class UserController extends \BaseController {
 
 	/**
 	 * Show the form for editing the specified resource.
-	 * GET /user/{id}/edit
+	 * GET /session/{id}/edit
 	 *
 	 * @param  int  $id
 	 * @return Response
@@ -66,7 +68,7 @@ class UserController extends \BaseController {
 
 	/**
 	 * Update the specified resource in storage.
-	 * PUT /user/{id}
+	 * PUT /session/{id}
 	 *
 	 * @param  int  $id
 	 * @return Response
@@ -78,14 +80,15 @@ class UserController extends \BaseController {
 
 	/**
 	 * Remove the specified resource from storage.
-	 * DELETE /user/{id}
+	 * DELETE /session/{id}
 	 *
-	 * @param  int  $id
 	 * @return Response
 	 */
-	public function destroy($id)
+	public function destroy()
 	{
-		//
+		Auth::logout();
+
+        return Redirect::route('login');
 	}
 
 }
