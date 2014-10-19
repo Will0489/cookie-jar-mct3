@@ -2,8 +2,8 @@
 
 ##Founders and creators
 
-Ksenia Karelskaya
-William Blommaert
+- Ksenia Karelskaya 
+- William Blommaert
 
 ##Information
 
@@ -11,7 +11,7 @@ Cookie Jar is a web application and collaboration platform designed for and main
 
 The intention behind the platform is to bring students together when they're looking for collaborators but don't know anyone in their close vicinity or study orientation.
 
-Cookie Jar acts as the middle man, allowing one student to put up a request for a project, while others can respond to this and offer their assistance.
+Cookie Jar acts as the middle man, allowing one student to put up a request for a project, while others can respond to this and offer their assistance. All of this in a moderated and controlled environment that allows interpersonal communication and feedback.
 
 ## Created using the Laravel PHP Framework
 
