@@ -89,7 +89,6 @@ Route::get('login/fb/callback', function() {
 
         $profile = new Profile();
         $profile->uid = $uid;
-        $profile->username = $me['id'];
         $profile = $user->profiles()->save($profile);
     }
 
