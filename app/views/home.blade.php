@@ -3,12 +3,13 @@
 @endif
 
 @if (!empty($data))
-    Hello, {{{ $data['name'] }}}
+    Hello, {{{ $data['username'] }}}
     <img src="{{ $data['photo']}}">
     <br>
     Your email is {{ $data['email']}}
     <br>
     <a href="logout">Logout</a>
 @else
-    Hi! Would you like to <a href="login/fb">Login with Facebook</a>?
+    Welcome to Cookie Jar!<br><br>
+    You can <a href="login/fb">login with Facebook</a> or <a href="login">login with a Cookie Jar account</a>
 @endif

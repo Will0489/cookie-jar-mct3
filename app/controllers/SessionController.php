@@ -10,7 +10,10 @@ class SessionController extends \BaseController {
 	 */
 	public function index()
 	{
-		//
+		if (!Auth::check()) return Redirect::to('/');
+
+        $data = Auth::user();
+        return View::make('home', array('data'=>$data));
 	}
 
 	/**
@@ -36,7 +39,8 @@ class SessionController extends \BaseController {
 	{
 		if (Auth::attempt(Input::only('username', 'password')))
         {
-            return Auth::user();
+            return Redirect::to('/');
+            // return Auth::user();
         }
 
         return Redirect::back()->withInput()->withErrors(['Invalid username/password.']);

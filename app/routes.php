@@ -1,8 +1,22 @@
 <?php
+Route::get('/', function()
+{
+    $data = array();
+
+    if (Auth::check()) {
+        $data = Auth::user();
+    }
+    return View::make('home', array('data'=>$data));
+});
+
+Route::get('logout', function() {
+    Auth::logout();
+    return Redirect::to('/');
+});
 
 // Logging in/out using Cookie Jar account
 Route::get('login', 'SessionController@create');
-//Route::get('logout', 'SessionController@destroy');
+// Old logout route Route::get('logout', 'SessionController@destroy');
 Route::resource('sessions', 'SessionController');
 
 // Search routes
@@ -28,21 +42,6 @@ Route::get('questions/details', 'QuestionController@details');
 Route::get('questions/add-new', 'QuestionController@create');
 
 // Facebook routes
-Route::get('/', function()
-{
-    $data = array();
-
-    if (Auth::check()) {
-        $data = Auth::user();
-    }
-    return View::make('user', array('data'=>$data));
-});
-
-Route::get('logout', function() {
-    Auth::logout();
-    return Redirect::to('/');
-});
-
 Route::get('login/fb', function() {
     $facebook = new Facebook(Config::get('facebook'));
     $params = array(
@@ -99,5 +98,5 @@ Route::get('login/fb/callback', function() {
 
     Auth::login($user);
 
-    return Redirect::to('/')->with('message', 'Logged in with Facebook');
+    return Redirect::to('/')->with('message', 'Logged in with Facebook. ');
 });
