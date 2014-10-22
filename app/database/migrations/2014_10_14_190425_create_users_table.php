@@ -24,6 +24,7 @@ class CreateUsersTable extends Migration {
             $table->string('name')->unique();
             $table->string('image_url')->nullable();
             $table->string('description');
+            $table->timestamps();
         });
 
         Schema::create('institutions', function($table)
@@ -33,6 +34,7 @@ class CreateUsersTable extends Migration {
             $table->string('description');
             $table->string('city');
             $table->string('country');
+            $table->timestamps();
         });
 
         Schema::create('courses', function($table)
@@ -42,6 +44,7 @@ class CreateUsersTable extends Migration {
             $table->string('description');
             $table->integer('institution_id')->unsigned();
             $table->foreign('institution_id')->references('id')->on('institutions')->onDelete('cascade');
+            $table->timestamps();
         });
 
         Schema::create('usersdetails', function($table)
@@ -68,6 +71,7 @@ class CreateUsersTable extends Migration {
             $table->dateTime('date_deadline');
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->timestamps();
         });
 
         Schema::create('projectscategorieslink', function($table)
@@ -77,6 +81,7 @@ class CreateUsersTable extends Migration {
             $table->foreign('project_id')->references('id')->on('projects')->onDelete('cascade');
             $table->integer('category_id')->unsigned();
             $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
+            $table->timestamps();
         });
 
         Schema::create('userscategorieslink', function($table)
@@ -86,6 +91,7 @@ class CreateUsersTable extends Migration {
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->integer('category_id')->unsigned();
             $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
+            $table->timestamps();
         });
 
         Schema::create('collaborations', function($table)
@@ -98,6 +104,7 @@ class CreateUsersTable extends Migration {
             $table->integer('collaborator_id')->unsigned();
             $table->foreign('collaborator_id')->references('id')->on('users')->onDelete('cascade');
             $table->boolean('creator_accepted')->default(0);
+            $table->timestamps();
         });
 
         Schema::create('conversations', function($table)
@@ -107,6 +114,7 @@ class CreateUsersTable extends Migration {
             $table->boolean('archived')->default(0);
             $table->integer('collaboration_id')->unsigned();
             $table->foreign('collaboration_id')->references('id')->on('collaborations')->onDelete('cascade');
+            $table->timestamps();
         });
 
         Schema::create('messages', function($table)
@@ -118,6 +126,7 @@ class CreateUsersTable extends Migration {
             $table->integer('conversation_id')->unsigned();
             $table->foreign('conversation_id')->references('id')->on('conversations')->onDelete('cascade');
             $table->dateTime('date_sent');
+            $table->timestamps();
         });
 
     }

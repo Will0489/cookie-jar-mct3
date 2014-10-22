@@ -7,12 +7,30 @@ class InstitutionsTableSeeder extends Seeder {
 
 	public function run()
 	{
-		$faker = Faker::create();
+        Eloquent::unguard();
 
-		foreach(range(1, 10) as $index)
+		$faker = Faker::create();
+        $names = array(
+            'Karel de Grote Hogeschool',
+            'Universiteit Antwerpen',
+            'Katholieke Universiteit Leuven',
+            'Vrije Universiteit Brussel',
+            'Universiteit Gent',
+            'Hogeschool West-Vlaanderen',
+            'Artesis',
+            'Lessius',
+            'Hogeschool Gent',
+            'Katholieke Hogeschool Limburg'
+        );
+
+        $i = 1;
+		foreach($names as $name)
 		{
 			Institution::create([
-
+                'name' => $name,
+                'description' => $faker->paragraph,
+                'city' => $faker->city,
+                'country' => 'Belgium'
 			]);
 		}
 	}
