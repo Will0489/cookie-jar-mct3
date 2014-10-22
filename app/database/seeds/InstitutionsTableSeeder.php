@@ -23,14 +23,13 @@ class InstitutionsTableSeeder extends Seeder {
             'Katholieke Hogeschool Limburg'
         );
 
-        $i = 1;
 		foreach($names as $name)
 		{
 			Institution::create([
                 'name' => $name,
                 'description' => $faker->paragraph,
                 'city' => $faker->city,
-                'country' => 'Belgium'
+                'country' => 'Belgium' // Default for now
 			]);
 		}
 	}
