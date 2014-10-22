@@ -12,7 +12,7 @@ class CreateStoryTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('story', function(Blueprint $table)
+		Schema::create('stories', function(Blueprint $table)
 		{
 			$table->increments('id');
             $table->text('body');
@@ -32,7 +32,7 @@ class CreateStoryTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('story');
+		Schema::drop('stories');
 	}
 
 }
