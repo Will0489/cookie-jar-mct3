@@ -1,15 +1,19 @@
-@if(Session::has('message'))
-    {{ Session::get('message')}}
-@endif
+@extends('layouts.default')
 
-@if (!empty($data))
-    Hello, {{{ $data['username'] }}}
-    <img src="{{ $data['photo']}}">
-    <br>
-    Your email is {{ $data['email']}}
-    <br>
-    <a href="logout">Logout</a>
-@else
-    Welcome to Cookie Jar!<br><br>
-    You can <a href="login/fb">login with Facebook</a> or <a href="login">login with a Cookie Jar account</a>
-@endif
+@section('content')
+    @if(Session::has('message'))
+        {{ Session::get('message')}}
+    @endif
+
+    @if (!empty($data))
+        Hello, {{{ $data['username'] }}}
+        <img src="{{ $data['photo']}}">
+        <br>
+        Your email is {{ $data['email']}}
+        <br>
+        <a href="logout">Logout</a>
+    @else
+        Welcome to Cookie Jar!<br><br>
+        You can <a href="login/fb">login with Facebook</a> or <a href="login">login with a Cookie Jar account</a>
+    @endif
+@stop

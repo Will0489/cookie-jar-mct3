@@ -1,0 +1,1 @@
+app/views/questions/new.blade.php
