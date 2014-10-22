@@ -39,8 +39,7 @@ class SessionController extends \BaseController {
 	{
 		if (Auth::attempt(Input::only('username', 'password')))
         {
-            return Redirect::to('/');
-            // return Auth::user();
+            return Redirect::to('/profile');
         }
 
         return Redirect::back()->withInput()->withErrors(['Invalid username/password.']);

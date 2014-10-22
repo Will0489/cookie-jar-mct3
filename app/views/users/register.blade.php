@@ -1,8 +1,8 @@
 @extends('layouts.default')
 
 @section('content')
-    <p>Fill out the form below to create an account. Fields marked with * are mandatory.</p>
-        {{ Form::open(['route' => 'user.create']) }}
+    <p>Fill out the form below to create an account or you can <a href="login/fb">login with Facebook</a>. Fields marked with * are mandatory.</p>
+        {{ Form::open(['route' => 'user.store', 'method' => 'post', 'files' => true]) }}
             <div>
                 {{ Form::label('username', '* Username:') }}
                 {{ Form::text('username') }}
@@ -12,8 +12,8 @@
                 {{ Form::password('password') }}
             </div>
             <div>
-                {{ Form::label('password_confirm', '* Confirm password:') }}
-                {{ Form::password('password_confirm') }}
+                {{ Form::label('password_confirmation', '* Confirm password:') }}
+                {{ Form::password('password_confirmation') }}
             </div>
             <div>
                 {{ Form::label('email', '* E-mail:') }}
@@ -29,7 +29,7 @@
             </div>
             <div>
                 @if($errors->any())
-                <h4>{{$errors->first()}}</h4>
+                <h4>{{$errors}}</h4>
                 @endif
             </div>
         {{ Form::close() }}

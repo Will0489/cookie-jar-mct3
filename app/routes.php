@@ -17,7 +17,7 @@ Route::get('/', function()
 Route::get('login', 'SessionController@create');
 Route::get('logout', function() {
     Auth::logout();
-    return Redirect::to('/');
+    return Redirect::to('/')->with('message', 'You have been logged out.');
 });
 
 // Search routes
@@ -28,6 +28,7 @@ Route::get('search/results', 'SearchController@results');
 Route::get('profile', 'UserController@profile');
 Route::get('settings', 'UserController@settings')->before('auth');
 Route::get('signup', 'UserController@create');
+Route::post('signup', 'UserController@store');
 
 // Project routes
 Route::get('projects', 'ProjectController@home');
@@ -81,6 +82,7 @@ Route::get('login/fb/callback', function() {
 
         $user = new User;
         $user->username = $me['first_name'].' '.$me['last_name'];
+        // $user->password = Hash::make($me['id'];
         $user->email = $me['email'];
         $user->photo = 'https://graph.facebook.com/'.$me['id'].'/picture?type=large';
 

@@ -14,6 +14,6 @@
         <a href="logout">Logout</a>
     @else
         <br>Welcome to Cookie Jar!<br><br>
-        You can <a href="login/fb">login with Facebook</a> or <a href="login">login with a Cookie Jar account</a>
+        You can login with Facebook or login with a Cookie Jar account via the link above.
     @endif
 @stop

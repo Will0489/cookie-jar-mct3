@@ -1,6 +1,7 @@
 @extends('layouts.default')
 
 @section('content')
+    <br>
         {{ Form::open(['route' => 'sessions.store']) }}
             <div>
                 {{ Form::label('username', 'Username:') }}
@@ -13,7 +14,7 @@
             </div>
 
             <div>
-                {{ Form::submit('Login') }}
+                {{ Form::submit('Login') }} or <a href="/login/fb">login via Facebook</a>
             </div>
             <div>
                 @if($errors->any())

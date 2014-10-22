@@ -43,7 +43,26 @@ class UserController extends \BaseController {
 	 */
 	public function store()
 	{
-		//
+        $data = Input::only(['username','email','photo','password']);
+        if(Input::hasFile('photo'))
+        {
+            $file = Input::file('photo');
+            $filename = $file->getClientOriginalName();
+            $destpath = 'images/'.str_random(8).'/';
+
+            $file->move($destpath, $filename);
+            $data['photo'] = $destpath . $filename;
+        } else {
+            $data['photo'] = '';
+        }
+        $user = User::create($data);
+        if ($user)
+        {
+            Auth::login($user);
+            return Redirect::to('/profile');
+        }
+
+        return Redirect::back()->withInput()->withErrors(['Failed to register.']);
 	}
 
 	/**
