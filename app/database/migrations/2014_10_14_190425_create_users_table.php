@@ -66,6 +66,7 @@ class CreateUsersTable extends Migration {
             $table->increments('id');
             $table->string('title');
             $table->string('description');
+            $table->string('question');
             $table->boolean('finished')->default(0);
             $table->dateTime('date_created');
             $table->dateTime('date_deadline');
