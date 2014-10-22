@@ -16,14 +16,14 @@ class UsersTableSeeder extends Seeder {
             'email' => 'william.blommaert@student.kdg.be',
             'photo' => $faker->imageUrl($width = 100, $height = 100, 'cats'),
             'username' => 'William',
-            'password' => $adminPass
+            'password' => 'cookiejar'
         ));
 
         $user = User::create(array(
             'email' => 'ksenia.karelskaya@student.kdg.be',
             'photo' => $faker->imageUrl($width = 100, $height = 100, 'cats'),
             'username' => 'Ksenia',
-            'password' => $adminPass
+            'password' => 'cookiejar'
         ));
 
 		foreach(range(1, 48) as $index)
@@ -32,7 +32,7 @@ class UsersTableSeeder extends Seeder {
                 'email' => $faker->email,
                 'photo' => $faker->imageUrl($width = 100, $height = 100, 'cats'),
                 'username' => $faker->userName,
-                'password' => Hash::make($faker->word)
+                'password' => $faker->word
 			]);
 		}
 	}
