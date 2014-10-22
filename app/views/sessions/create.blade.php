@@ -1,9 +1,6 @@
-<!doctype html>
-<html>
-    <head>
-        <meta charset="utf-8">
-    </head>
-    <body>
+@extends('layouts.default')
+
+@section('content')
         {{ Form::open(['route' => 'sessions.store']) }}
             <div>
                 {{ Form::label('username', 'Username:') }}
@@ -24,6 +21,4 @@
                 @endif
             </div>
         {{ Form::close() }}
-
-    </body>
-</html>
+@stop

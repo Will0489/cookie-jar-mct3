@@ -13,7 +13,7 @@
         <br>
         <a href="logout">Logout</a>
     @else
-        Welcome to Cookie Jar!<br><br>
+        <br>Welcome to Cookie Jar!<br><br>
         You can <a href="login/fb">login with Facebook</a> or <a href="login">login with a Cookie Jar account</a>
     @endif
 @stop

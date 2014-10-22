@@ -15,7 +15,13 @@ class UserController extends \BaseController {
 
     public function profile()
     {
-        return 'Profile page (logged on)';
+        if(Auth::check())
+        {
+            $data = Auth::user();
+            return View::make('users.profile', array('data' => $data));
+        } else {
+            return View::make('error.guest');
+        }
     }
 
 	/**
@@ -26,7 +32,7 @@ class UserController extends \BaseController {
 	 */
 	public function create()
 	{
-		//
+		return View::make('users.register');
 	}
 
 	/**

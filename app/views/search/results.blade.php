@@ -1,0 +1,1 @@
+app/views/search/results.blade.php
