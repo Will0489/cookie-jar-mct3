@@ -36,6 +36,7 @@ Route::get('projects/details', 'ProjectController@details');
 Route::get('projects/edit', 'ProjectController@edit');
 Route::get('questions', 'ProjectController@questionhome');
 Route::get('questions/new', 'ProjectController@create');
+Route::get('story/{id}', 'ProjectController@story');
 
 // Message routes
 Route::get('messages', 'MessageController@home');
