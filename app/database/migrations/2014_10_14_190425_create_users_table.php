@@ -134,17 +134,17 @@ class CreateUsersTable extends Migration {
 
     public function down()
     {
-        Schema::drop('users');
-        Schema::drop('usersdetails');
-        Schema::drop('courses');
-        Schema::drop('institutions');
-        Schema::drop('collaborations');
-        Schema::drop('conversations');
-        Schema::drop('projects');
-        Schema::drop('messages');
         Schema::drop('projectscategorieslink');
         Schema::drop('userscategorieslink');
+        Schema::drop('usersdetails');
+        Schema::drop('courses');
+        Schema::drop('projects');
+        Schema::drop('messages');
+        Schema::drop('conversations');
+        Schema::drop('collaborations');        
+        Schema::drop('institutions');
         Schema::drop('categories');
+        Schema::drop('users');
     }
 
 }
