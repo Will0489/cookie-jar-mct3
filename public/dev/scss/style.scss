@@ -1,1 +1,40 @@
-body {}
+@import 'variables';
+@import 'buttons';
+
+body { 
+	font-weight: 300;
+	font-family: $lato;
+	font-size: $font-size-base;
+ }
+
+header {
+	width: 100%;
+	height: 60px;
+	background-color: $white;
+	border-bottom: 1px solid #e5e5e5;
+	ul {
+		list-style: none;
+		float: right;
+		margin-right: 60px;
+		li {
+			float: left;
+			a {
+				margin-right: 20px;
+				color: $dark-gray;
+			}
+			.icon {
+				width: $icon-size;
+				padding-top: $padding-base-vertical;
+				padding-right: $padding-base-horizontal;
+				cursor: pointer;
+			}
+		}
+	}
+}
+
+a {
+	text-decoration: none;
+}
+
+
+

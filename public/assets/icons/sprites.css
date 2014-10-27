@@ -1,0 +1,34 @@
+.icon-email, .icon-logout, .icon-menu, .icon-search, .icon-settings{
+	background: url(sprites.png) no-repeat;
+}
+
+.icon-email{
+	background-position: -212px -11px ;
+	width: 24px;
+	height: 24px;
+}
+
+.icon-logout{
+	background-position: -160px -8px ;
+	width: 32px;
+	height: 32px;
+}
+
+.icon-menu{
+	background-position: -10px -8px ;
+	width: 32px;
+	height: 32px;
+}
+
+.icon-search{
+	background-position: -112px -12px ;
+	width: 24px;
+	height: 24px;
+}
+
+.icon-settings{
+	background-position: -62px -13px ;
+	width: 24px;
+	height: 24px;
+}
+

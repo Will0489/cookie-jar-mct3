@@ -1,0 +1,21 @@
+@import url(http://fonts.googleapis.com/css?family=Lato:300,400,700);
+
+$lato: 'Lato', sans-serif;
+
+// colours
+$red      : #e74c3c;
+$fb-blue  : #3b5998;
+$cyan     : #3498db;
+$white    : #ffffff;
+$navy     : #2c3e50;
+$grey     : #494d55; // used for icons
+$dark-gray: lighten(#000, 13.5%) !default; // #222
+
+
+$font-size-base         : 14px !default;
+$padding-base-vertical  : 4px !default;
+$padding-base-horizontal: 14px !default;
+$line-height-base       : 1.428571429 !default; // 20/14
+$border-radius-base     : 4px !default;
+
+$icon-size: 20px;

@@ -1,4 +1,4 @@
 <footer>
            
 </footer>
-{{HTML::script('assets/js/main.js')}}
+{{HTML::script('assets/js/main.min.js')}}
