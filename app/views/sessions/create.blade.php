@@ -4,8 +4,8 @@
     <br>
         {{ Form::open(['route' => 'sessions.store']) }}
             <div>
-                {{ Form::label('username', 'Username:') }}
-                {{ Form::text('username') }}
+                {{ Form::label('email', 'E-mail address:') }}
+                {{ Form::text('email') }}
             </div>
 
             <div>
