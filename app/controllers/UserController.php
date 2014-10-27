@@ -48,7 +48,7 @@ class UserController extends \BaseController {
         {
             $file = Input::file('photo');
             $filename = $file->getClientOriginalName();
-            $destpath = 'images/'.str_random(8).'/';
+            $destpath = 'assets/images/users'.str_random(8).'/';
 
             $file->move($destpath, $filename);
             $data['photo'] = $destpath . $filename;
