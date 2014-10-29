@@ -21,7 +21,7 @@ Route::get('logout', function() {
 });
 
 // Search routes
-Route::get('search', 'SearchController@home');
+Route::post('search', 'SearchController@search');
 Route::get('search/results', 'SearchController@results');
 
 // User routes

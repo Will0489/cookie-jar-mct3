@@ -8,8 +8,8 @@
                 <a href="/login/fb">Sign In with Facebook</a>
             </div>  
 
-            <div>
-                {{ Form::text('username', null, ['class' => 'form-field', 'required' => 'required', 'placeholder' => 'Email address']) }}
+                {{ Form::label('email', 'E-mail address:') }}
+                {{ Form::text('email') }}
             </div>
 
             <div>
