@@ -7,9 +7,8 @@
 	<body>
 		@include('layouts.partials.navbar')
 
-		<section>
-			@yield('content')
-		</section>
+		
+		@yield('content')
 		
 		@include('layouts.partials.footer')
 	</body>

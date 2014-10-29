@@ -2,6 +2,7 @@
 
 @section('content')
 <br/>
+<div class="md-overlay"></div> 
 <div class="md-modal md-effect md-show" id="modal">
 	<div class="md-content">
 		{{ Form::open(['route' => 'sessions.store', 'class' => 'form-group']) }}
@@ -27,12 +28,12 @@
 			<div>
 				@if($errors->any())
 				<p class='xs'>{{$errors->first()}}</p>
+				<br/>
 				@endif
 			</div>
 		{{ Form::close() }}
 		<p class='xs'>Need an account? <a href="signup" class="link">Sign Up</a></p>
 	</div>	
 </div>
-<div class="md-overlay"></div>
 @stop
 
