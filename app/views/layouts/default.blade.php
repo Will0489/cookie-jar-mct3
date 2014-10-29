@@ -6,8 +6,7 @@
 
 	<body>
 		@include('layouts.partials.navbar')
-
-		
+		 <!-- <div class="clearfix"></div> -->
 		@yield('content')
 		
 		@include('layouts.partials.footer')
