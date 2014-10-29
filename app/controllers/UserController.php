@@ -43,8 +43,12 @@ class UserController extends \BaseController {
 	 */
 	public function store()
 	{
-        $data = Input::only(['username','email','photo','password']);
-        if(Input::hasFile('photo'))
+        $rawdata = Input::only(['firstname','lastname','email','photo','password']);
+        $storedata['username'] = $rawdata['firstname'] . ' ' . $rawdata['lastname'];
+        $storedata['email'] = $rawdata['email'];
+        $storedata['photo'] = '';
+        $storedata['password'] = $rawdata['password'];
+        /*if(Input::hasFile('photo'))
         {
             $file = Input::file('photo');
             $filename = $file->getClientOriginalName();
@@ -54,8 +58,8 @@ class UserController extends \BaseController {
             $data['photo'] = $destpath . $filename;
         } else {
             $data['photo'] = '';
-        }
-        $user = User::create($data);
+        }*/
+        $user = User::create($storedata);
         if ($user)
         {
             Auth::login($user);
