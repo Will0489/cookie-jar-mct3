@@ -1,7 +1,7 @@
 @extends('layouts.default')
 
 @section('content')
-    <img src="assets/images/header.gif" class="cover-image"/>
+    <img src="assets/images/header.gif" class="cover image"/>
     
     <div class="section">
         <div class="col span_1_of_3">
@@ -37,6 +37,8 @@
             <div class="col span_3_of_3">
                 <h2>Story: Natan van Boven</h2>
                 <p>Student of engineering Natan helped Alison with her art project and this is how their friendship was born!</p>
+                <br/>
+                <img src="assets/images/article.gif" class="image"/>
             </div>
         </div>
 
