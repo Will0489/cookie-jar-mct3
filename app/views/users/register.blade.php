@@ -16,8 +16,7 @@
                 {{ Form::password('password_confirmation') }}
             </div>
             <div>
-                {{ Form::label('email', '* E-mail:') }}
-                {{ Form::email('email') }}
+                {{ Form::text('email', null, ['placeholder' => 'Email address', 'class' => 'form-field', 'required' => 'required']) }}
             </div>
             <div>
                 {{ Form::label('photo', 'Profile picture:') }}
