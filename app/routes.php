@@ -26,14 +26,15 @@ Route::get('search/results', 'SearchController@results');
 
 // User routes
 Route::get('profile', 'UserController@profile');
+Route::get('profile/{id}', 'UserController@profilebyid')
 Route::get('settings', 'UserController@settings')->before('auth');
 Route::get('signup', 'UserController@create');
 Route::post('signup', 'UserController@store');
 
 // Project routes
 Route::get('projects', 'ProjectController@home');
-Route::get('projects/details', 'ProjectController@details');
-Route::get('projects/edit', 'ProjectController@edit');
+Route::get('projects/{id}', 'ProjectController@details');
+Route::get('projects/{id}/edit', 'ProjectController@edit');
 Route::get('questions', 'ProjectController@questionhome');
 Route::get('questions/new', 'ProjectController@create');
 Route::get('story/{id}', 'ProjectController@story');
