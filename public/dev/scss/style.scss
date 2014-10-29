@@ -1,11 +1,22 @@
 @import 'variables';
 @import 'buttons';
+@import 'forms';
 
 body { 
 	font-weight: 300;
 	font-family: $lato;
 	font-size: $font-size-base;
  }
+
+ h1 {
+	color: $gray;
+	font-weight: 300;
+	font-size: $font-size-h1;
+}
+
+p {
+	margin: 0;
+}
 
 header {
 	width: 100%;
@@ -32,9 +43,48 @@ header {
 	}
 }
 
+// Link Style
 a {
 	text-decoration: none;
 }
+
+.link {
+	color: $red;
+}
+
+.xs {
+	font-size: $font-size-xs;
+}
+
+
+.btn, .form-field, .separator{
+	margin-bottom: $line-height-xl;
+}
+
+// Separator pop-up sign in and sign up
+.separator {
+    width:100%;
+    text-align:center;
+    box-sizing:border-box;
+    margin-top: -5px;
+}
+
+.divider {
+	padding-right: 10px;
+    	display: inline-block;
+    	padding: 0 5px;
+    	vertical-align: middle;
+}
+
+.div-line {
+	margin-top: 0px;
+	border-bottom: 1px solid $gray;
+	width: 45%;
+	height: 3px;
+	display: inline-block;
+    	vertical-align: middle;
+}
+
 
 
 

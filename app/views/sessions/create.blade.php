@@ -2,14 +2,17 @@
 
 @section('content')
     <br>
-        {{ Form::open(['route' => 'sessions.store']) }}
-            
-            <div>
+        {{ Form::open(['route' => 'sessions.store', 'class' => 'form-group']) }}
+            <h1>Sign In</h1>
+            <div class='btn fb big'>
                 <a href="/login/fb">Sign In with Facebook</a>
             </div>  
+   <div class="separator">
+          <span class="div-line" ></span><p class="divider xs">or</p><span class="div-line" ></span>
+    </div>   
 
-                {{ Form::label('email', 'E-mail address:') }}
-                {{ Form::text('email') }}
+            <div>
+                {{ Form::text('email', null, ['placeholder' => 'Email address', 'class' => 'form-field', 'required' => 'required']) }}
             </div>
 
             <div>
@@ -17,7 +20,7 @@
             </div>
 
             <div>
-                {{ Form::submit('Login') }} </a>
+               {{ Form::submit('Sign In', ['class' => 'btn red xxl']) }}
             </div>
             <div>
                 @if($errors->any())
@@ -25,5 +28,5 @@
                 @endif
             </div>
         {{ Form::close() }}
-        <p>Need an account? <a href="signup" class="">Sign Up</a></p>
+        <p class='xs'>Need an account? <a href="signup" class="link">Sign Up</a></p>
 @stop

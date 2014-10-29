@@ -1,6 +1,11 @@
 @import url(http://fonts.googleapis.com/css?family=Lato:300,400,700);
 
-$lato: 'Lato', sans-serif;
+// typography
+$lato          : 'Lato', sans-serif;
+$font-size-base: 14px !default;
+$font-size-xl  : ceil(($font-size-base * 1.2)) !default; //used for big buttons
+$font-size-h1  : floor(($font-size-base * 1.9)) !default; // ~26px
+$font-size-xs  : ceil(($font-size-base * 0.85));
 
 // colours
 $red      : #e74c3c;
@@ -8,14 +13,22 @@ $fb-blue  : #3b5998;
 $cyan     : #3498db;
 $white    : #ffffff;
 $navy     : #2c3e50;
-$grey     : #494d55; // used for icons
+$gray     : #494d55; // used for icons
 $dark-gray: lighten(#000, 13.5%) !default; // #222
 
 
-$font-size-base         : 14px !default;
 $padding-base-vertical  : 4px !default;
 $padding-base-horizontal: 14px !default;
 $line-height-base       : 1.428571429 !default; // 20/14
 $border-radius-base     : 4px !default;
+
+$padding-xl-vertical: 10px !default;
+$padding-xl-horizontal: 46px !default;
+$line-height-xl: floor(($font-size-base * $line-height-base)) !default; // ~20px
+$border-radius-xl: 4px !default;
+
+$padding-xxl-horizontal: 100.5px !default;
+
+$input-height-base: ($line-height-xl + ($padding-base-vertical * 2) + 2) !default;
 
 $icon-size: 20px;

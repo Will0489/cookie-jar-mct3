@@ -1,0 +1,22 @@
+form {
+	padding-bottom: $padding-base-vertical;
+}
+.form-group {
+	display: inline-block;
+ 	margin-bottom: 0;
+ 	vertical-align: middle;
+}
+
+.form-field {
+	display: block;
+	width: 88%;
+	height: $input-height-base; // Make inputs at least the height of their button counterpart (base line-height + padding + border)
+	padding: $padding-base-vertical $padding-base-horizontal;
+	font-size: $font-size-base;
+	line-height: $line-height-base;
+	color: $gray;
+	background-color: $white;
+	background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
+	border: 1px solid lighten($gray , 40.5%);
+	border-radius: $border-radius-base;
+}

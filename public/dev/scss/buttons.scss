@@ -6,15 +6,37 @@
   border-radius: $border-radius;
 }
 
+input[type="submit"] {
+	border: none;
+}
+
 .btn {
 	display: inline-block;
 	text-align: center;
   	vertical-align: middle;
   	cursor: pointer;
   	color: $dark-gray;
-  	@include button-size($padding-base-vertical, $padding-base-horizontal, $font-size-base, $line-height-base, $border-radius-base);
 }
 .red {
 	background-color: $red;
 	color: $white;
+}
+
+.fb {
+	background-color: $fb-blue;
+	a {
+		color: $white;
+	}
+}
+
+.big {
+	@include button-size($padding-xl-vertical, $padding-xl-horizontal, $font-size-xl, $line-height-xl, $border-radius-xl);
+}
+
+.small {
+	@include button-size($padding-base-vertical, $padding-base-horizontal, $font-size-base, $line-height-base, $border-radius-base);
+}
+
+.xxl {
+	@include button-size($padding-xl-vertical, $padding-xxl-horizontal, $font-size-xl, $line-height-xl, $border-radius-xl);
 }
