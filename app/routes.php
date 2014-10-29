@@ -12,7 +12,7 @@ Route::get('/', function()
     if (Auth::check()) {
         $data = Auth::user();
     }
-    return View::make('home', array('data'=>$data));
+    return View::make('pages.home', array('data'=>$data));
 });
 Route::get('login', 'SessionController@create');
 Route::get('logout', function() {

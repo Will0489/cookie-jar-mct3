@@ -31,6 +31,7 @@
 				<br/>
 				@endif
 			</div>
+			<br/>
 		{{ Form::close() }}
 		<p class='xs'>Need an account? <a href="signup" class="link">Sign Up</a></p>
 	</div>	
