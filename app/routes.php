@@ -26,7 +26,7 @@ Route::get('search/results', 'SearchController@results');
 
 // User routes
 Route::get('profile', 'UserController@profile');
-Route::get('profile/{id}', 'UserController@profilebyid')
+Route::get('profile/{id}', 'UserController@profilebyid');
 Route::get('settings', 'UserController@settings')->before('auth');
 Route::get('signup', 'UserController@create');
 Route::post('signup', 'UserController@store');
