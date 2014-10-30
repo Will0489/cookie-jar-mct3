@@ -40,3 +40,37 @@ input[type="submit"] {
 .xxl {
 	@include button-size($padding-xl-vertical, $padding-xxl-horizontal, $font-size-xl, $line-height-xl, $border-radius-xl);
 }
+
+.xxxl {
+	font-weight: 400;
+	@include button-size($padding-xl-vertical*2, $padding-xl-horizontal, $font-size-xxl, $line-height-xl, $border-radius-xl);
+}
+.white {
+	border: none;
+	font-family: inherit;
+	font-size: $font-size-h1;
+	color: $white;
+	background: none;
+	padding: 25px 70px;
+	margin: 15px 30px;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-weight: 700;
+	outline: none;
+	position: relative;
+	transition: all 0.3s;
+	border: 3px solid $white;
+	border-radius: $border-radius-xl;
+	
+}
+.white:hover,
+.white:active {
+	color: $red;
+	background: $white;
+}
+@media only screen and (max-width: 980px) {
+	.white {
+		font-size: $font-size-h2;
+		padding: 15px 50px;
+	}
+}
