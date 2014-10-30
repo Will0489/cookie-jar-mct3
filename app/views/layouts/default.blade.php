@@ -6,9 +6,12 @@
 
 	<body>
 		@include('layouts.partials.navbar')
-		 <!-- <div class="clearfix"></div> -->
+			
 		@yield('content')
 		
+		<div class="clearfix"></div>
+		 
 		@include('layouts.partials.footer')
+		 		
 	</body>
 </html>
