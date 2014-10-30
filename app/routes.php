@@ -3,6 +3,9 @@
 // Resources
 Route::resource('sessions', 'SessionController');
 Route::resource('user', 'UserController');
+Route::resource('project', 'ProjectController');
+Route::resource('conversation', 'ConversationController');
+Route::resource('message', 'MessageController');
 
 // Logging in/out using Cookie Jar account
 Route::get('/', function()
