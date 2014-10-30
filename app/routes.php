@@ -37,13 +37,15 @@ Route::post('signup', 'UserController@store');
 // Project routes
 Route::get('projects', 'ProjectController@home');
 Route::get('projects/{id}', 'ProjectController@details');
-Route::get('projects/{id}/edit', 'ProjectController@edit');
+Route::get('projects/{id}/edit', 'ProjectController@edit')->before('auth');
 Route::get('questions', 'ProjectController@questionhome');
-Route::get('questions/new', 'ProjectController@create');
+Route::get('questions/new', 'ProjectController@create')->before('auth');
 Route::get('story/{id}', 'ProjectController@story');
+Route::get('story/new', 'ProjectController@story')->before('auth');
 
 // Message routes
 Route::get('messages', 'MessageController@home');
+Route::post('messages/reply', 'MessageController@reply')->before('auth');
 
 // Facebook routes
 Route::get('login/fb', function() {
