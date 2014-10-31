@@ -73,3 +73,11 @@ input[type="submit"] {
 		padding: 15px 50px;
 	}
 }
+
+.category {
+	color: $white;
+	background-color: $navy;
+	margin-right: 10px;
+	margin-top: 7px;
+	@include button-size($padding-xs-vertical, $padding-xs-horizontal, $font-size-xxs, $line-height-xs, $border-radius-xs);
+}
