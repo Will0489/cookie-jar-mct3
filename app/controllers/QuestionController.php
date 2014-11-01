@@ -10,7 +10,7 @@ class QuestionController extends \BaseController {
 	 */
 	public function index()
 	{
-		//
+	
 	}
 
 	/**
@@ -21,7 +21,7 @@ class QuestionController extends \BaseController {
 	 */
 	public function create()
 	{
-		//
+		
 	}
 
 	/**

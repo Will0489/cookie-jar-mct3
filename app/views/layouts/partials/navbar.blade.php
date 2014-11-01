@@ -1,9 +1,9 @@
  <header>
  	<nav>
- 		<a href="/" class="logo left">COOKIE JAR</a>
+ 		<a href="/" class="logo left"><img src="/assets/images/logo.gif" class=""></a>
  		@if(Auth::check())
  		<ul class="left">
- 			<li><a href="signup" class="btn small red">Ask your question!</a></li>
+ 			<li><a href="questions/new" class="btn small red">Ask your question!</a></li>
  		</ul>
  		@endif
  		<ul>

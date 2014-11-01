@@ -21,7 +21,8 @@ class ProjectController extends \BaseController {
 	 */
 	public function create()
 	{
-		//
+		$data = Auth::user();
+		return View::make('questions.new', array('data' => $data));
 	}
 
 	/**
