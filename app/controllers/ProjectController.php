@@ -10,7 +10,8 @@ class ProjectController extends \BaseController {
 	 */
 	public function index()
 	{
-		//
+		$data = Auth::user();
+		return View::make('questions.overview', array('data' => $data));
 	}
 
 	/**

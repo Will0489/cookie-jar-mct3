@@ -10,7 +10,7 @@
 			<h2 class="qHeading">Latest Questions</h2>
 		</div>
 		<div class="col span_2_of_3">
-			<p class='xs right'><a href="login">Explore All</a></p>
+			<p class='xs right'><a href="questions">Explore All</a></p>
 		</div> 
 	</div>
 	<div class="section group">

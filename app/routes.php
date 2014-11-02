@@ -35,10 +35,10 @@ Route::get('signup', 'UserController@create');
 Route::post('signup', 'UserController@store');
 
 // Project routes
-Route::get('projects', 'ProjectController@home');
+//Route::get('projects', 'ProjectController@home');
 Route::get('projects/{id}', 'ProjectController@details');
 Route::get('projects/{id}/edit', 'ProjectController@edit')->before('auth');
-Route::get('questions', 'ProjectController@questionhome');
+Route::get('questions', 'ProjectController@index');
 Route::get('questions/new', 'ProjectController@create')->before('auth');
 Route::get('story/{id}', 'ProjectController@story');
 Route::get('story/new', 'ProjectController@story')->before('auth');
