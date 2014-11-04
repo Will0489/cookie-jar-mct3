@@ -10,28 +10,31 @@ class UsersTableSeeder extends Seeder {
         Eloquent::unguard();
 
         $faker = Faker::create();
-        $adminPass = Hash::make('cookiejar');
+        $adminPass = 'cookiejar';
 
         $user = User::create(array(
+            'first_name' => 'William',
+            'last_name' => 'Blommaert',
             'email' => 'william.blommaert@student.kdg.be',
             'photo' => $faker->imageUrl($width = 100, $height = 100, 'cats'),
-            'username' => 'William',
-            'password' => 'cookiejar'
+            'password' => $adminPass
         ));
 
         $user = User::create(array(
+            'first_name' => 'Ksenia',
+            'last_name' => 'Karelskaya',
             'email' => 'ksenia.karelskaya@student.kdg.be',
             'photo' => $faker->imageUrl($width = 100, $height = 100, 'cats'),
-            'username' => 'Ksenia',
-            'password' => 'cookiejar'
+            'password' => $adminPass
         ));
 
 		foreach(range(1, 48) as $index)
 		{
 			User::create([
+                'first_name' => $faker->firstName,
+                'last_name' => $faker->lastName,
                 'email' => $faker->email,
                 'photo' => $faker->imageUrl($width = 100, $height = 100, 'cats'),
-                'username' => $faker->userName,
                 'password' => $faker->word
 			]);
 		}

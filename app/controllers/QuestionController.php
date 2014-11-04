@@ -1,12 +1,12 @@
 <?php
 
-class ProjectController extends \BaseController {
+class QuestionController extends \BaseController {
 
 	public function index()
 	{
-        $projects = Project::where('finished', '=','0')->with('user','projectcategories');
+        $questions = Question::where('finished', '=','0')->with('user','projectcategories');
 		$data = Auth::user();
-		return View::make('questions.overview', compact('data', 'projects'));
+		return View::make('questions.overview', compact('data', 'questions'));
 	}
 
 	public function create()

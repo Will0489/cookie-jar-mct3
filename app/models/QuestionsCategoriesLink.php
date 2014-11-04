@@ -1,11 +1,11 @@
 <?php
 
-class ProjectsCategoriesLink extends \Eloquent {
+class QuestionsCategoriesLink extends \Eloquent {
 	protected $fillable = [];
 
-    public function project()
+    public function question()
     {
-        return $this->belongsTo('Project');
+        return $this->belongsTo('Question');
     }
 
     public function categories()
