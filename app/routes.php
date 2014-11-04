@@ -64,9 +64,10 @@ Route::get('login/fb/callback', function() {
     if (empty($profile)) {
 
         $user = new User;
-        $user->username = $me['first_name'].' '.$me['last_name'];
-        // $user->password = Hash::make($me['id'];
+        $user->first_name = $me['first_name'];
+        $user->last_name = $me['last_name'];
         $user->email = $me['email'];
+        //TODO: Store FB avatar locally
         $user->photo = 'https://graph.facebook.com/'.$me['id'].'/picture?type=large';
 
         $user->save();
