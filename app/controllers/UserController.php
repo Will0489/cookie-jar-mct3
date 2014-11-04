@@ -30,12 +30,12 @@ class UserController extends \BaseController {
         {
             $file = Input::file('photo');
             $filename = $file->getClientOriginalName();
-            $destpath = 'assets/images/users'.str_random(16).'/';
+            $destpath = '/images/'.str_random(16).'/';
 
             $file->move($destpath, $filename);
             $storedata['photo'] = $destpath . $filename;
         } else {
-            $storedata['photo'] = 'assets/images/users/no_avatar.jpg';
+            $storedata['photo'] = '/images/no_avatar.jpg';
         }
         $user = User::create($storedata);
         if ($user)

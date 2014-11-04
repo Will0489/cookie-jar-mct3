@@ -64,7 +64,7 @@ class CreateUsersTable extends Migration {
         {
             $table->increments('id');
             $table->integer('question_id')->unsigned();
-            $table->foreign('question_id')->references('id')->on('projects')->onDelete('cascade');
+            $table->foreign('question_id')->references('id')->on('questions')->onDelete('cascade');
             $table->integer('creator_id')->unsigned();
             $table->foreign('creator_id')->references('id')->on('users')->onDelete('cascade');
             $table->integer('collaborator_id')->unsigned();
