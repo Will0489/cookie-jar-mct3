@@ -29,9 +29,6 @@
  					<span class="icon"><i aria-hidden="true" class="icon-logout"></i></span>
  				</a>
  			</li>
-	 		<li><a href="/profile" class="btn small" alt="your profile"><img src="{{ $data['photo']}}" class="icon avatar"/>{{ $data['first_name'] }}</a></li>
-	 		<li><a href="/messages" alt="your messages"><img src="/assets/icons/icon-email.png" class="icon"/></a></li>
-	 		<li><a href="/logout"  alt="sign out"><img src="/assets/icons/icon-logout.png" class="icon"/></a></li>
 	 		@else
 	 		<li><a href="login" class="btn small">Sign In</a></li>
 	 		<li><a href="signup" class="btn small red">Sign Up</a></li>

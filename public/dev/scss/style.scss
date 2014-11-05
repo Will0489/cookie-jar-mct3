@@ -82,7 +82,7 @@ header {
 
 
 //smaller than 519px 32.438em
-@media (max-width: 1380px) {
+@media (max-width: 980px) {
 	/* Unhiding the styled menu link */
 	.nav {
 		height: 50px;
@@ -93,16 +93,28 @@ header {
 			}
 		}
 		.hide {
-				display: none;
-			}
+			display: none;
+		}
 		.show {
-				display: block;
-			}
+			display: block;
+		}
 		.navtoggle {
 			display: block;
 		}
 	}
 
+	ul.left {
+		display: none;
+	}
+
+	header {
+		ul {
+			margin-right: 0;
+		}
+	}
+	.logo {
+		margin-left: 20px !important; 
+	}
 }
 
 // Footer
