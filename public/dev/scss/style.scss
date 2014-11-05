@@ -52,10 +52,11 @@ header {
 			a {
 				margin-right: 20px;
 				color: $dark-gray;
+				display: block;
 				.icon {
 					width: $icon-size;
 					padding-top: $padding-base-vertical;
-					//padding-right: $padding-xs-horizontal;
+					padding-right: $padding-xs-horizontal;
 					cursor: pointer;
 						i {
 							font-size: $font-size-h1;
@@ -68,30 +69,40 @@ header {
 		}
 	}
 }
-.nav {
+
 	.navtoggle {
 		display: none;
+		
 		cursor: pointer;
 		i {
 			z-index: -1;
 		}
 	}
-}
+
 
 
 //smaller than 519px 32.438em
 @media (max-width: 1380px) {
 	/* Unhiding the styled menu link */
 	.nav {
-		a {
-			max-height: 0em;
-			display: none;
+		height: 50px;
+		li{
+			display: block;
+			a {
+				display: none;
+			}
 		}
+		.hide {
+				display: none;
+			}
+		.show {
+				display: block;
+			}
 		.navtoggle {
-			margin: 0;
 			display: block;
 		}
 	}
+
 }
 
 // Footer
