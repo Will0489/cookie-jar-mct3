@@ -8,24 +8,24 @@
  		@endif
  		<ul id="menu" class="nav">
  			<li>
- 				<a href="#" alt="search">
+ 				<a href="#" data-alt="Search">
  					<span class="icon"><i aria-hidden="true" class="icon-search"></i></span>
  				</a>
  			</li>
 	 		@if(Auth::check())
 	 		<li>
-	 			<a href="/profile" class="btn small" alt="your profile">
+	 			<a href="/profile" class="btn small" alt="Profile">
 	 				<img src="{{ $data['photo']}}" class="icon avatar"/>
 	 				{{ $data['username'] }}
 	 			</a>
 	 		</li>
 	 		<li>
- 				<a href="/messages" alt="your messages">
+ 				<a href="/messages" data-alt="Messages">
  					<span class="icon"><i aria-hidden="true" class="icon-email"></i></span>
  				</a>
  			</li>
  			<li>
- 				<a href="/logout" alt="sign out">
+ 				<a href="/logout" data-alt="Sign out">
  					<span class="icon"><i aria-hidden="true" class="icon-logout"></i></span>
  				</a>
  			</li>
