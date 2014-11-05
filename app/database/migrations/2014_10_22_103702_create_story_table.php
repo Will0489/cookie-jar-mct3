@@ -18,8 +18,8 @@ class CreateStoryTable extends Migration {
             $table->text('body');
             $table->boolean('public')->default(1);
             $table->boolean('reviewed')->default(0);
-            $table->integer('project_id')->unsigned();
-            $table->foreign('project_id')->references('id')->on('projects')->onDelete('cascade');
+            $table->integer('question_id')->unsigned();
+            $table->foreign('question_id')->references('id')->on('questions')->onDelete('cascade');
 			$table->timestamps();
 		});
 	}

@@ -2,17 +2,6 @@
 
 class UserController extends \BaseController {
 
-	/**
-	 * Display a listing of the resource.
-	 * GET /user
-	 *
-	 * @return Response
-	 */
-	public function index()
-	{
-		//
-	}
-
     public function profile()
     {
         if(Auth::check())
@@ -24,41 +13,30 @@ class UserController extends \BaseController {
         }
     }
 
-	/**
-	 * Show the form for creating a new resource.
-	 * GET /user/create
-	 *
-	 * @return Response
-	 */
 	public function create()
 	{
 		return View::make('users.register');
 	}
 
-	/**
-	 * Store a newly created resource in storage.
-	 * POST /user
-	 *
-	 * @return Response
-	 */
 	public function store()
 	{
         $rawdata = Input::only(['firstname','lastname','email','photo','password']);
-        $storedata['username'] = $rawdata['firstname'] . ' ' . $rawdata['lastname'];
+        $storedata['first_name'] = $rawdata['firstname'];
+        $storedata['last_name'] = $rawdata['lastname'];
         $storedata['email'] = $rawdata['email'];
         $storedata['photo'] = '';
         $storedata['password'] = $rawdata['password'];
-        /*if(Input::hasFile('photo'))
+        if(Input::hasFile('photo'))
         {
             $file = Input::file('photo');
             $filename = $file->getClientOriginalName();
-            $destpath = 'assets/images/users'.str_random(8).'/';
+            $destpath = '/images/'.str_random(16).'/';
 
             $file->move($destpath, $filename);
-            $data['photo'] = $destpath . $filename;
+            $storedata['photo'] = $destpath . $filename;
         } else {
-            $data['photo'] = '';
-        }*/
+            $storedata['photo'] = '/images/no_avatar.jpg';
+        }
         $user = User::create($storedata);
         if ($user)
         {
@@ -68,53 +46,4 @@ class UserController extends \BaseController {
 
         return Redirect::back()->withInput()->withErrors(['Failed to register.']);
 	}
-
-	/**
-	 * Display the specified resource.
-	 * GET /user/{id}
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function show($id)
-	{
-		//
-	}
-
-	/**
-	 * Show the form for editing the specified resource.
-	 * GET /user/{id}/edit
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function edit($id)
-	{
-		//
-	}
-
-	/**
-	 * Update the specified resource in storage.
-	 * PUT /user/{id}
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function update($id)
-	{
-		//
-	}
-
-	/**
-	 * Remove the specified resource from storage.
-	 * DELETE /user/{id}
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function destroy($id)
-	{
-		//
-	}
-
 }

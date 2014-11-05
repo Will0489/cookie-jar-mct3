@@ -7,18 +7,19 @@ class CreateUsersTable extends Migration {
 
     public function up()
     {
-        Schema::create('users', function($table)
+        Schema::create('users', function(Blueprint $table)
         {
             $table->increments('id');
+            $table->string('first_name');
+            $table->string('last_name');
             $table->string('email')->unique();
             $table->string('photo')->nullable();
-            $table->string('username')->unique();
             $table->string('password');
             $table->string('remember_token');
             $table->timestamps();
         });
 
-        Schema::create('categories', function($table)
+        Schema::create('categories', function(Blueprint $table)
         {
             $table->increments('id');
             $table->string('name')->unique();
@@ -27,65 +28,29 @@ class CreateUsersTable extends Migration {
             $table->timestamps();
         });
 
-        Schema::create('institutions', function($table)
-        {
-            $table->increments('id');
-            $table->string('name')->unique();
-            $table->string('description');
-            $table->string('city');
-            $table->string('country');
-            $table->timestamps();
-        });
-
-        Schema::create('courses', function($table)
-        {
-            $table->increments('id');
-            $table->string('name');
-            $table->string('description');
-            $table->integer('institution_id')->unsigned();
-            $table->foreign('institution_id')->references('id')->on('institutions')->onDelete('cascade');
-            $table->timestamps();
-        });
-
-        Schema::create('usersdetails', function($table)
-        {
-            $table->increments('id');
-            $table->string('first_name')->nullable();
-            $table->string('last_name')->nullable();
-            $table->integer('course_id')->unsigned();
-            $table->foreign('course_id')->references('id')->on('courses')->onDelete('cascade');
-            $table->integer('institution_id')->unsigned();
-            $table->foreign('institution_id')->references('id')->on('institutions')->onDelete('cascade');
-            $table->integer('user_id')->unsigned();
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->timestamps();
-        });
-
-        Schema::create('projects', function($table)
+        Schema::create('questions', function(Blueprint $table)
         {
             $table->increments('id');
             $table->string('title');
-            $table->string('description');
-            $table->string('question');
-            $table->boolean('finished')->default(0);
-            $table->dateTime('date_created');
-            $table->dateTime('date_deadline');
+            $table->string('body', 300);
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->boolean('answered')->default(0);
+            $table->date('deadline');
             $table->timestamps();
         });
 
-        Schema::create('projectscategorieslink', function($table)
+        Schema::create('questionscategorieslink', function(Blueprint $table)
         {
             $table->increments('id');
-            $table->integer('project_id')->unsigned();
-            $table->foreign('project_id')->references('id')->on('projects')->onDelete('cascade');
+            $table->integer('question_id')->unsigned();
+            $table->foreign('question_id')->references('id')->on('questions')->onDelete('cascade');
             $table->integer('category_id')->unsigned();
             $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
             $table->timestamps();
         });
 
-        Schema::create('userscategorieslink', function($table)
+        Schema::create('userscategorieslink', function(Blueprint $table)
         {
             $table->increments('id');
             $table->integer('user_id')->unsigned();
@@ -95,11 +60,11 @@ class CreateUsersTable extends Migration {
             $table->timestamps();
         });
 
-        Schema::create('collaborations', function($table)
+        Schema::create('collaborations', function(Blueprint $table)
         {
             $table->increments('id');
-            $table->integer('project_id')->unsigned();
-            $table->foreign('project_id')->references('id')->on('projects')->onDelete('cascade');
+            $table->integer('question_id')->unsigned();
+            $table->foreign('question_id')->references('id')->on('questions')->onDelete('cascade');
             $table->integer('creator_id')->unsigned();
             $table->foreign('creator_id')->references('id')->on('users')->onDelete('cascade');
             $table->integer('collaborator_id')->unsigned();
@@ -108,7 +73,7 @@ class CreateUsersTable extends Migration {
             $table->timestamps();
         });
 
-        Schema::create('conversations', function($table)
+        Schema::create('conversations', function(Blueprint $table)
         {
             $table->increments('id');
             $table->dateTime('started_on');
@@ -118,7 +83,7 @@ class CreateUsersTable extends Migration {
             $table->timestamps();
         });
 
-        Schema::create('messages', function($table)
+        Schema::create('messages', function(Blueprint $table)
         {
             $table->increments('id');
             $table->string('content');
@@ -134,15 +99,12 @@ class CreateUsersTable extends Migration {
 
     public function down()
     {
-        Schema::drop('projectscategorieslink');
+        Schema::drop('questionscategorieslink');
         Schema::drop('userscategorieslink');
-        Schema::drop('usersdetails');
-        Schema::drop('courses');
-        Schema::drop('projects');
+        Schema::drop('questions');
         Schema::drop('messages');
         Schema::drop('conversations');
-        Schema::drop('collaborations');        
-        Schema::drop('institutions');
+        Schema::drop('collaborations');
         Schema::drop('categories');
         Schema::drop('users');
     }
