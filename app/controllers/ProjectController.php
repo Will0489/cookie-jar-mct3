@@ -4,7 +4,7 @@ class ProjectController extends \BaseController {
 
 	public function index()
 	{
-        $projects = Project::where('finished', '=','0')->with('user','projectcategories');
+		$projects = Project::where('finished', '=','0')->with('user','projectcategories');
 		$data = Auth::user();
 		return View::make('questions.overview', compact('data', 'projects'));
 	}

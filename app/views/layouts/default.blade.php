@@ -11,7 +11,7 @@
 		
 		<div class="clearfix"></div>
 		 
-		
+		@include('layouts.partials.footer')
 		 		
 	</body>
 </html>

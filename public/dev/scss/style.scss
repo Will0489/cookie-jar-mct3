@@ -1,4 +1,5 @@
 @import 'variables';
+@import 'icons';
 @import 'buttons';
 @import 'forms';
 @import 'modal';
@@ -51,16 +52,44 @@ header {
 			a {
 				margin-right: 20px;
 				color: $dark-gray;
-			}
-			.icon {
-				width: $icon-size;
-				padding-top: $padding-base-vertical;
-				padding-right: $padding-base-horizontal;
-				cursor: pointer;
-			}
-			.avatar{
+				.icon {
+					width: $icon-size;
+					padding-top: $padding-base-vertical;
+					//padding-right: $padding-xs-horizontal;
+					cursor: pointer;
+						i {
+							font-size: $font-size-h1;
+							color: $gray;
+						}
 
+				}
 			}
+			
+		}
+	}
+}
+.nav {
+	.navtoggle {
+		display: none;
+		cursor: pointer;
+		i {
+			z-index: -1;
+		}
+	}
+}
+
+
+//smaller than 519px 32.438em
+@media (max-width: 1380px) {
+	/* Unhiding the styled menu link */
+	.nav {
+		a {
+			max-height: 0em;
+			display: none;
+		}
+		.navtoggle {
+			margin: 0;
+			display: block;
 		}
 	}
 }
