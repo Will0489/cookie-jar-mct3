@@ -240,14 +240,18 @@ a {
 
 @media only screen and (max-width: 1380px) {
 	#welcome {
-		margin-top: -34%;
+		margin-top: -36%;
 	}
 	.h-white {
-		font-size: $font-size-xxxl - 4;
+		font-size: $font-size-xxxl - 6;
 	}
 	.p-white {
-		font-size: $font-size-xxl - 6;
+		font-size: $font-size-xxl - 8;
 		letter-spacing: 0.5px;
+	}
+
+	.xxxl {
+		@include button-size($padding-xl-vertical, $padding-xl-horizontal, $font-size-xl, $line-height-xl, $border-radius-xl);
 	}
 }
 
