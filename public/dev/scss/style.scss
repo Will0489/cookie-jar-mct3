@@ -6,6 +6,11 @@
 @import 'clearfix';
 @import 'grid';
 
+
+html, body {
+  height: 100%;
+}
+
 body { 
 	width: 100%;
 	font-weight: 300;
@@ -46,6 +51,7 @@ header {
 	ul {
 		list-style: none;
 		float: right;
+		margin-top: 18px;
 		margin-right: 60px;
 		li {
 			float: left;
@@ -142,6 +148,17 @@ footer {
 	background-color: $dark-gray;
 	margin-top: 50px; 
 }
+.page-wrap {
+  min-height: 100%;
+  /* equal to footer height */
+  margin-bottom: -120px; 
+}
+.page-wrap:after {
+  content: "";
+  display: block;
+  height: 70px;
+}
+
 
 // Link Style
 a {
@@ -235,6 +252,7 @@ a {
 }
 
 .logo {
+	margin-top: 4px;
 	margin-left: 60px;
 }
 

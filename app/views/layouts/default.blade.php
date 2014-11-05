@@ -5,13 +5,14 @@
 	</head>
 
 	<body>
-		@include('layouts.partials.navbar')
+		<div class="page-wrap">
+			@include('layouts.partials.navbar')
+				
+			@yield('content')
 			
-		@yield('content')
-		
-		<div class="clearfix"></div>
-		 
-		@include('layouts.partials.footer')
-		 		
+			<div class="clearfix"></div>
+		</div>
+
+		@include('layouts.partials.footer')	
 	</body>
 </html>
