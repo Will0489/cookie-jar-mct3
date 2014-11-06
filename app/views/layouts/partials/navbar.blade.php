@@ -8,9 +8,10 @@
  		@endif
  		<ul id="menu" class="nav">
  			<li>
- 				<a href="#" data-alt="Search">
+ 			<!-- 	<a href="#" data-alt="Search">
  					<span class="icon"><i aria-hidden="true" class="icon-search"></i></span>
- 				</a>
+ 				</a> -->
+ 				@include('layouts.partials.search')
  			</li>
 	 		@if(Auth::check())
 	 		<li>
