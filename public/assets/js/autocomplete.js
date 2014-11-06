@@ -1,4 +1,4 @@
-/*$('#tag').autocomplete({
+$('#tag').autocomplete({
     source: function (request, response) {
         $.ajax({
             url: "/questions/tags",
@@ -21,5 +21,5 @@
     select: function (event, ui) {
         $('#tag').val(ui.item.label);
     }
-});*/
+});
 
