@@ -24,13 +24,10 @@
 				{{ Form::textarea('body', null, [ 'rows' => 6, 'placeholder' => 'Specify your question in 300 characters', 'class' => 'form-field', 'required' => 'required']) }}
 			</div>
 			<div>
-				{{ Form::text('tag', null, ['placeholder' => 'Start typing some tags...', 'class' => 'form-field', 'required' => 'required']) }}
-            <div id="selected_tags">
-                <span class="category btn" name="tags[]">Web</span>
-                <span class="category btn" name="tags[]">Photoshop</span>
-                <span class="category btn" name="tags[]">Design</span>
-            </div>
-				<br><small>Didn’t find a suitable tag? Suggest one!</small>
+			    {{ Form::select('tags', array(0 => 'Enter tags below'), 0, ['multiple', 'data-role' => 'tagsinput', 'id' => 'tag_values', 'disabled' => 'disabled']) }}
+				{{ Form::input('tag', null, ['placeholder' => 'Start typing some tags...', 'class' => 'form-field', 'required' => 'required', 'id' => 'tag']) }}
+				<small>Is your tag not showing up? Enter it and we'll create it for you!</small>
+				<br><br>
 			</div>
 
 			<div>

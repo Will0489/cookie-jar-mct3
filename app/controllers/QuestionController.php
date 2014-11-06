@@ -62,4 +62,17 @@ class QuestionController extends \BaseController {
 
         return View::make('questions.detail', compact('question'));
 	}
+
+    public function tags()
+    {
+        $term = Input::get('tag');
+        $tags = array();
+
+        $query = DB::table('categories')->where('name', 'LIKE', $term.'%')->get();
+        foreach($query as $results => $tag)
+        {
+            $tags[] = array('id' => $tag->id, 'label' => $tag->name, 'value' => $tag->id);
+        }
+        return Response::json($tags);
+    }
 }

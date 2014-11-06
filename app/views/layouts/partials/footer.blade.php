@@ -15,3 +15,6 @@
 {{ HTML::script('assets/js/main.min.js') }}
 {{ HTML::script('https://code.jquery.com/jquery-2.1.1.min.js') }}
 {{ HTML::script('https://code.jquery.com/ui/1.11.2/jquery-ui.min.js') }}
+{{ HTML::script('http://timschlechter.github.io/bootstrap-tagsinput/examples/lib/bootstrap-3/dist/js/bootstrap.min.js') }}
+{{ HTML::script('http://timschlechter.github.io/bootstrap-tagsinput/examples/lib/bootstrap-tagsinput/bootstrap-tagsinput.js') }}
+{{ HTML::script('assets/js/autocomplete.js') }}
