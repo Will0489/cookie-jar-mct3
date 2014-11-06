@@ -48,6 +48,10 @@ class QuestionController extends \BaseController {
                 'answered' => 0,
                 'deadline' => $data['deadline']
             ]);
+            /*foreach($data['tag'] as $tag)
+            {
+                //TODO: Iterate over tag array and create questionscategorieslink entry
+            }*/
         }
         return Redirect::back();
 	}
