@@ -106,13 +106,16 @@ header {
 			display: block;
 			width: auto;
 			background-color: $white;
+			width: 200px;
+			height: 30px;
 			padding: 20px;
 			z-index: 1114;
 			position: relative;
 		}
 		.navtoggle {
 			display: block;
-			padding-left: 180px;
+			padding-bottom: 16px;
+			padding-left: 220px;
 		}
 	}
 	
@@ -133,12 +136,29 @@ header {
 	}
 
 	.logo {
-		margin-left: 20px !important; 
+		margin-left: 5px !important; 
 	}
 	
 	// showing alt-data
 	.show:after {
 		content: attr(data-alt);
+	}
+	
+	.sb-search-input:focus {
+		width: 170px;
+	}
+
+	header {
+		width: auto;
+		ul {
+			margin-right: 0px;
+			li {
+				float: left;
+				a {
+					margin-right: 0px;
+				}
+			}
+		}
 	}	
 }
 
