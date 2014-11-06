@@ -22,6 +22,11 @@ Route::get('questions/new', 'QuestionController@create')->before('auth');
 Route::get('messages', 'MessageController@home');
 Route::post('messages/reply', 'MessageController@reply')->before('auth');
 
+// Static page routes
+Route::get('help', 'PagesController@help');
+Route::get('tos', 'PagesController@tos');
+Route::get('about', 'PagesController@about');
+
 // Authentication routes
 Route::get('/', function()
 {
