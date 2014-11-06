@@ -233,6 +233,10 @@ a {
 	width: 100%;
 }
 
+.white-txt {
+	color: $white;
+}
+
 .h-white {
 	color: $white;
 	font-size: $font-size-xxxl;
@@ -254,6 +258,14 @@ a {
 .logo {
 	margin-top: 4px;
 	margin-left: 60px;
+}
+
+//position el in the center of a div
+.centered {
+	background-size: auto;  
+	margin-left: 45%;
+	margin-right: 15%; 
+	width: 25%;
 }
 
 @media only screen and (max-width: 1380px) {
@@ -279,5 +291,12 @@ a {
 	}
 	#welcome {
 		display: none;
+	}
+	footer {
+		padding-top: 20px;
+		height: 100px;
+		.centered {
+			margin-left: 46%; 
+		}
 	}
 }
