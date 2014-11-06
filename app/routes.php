@@ -17,7 +17,7 @@ Route::post('signup', 'UserController@store');
 // Question routes
 Route::get('questions', 'QuestionController@index');
 Route::get('questions/new', 'QuestionController@create')->before('auth');
-Route::get('questions/tags', 'QuestionController@tags');
+Route::post('questions/tags', 'QuestionController@tags');
 
 // Message routes
 Route::get('messages', 'MessageController@home');

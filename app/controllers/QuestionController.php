@@ -65,7 +65,9 @@ class QuestionController extends \BaseController {
 
     public function tags()
     {
-        $term = Input::get('tag');
+        $request = Request::instance();
+        $term = $request->getContent();
+        dd($term);
         $tags = array();
 
         $query = DB::table('categories')->where('name', 'LIKE', $term.'%')->get();
