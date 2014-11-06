@@ -77,15 +77,18 @@ header {
 	}
 }
 
-	.navtoggle {
-		display: none;
-		
-		cursor: pointer;
-		i {
-			z-index: -1;
-		}
+.navtoggle {
+	display: none;
+	cursor: pointer;
+	i {
+		z-index: -1;
 	}
+}
 
+.textarea {
+	resize: none;
+	height: auto;
+}
 
 
 // smaller than 519px 32.438em
@@ -320,4 +323,12 @@ a {
 			margin-left: 46%; 
 		}
 	}
+}
+
+.tag {
+	margin-bottom: 2px;
+}
+
+.s-tag {
+	margin-bottom: 20px;
 }
