@@ -25,7 +25,12 @@
 			</div>
 			<div>
 				{{ Form::text('tag', null, ['placeholder' => 'Start typing some tags...', 'class' => 'form-field', 'required' => 'required']) }}
-				<small>Didn’t find a suitable tag? Suggest one!</small>
+            <div id="selected_tags">
+                <span class="category btn" name="tags[]">Web</span>
+                <span class="category btn" name="tags[]">Photoshop</span>
+                <span class="category btn" name="tags[]">Design</span>
+            </div>
+				<br><small>Didn’t find a suitable tag? Suggest one!</small>
 			</div>
 
 			<div>
