@@ -12,10 +12,12 @@ var changeClass = function (r, className1, className2) {
 };
 
 //  Creating our button in JS for smaller screens
-var menuElements = document.getElementById('menu');
-menuElements.insertAdjacentHTML('afterBegin',
-	'<li><a href="#" alt="menu" id="menutoggle" class="navtoggle" aria-hidden="true"><span class="icon"><i aria-hidden="true" class="icon-menu"></i></span></a></li>');
+// var menuElements = document.getElementById('menu');
+// menuElements.insertAdjacentHTML('afterBegin',
+//	'<li><a href="#" alt="menu" id="menutoggle" class="navtoggle" aria-hidden="true"><span class="icon"><i aria-hidden="true" class="icon-menu"></i></span></a></li>');
 
+var menuElements = document.getElementById('menu');
+	menuElements.insertAdjacentHTML('afterBegin','<button type="button" id="menutoggle" class="navtoggle" aria-hidden="true"><i aria-hidden="true" class="icon-menu"></i></button>');
 
 //  Toggle the class on click to show / hide the menu
 document.getElementById('menutoggle').onclick = function() {
