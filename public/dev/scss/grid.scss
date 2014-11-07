@@ -14,6 +14,7 @@
 	margin: 0px;
 }
 
+
 /*  COLUMN SETUP  */
 .col {
 	display: block;
@@ -53,7 +54,7 @@
 
 @media only screen and (max-width: 980px) {
 	.section {
-		padding: 0px;
+		padding: 10px;
 		margin: 0px;
 	}
 	.col { 
@@ -63,7 +64,7 @@
 
 @media only screen and (max-width: 680px) {
 	.section {
-		padding: 0px;
+		padding: 10px;
 		margin: 0px;
 	}
 	.col { 

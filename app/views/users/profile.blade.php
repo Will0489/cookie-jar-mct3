@@ -2,12 +2,12 @@
 
 @section('content')
     	<div class="section group">
-		<div class="col span_1_of_5">
-			<img  class="right question avatar" src="@if($data->photo != NULL) {{ $data->photo }} @endif" />
+		<div class="col span_1_of_3 ">
+			<img  class="avatar" src="@if($data->photo != NULL) {{ $data->photo }} @endif" />
 		</div>
-		<div class="col span_2_of_5">
-			<div>
-				<h2 class="qHeading"> {{ $data->username }} </h2>
+		<div class="col span_2_of_3">
+			<div >
+				<h2 class="qHeading"> {{ $data->username }} <p class='right'><a class="link-dark xs" href="">Edit</a></p></h2>
 				<br/>
 				<p>Studying MTA, web dev & UX '@KdG' </p>
 				<p>My portfolio</p>
@@ -16,14 +16,11 @@
 				<p><a class='category btn' href="">web</a> <a class='category btn' href="">photography</a> <a href="" class='category btn'>design</a></p>
 			</div>
 		</div>
-		<div class="col span_1_of_5">
-			<p class='right'><a class="link-dark" href="">Edit</a></p>
-		</div>
 	</div>
 
 	<div class="section group">
 		<div class="col span_5_of_5">
-			<h2 class="qHeading "> My Questions </h2>
+			<h2 class="qHeading push"> My Questions </h2>
 		</div>
 		<div class="col span_5_of_5">
 			

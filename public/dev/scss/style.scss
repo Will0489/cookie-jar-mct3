@@ -357,6 +357,7 @@ a {
 	width: 200px;
 	height: 200px;
 	border-radius: 50%;
+	@include center-block;
 }
 
 .thumbnail {
@@ -377,7 +378,8 @@ a {
 .center-block {
 	@include center-block;
 }
-// Explore all -> Message template style
+
+// Explore all -> Question template style
 .block {
 	display: block;
 	position: relative;
@@ -404,7 +406,6 @@ a {
 .block-button {
 	display: block;
 	width: 10%;
-	//width: 110px;
 	margin-top: -120px;
 	float: right;
 }
@@ -417,6 +418,14 @@ a {
 	}
 }
 
+// ====================question=template===================
+
+
+// Profile 
+.push {
+	padding-left: 1.6%;
+}
+
 @media only screen and (max-width: 980px) {
 
 	.block-image {
@@ -427,6 +436,9 @@ a {
 	}
 	.block-button {
 		margin-top: -220px; 
+	}
+	.push {
+		padding-left: 0.1%;
 	}
 
 }

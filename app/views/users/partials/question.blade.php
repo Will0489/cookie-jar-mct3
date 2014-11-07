@@ -6,7 +6,7 @@
 	</div>
 	
 	<div class="block-body clearfix">
-		<h2>Photographer wanted!<span class="xs date"> till 21.12.14 <span class="xs date right">submited 2 hours ago</span></span> </h2>
+		<h2>Photographer wanted!<span class="xs date"> till 21.12.14 <span class="xs date right">submited 2 hours ago</span></span></h2>
 		<div class="msg-body s-tag">
 			<p>Hi! I'm looking for a photographer to shoot some pictures for my web development project. Pictures should reflect the creative and working atmosphere and be rich in colours. I'm from Antwerp, it's nice if you are too. Contact me asap! It's a good opportunity for you to get hands dirty:)</p>
 		</div>
