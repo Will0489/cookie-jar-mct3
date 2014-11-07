@@ -212,6 +212,7 @@ a {
 
 .xs {
 	font-size: $font-size-xs;
+	font-weight: 300;
 }
 
 
@@ -355,7 +356,7 @@ a {
 .avatar {
 	width: 200px;
 	height: 200px;
-	 border-radius: 50%;
+	border-radius: 50%;
 }
 
 .thumbnail {
@@ -366,4 +367,49 @@ a {
 	border-radius: 50%;
 }
 
+.post-avatar {
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+	@include center-block;
+}
 
+.center-block {
+	@include center-block;
+}
+// Explore all -> Message template style
+.block {
+	position: relative;
+	padding: 50px;
+	border-bottom: 0.5px solid $gray;
+	border-top: 1px solid $gray;
+	line-height: 1.1;
+}
+
+.block-image {
+	display: block;
+	width: 140px;
+	position: absolute;
+	top: 50%;
+	margin-top: -60px;
+}
+
+.block-body {
+	margin-left: 165px;
+	margin-bottom: -5px;
+	width: 630px;
+}
+
+.block-button {
+	display: block;
+	width: 110px;
+	margin-top: -120px;
+	float:right;
+}
+
+.msg-body {
+	p{
+		font-size: $font-size-base + 2;
+		line-height: 24px;
+	}
+}

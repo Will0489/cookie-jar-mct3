@@ -1,16 +1,24 @@
 @extends('layouts.default')
 
 @section('content')
-    @if(Session::has('message'))
-        {{ Session::get('message')}}
-    @endif
-    <div class="section">
-		<div class="col span_1_of_3 qHeading">
-			<h2>Explore All Questions</h2>
-			@include('questions.partials.question')
-		    @if (!empty($data))
-		        <!-- TODO: QUESTION OVERVIEW DISPLAY -->
-		    @endif
-		</div>		
+@if(Session::has('message'))
+{{ Session::get('message')}}
+@endif
+
+<div class="section group">
+	<div class="col span_5_of_5">
+		<h2 class="qHeading "> Explore All Questions </h2>
 	</div>
+	<div class="col span_5_of_5">
+		
+		@include('questions.partials.question')
+
+		
+		@include('questions.partials.question')
+		
+		@if (!empty($data))
+		<!-- TODO: QUESTION OVERVIEW DISPLAY -->
+		@endif
+	</div>		
+</div>
 @stop
