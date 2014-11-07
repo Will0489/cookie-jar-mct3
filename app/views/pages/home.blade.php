@@ -24,5 +24,5 @@
 	</div>
 
 	@include('pages.partials.article')
-	@include('layouts.partials.footer')	
+	
 @stop

@@ -28,8 +28,6 @@
 		<div class="col span_5_of_5">
 			
 			@include('users.partials.question')
-
-			
 			@include('users.partials.question')
 			
 		</div>

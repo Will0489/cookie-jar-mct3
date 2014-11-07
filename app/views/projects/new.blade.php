@@ -1,1 +1,0 @@
-app/views/projects/new.blade.php

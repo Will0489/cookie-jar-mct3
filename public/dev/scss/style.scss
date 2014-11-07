@@ -379,6 +379,7 @@ a {
 }
 // Explore all -> Message template style
 .block {
+	display: block;
 	position: relative;
 	padding: 50px;
 	border-bottom: 0.5px solid $gray;
@@ -397,19 +398,35 @@ a {
 .block-body {
 	margin-left: 165px;
 	margin-bottom: -5px;
-	width: 630px;
+	width: 65%;
 }
 
 .block-button {
 	display: block;
-	width: 110px;
+	width: 10%;
+	//width: 110px;
 	margin-top: -120px;
-	float:right;
+	float: right;
 }
 
 .msg-body {
+	width: 100%;
 	p{
 		font-size: $font-size-base + 2;
 		line-height: 24px;
 	}
+}
+
+@media only screen and (max-width: 980px) {
+
+	.block-image {
+		display: none;
+	}
+	.block-body {
+		margin-left: 0px;
+	}
+	.block-button {
+		margin-top: -220px; 
+	}
+
 }
