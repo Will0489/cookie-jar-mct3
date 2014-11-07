@@ -26,6 +26,7 @@ Route::post('messages/reply', 'MessageController@reply')->before('auth');
 Route::get('help', 'PagesController@help');
 Route::get('tos', 'PagesController@tos');
 Route::get('about', 'PagesController@about');
+Route::get('story', 'PagesController@story');
 
 // Authentication routes
 Route::get('/', function()

@@ -3,18 +3,23 @@
 class PagesController extends \BaseController {
 
 	public function about()
-    {
-        return View::make('pages.about');
-    }
+	{
+		return View::make('pages.about');
+	}
 
-    public function help()
-    {
-        return View::make('pages.help');
-    }
+	public function help()
+	{
+		return View::make('pages.help');
+	}
 
-    public function tos()
-    {
-        return View::make('pages.tos');
-    }
+	public function tos()
+	{
+		return View::make('pages.tos');
+	}
+
+	public function story()
+	{
+		return View::make('pages.story');
+	}
 
 }

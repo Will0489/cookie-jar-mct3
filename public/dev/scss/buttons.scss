@@ -6,6 +6,12 @@
   border-radius: $border-radius;
 }
 
+@mixin center-block() {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 input[type="submit"] {
 	border: none;
 }
@@ -20,12 +26,29 @@ input[type="submit"] {
 .red {
 	background-color: $red;
 	color: $white;
+	&:hover,
+	&:focus {
+		background-color: darken($red, 5%);
+	}
+}
+
+.blue {
+	background-color: $cyan;
+	color: $white;
+	&:hover,
+	&:focus {
+		background-color: darken($cyan, 5%);
+	}
 }
 
 .fb {
 	background-color: $fb-blue;
 	a {
 		color: $white;
+	}
+	&:hover,
+	&:focus {
+		background-color: darken($fb-blue, 5%);
 	}
 }
 
@@ -48,10 +71,10 @@ input[type="submit"] {
 .white {
 	border: none;
 	font-family: inherit;
-	font-size: $font-size-h1;
+	font-size: $font-size-h2;
 	color: $white;
 	background: none;
-	padding: 25px 70px;
+	padding: 15px 50px;
 	margin: 15px 30px;
 	text-transform: uppercase;
 	letter-spacing: 1px;
@@ -61,18 +84,14 @@ input[type="submit"] {
 	transition: all 0.3s;
 	border: 3px solid $white;
 	border-radius: $border-radius-xl;
-}
-.white:hover,
-.white:active {
-	color: $red;
-	background: $white;
-}
-@media only screen and (max-width: 980px) {
-	.white {
-		font-size: $font-size-h2;
-		padding: 15px 50px;
+	
+	&:hover,
+	&:active {
+		color: $red;
+		background: $white;
 	}
 }
+
 
 .category {
 	color: $white;
@@ -80,4 +99,8 @@ input[type="submit"] {
 	margin-right: 10px;
 	margin-top: 7px;
 	@include button-size($padding-xs-vertical, $padding-xs-horizontal, $font-size-xxs, $line-height-xs, $border-radius-xs);
+	&:hover,
+	&:focus {
+		background-color: darken($navy, 5%);
+	}
 }

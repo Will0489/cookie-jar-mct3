@@ -21,6 +21,12 @@
 	/* Better Font Rendering =========== */
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+	
+	color: $gray;
+	&:hover,
+	&:focus {
+		color: darken($gray, 15%);
+	}
 }
 
 .icon-menu:before {

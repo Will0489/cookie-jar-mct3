@@ -4,6 +4,5 @@
 	<h4><a href="" class="link">Title needed!</a></h4>
 	<p class="date">I need your help untill 12.12.2014. Get more <span class="link">info</span>!</p>
 	<br/>
-	<small>by <a href="">Name Name</a></small>
-	<small class="right">Submited 2h ago</small>
+	<small><span class="left">by <a class="link-dark" href="">Name Name</a></span> <span class="right">Submited 2h ago</span></small>
 </div>

@@ -24,7 +24,7 @@
 			</div>
 			<div class="s-tag">
 				{{ Form::text('tag', null, ['placeholder' => 'Start typing some tags...', 'class' => 'form-field tag', 'required' => 'required']) }}
-				<small>Didn’t find a suitable tag? <a href="#">Suggest one!</a></small>
+				<small>Didn’t find a suitable tag? <a href="#" class="link">Suggest one!</a></small>
 			</div>
 
 			<div>

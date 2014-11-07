@@ -14,13 +14,12 @@
  			</li>
 	 		@if(Auth::check())
 	 		<li>
-	 			<a href="/profile" class="btn small" alt="Profile">
-	 				<img src="{{ $data['photo']}}" class="icon avatar"/>
-	 				{{ $data['username'] }}
+	 			<a href="/profile" class="btn small link-dark" alt="Profile">
+	 				<img src="{{ $data['photo']}}" class="icon avatar"/>{{ $data['username'] }}
 	 			</a>
 	 		</li>
 	 		<li>
- 				<a href="/messages" data-alt="Messages">
+ 				<a href="/messages" data-alt="Messages" >
  					<span class="icon"><i aria-hidden="true" class="icon-email"></i></span>
  				</a>
  			</li>
@@ -30,7 +29,7 @@
  				</a>
  			</li>
 	 		@else
-	 		<li><a href="login" class="btn small">Sign In</a></li>
+	 		<li><a href="login" class="btn small link-dark">Sign In</a></li>
 	 		<li><a href="signup" class="btn small red">Sign Up</a></li>
  			@endif
  		</ul>

@@ -16,7 +16,7 @@
 			
 		</div>
 		<div class="col span_1_of_5">
-			<p class='right'><a href="">Edit</a></p>
+			<p class='right'><a class="link-dark" href="">Edit</a></p>
 		</div>
 	</div>
 	<div class="section group">
