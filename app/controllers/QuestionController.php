@@ -66,7 +66,9 @@ class QuestionController extends \BaseController {
     public function tags()
     {
         $request = Request::instance();
+        // Access the post info to this route
         $term = $request->getContent();
+        // Display the post info
         dd($term);
         $tags = array();
 
