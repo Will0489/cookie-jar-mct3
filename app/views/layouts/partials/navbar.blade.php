@@ -13,9 +13,14 @@
  				</a>
  			</li>
 	 		@if(Auth::check())
+	 		 <li>
+	 			<a href="/profile" class="" alt="Profile">
+	 				<img src="{{ $data['photo']}}" class="thumbnail"/>
+	 			</a>
+	 		</li>
 	 		<li>
 	 			<a href="/profile" class="btn small link-dark" alt="Profile">
-	 				<img src="{{ $data['photo']}}" class="icon avatar"/>{{ $data['username'] }}
+	 				<span class="icon"> {{ $data['username'] }}</span>
 	 			</a>
 	 		</li>
 	 		<li>

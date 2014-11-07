@@ -3,10 +3,10 @@
 @section('content')
     	<div class="section group">
 		<div class="col span_1_of_5">
-			<img  class="right question" src="@if($data->photo != NULL) {{ $data->photo }} @endif" />
+			<img  class="right question avatar" src="@if($data->photo != NULL) {{ $data->photo }} @endif" />
 		</div>
 		<div class="col span_2_of_5">
-			<h2 class="qHeading"> {{ $data->first_name }} </h2>
+			<h2 class="qHeading"> {{ $data->username }} </h2>
 			<br/>
 			<p>Studying MTA, web dev & UX '@KdG' </p>
 			<p>My portfolio</p>
@@ -20,8 +20,8 @@
 		</div>
 	</div>
 	<div class="section group">
-		<div class="col span_1_of_3">
-			<h2 class="qHeading"> My Questions </h2>
+		<div class="col span_2_of_12">
+			<h2 class="qHeading right"> My Questions </h2>
 		</div>
 	</div>
 @stop

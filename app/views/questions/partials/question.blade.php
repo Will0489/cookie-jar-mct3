@@ -10,5 +10,5 @@
 		text text
 	</div>
 	<p><a class='category btn' href="">web</a> <a class='category btn' href="">photography</a> <a href="" class='category btn'>design</a></p>
-	<a href="" class="btn small red">I can help!</a>
+	<a href="" class="btn small blue">I can help!</a>
 </div>

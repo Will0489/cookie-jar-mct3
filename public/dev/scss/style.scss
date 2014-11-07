@@ -91,7 +91,7 @@ header {
 }
 
 
-// smaller than 519px 32.438em
+// smaller than 980px
 @media (max-width: 980px) {
 	
 	// hiding/showing menu link 
@@ -351,3 +351,19 @@ a {
 .s-tag {
 	margin-bottom: 20px;
 }
+
+.avatar {
+	width: 200px;
+	height: 200px;
+	 border-radius: 50%;
+}
+
+.thumbnail {
+	padding: 4px 0px;
+	margin-top: -5px;
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+}
+
+

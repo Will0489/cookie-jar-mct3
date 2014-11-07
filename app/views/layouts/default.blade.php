@@ -13,6 +13,7 @@
 			<div class="clearfix"></div>
 		</div>
 
-		@include('layouts.partials.footer')	
+		
+		{{ HTML::script('assets/js/main.min.js') }}
 	</body>
 </html>
