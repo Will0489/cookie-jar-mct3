@@ -7,7 +7,7 @@
 
     @if (!empty($data))
        
-       {{ Form::open() }}
+       {{ Form::open(['route' => 'question.store', 'method' => 'post']) }}
        <div class="section group">
        	<div class="col span_1_of_5"></div>
 		<div class="col span_3_of_5">
@@ -23,8 +23,11 @@
 				{{ Form::textarea('body', null, ['placeholder' => 'Specify your question in 300 characters', 'class' => 'form-field textarea', 'required' => 'required', 'rows' => 8 ]) }}
 			</div>
 			<div class="s-tag">
-				{{ Form::text('tag', null, ['placeholder' => 'Start typing some tags...', 'class' => 'form-field tag', 'required' => 'required']) }}
-				<small>Didn’t find a suitable tag? <a href="#" class="link">Suggest one!</a></small>
+				{{ Form::text('tag', null, ['placeholder' => 'Start typing some tags...', 'class' => 'form-field tag', 'id' => 'tag']) }}
+			    <div id="tags">
+			    </div>
+				<small>Is your tag not showing up in the list? Enter yours, hit space and we'll add it for you!</small>
+				<br><br>
 			</div>
 
 			<div>

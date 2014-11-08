@@ -14,5 +14,7 @@
 </footer>
 
 {{ HTML::script('//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js') }}
+{{ HTML::script('https://code.jquery.com/ui/1.11.2/jquery-ui.min.js') }}
+{{ HTML::script('assets/js/autocomplete.js') }}
 {{ HTML::script('assets/js/modal.js') }}
 {{ HTML::script('assets/js/main.min.js') }}
