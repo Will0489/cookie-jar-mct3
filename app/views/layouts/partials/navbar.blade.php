@@ -6,7 +6,8 @@
  			<li><a href="questions/new" class="btn small red">Ask your question!</a></li>
  		</ul>
  		@endif
- 		<ul id="menu" class="nav">
+ 		<nav id="menu" class="nav">
+ 		<ul>
  			<li>
  				<a href="#" data-alt="">
  					@include('layouts.partials.search')
@@ -38,6 +39,7 @@
 	 		<li><a href="signup" class="btn small red">Sign Up</a></li>
  			@endif
  		</ul>
+ 		</nav>
  	</nav>
  	
  	@if(Session::has('flash_notice'))
