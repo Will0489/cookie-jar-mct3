@@ -58,7 +58,7 @@ class QuestionController extends \BaseController {
 
 	public function show($id)
 	{
-        $question = Question::find($id)->with('user', 'questioncategories');
+        $question = Question::find($id);
 
         return View::make('questions.detail', compact('question'));
 	}

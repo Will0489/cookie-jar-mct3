@@ -7,7 +7,7 @@
 
     @if (!empty($data))
        
-       {{ Form::open(['route' => '/questions/new', 'method' => 'post', 'files' => true, 'class' => 'form-group']) }}
+       {{ Form::open(['route' => 'question.store', 'method' => 'post']) }}
        <div class="section group">
        	<div class="col span_1_of_5">
        	</div>

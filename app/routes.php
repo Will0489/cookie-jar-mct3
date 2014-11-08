@@ -2,7 +2,7 @@
 
 // Resources
 Route::resource('sessions', 'SessionController');
-Route::resource('questions', 'QuestionController');
+Route::resource('question', 'QuestionController');
 Route::resource('user', 'UserController');
 
 // Search routes
@@ -17,9 +17,7 @@ Route::post('signup', 'UserController@store');
 
 // Question routes
 Route::get('questions', 'QuestionController@index');
-Route::get('questions/{id}', 'QuestionController@show');
-Route::get('questions/new', 'QuestionController@create')->before('auth');
-Route::post('questions/new', 'QuestionController@store');
+Route::get('questions/new', 'QuestionController@create');
 Route::post('questions/tags', 'QuestionController@tags');
 
 // Message routes
