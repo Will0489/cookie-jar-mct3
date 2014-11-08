@@ -42,12 +42,13 @@ class QuestionController extends \BaseController {
         }
         else
         {
+            $data['deadline'] = str_replace('/', '-', $data['deadline']);
             $question = Question::create([
                 'title' => $data['title'],
                 'body' => $data['body'],
                 'user_id' => $user,
                 'answered' => 0,
-                'deadline' => $data['deadline']
+                'deadline' => date('Y-m-d', strtotime($data['deadline']))
             ]);
             foreach($data['tagvalues'] as $tag)
             {

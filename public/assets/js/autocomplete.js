@@ -6,7 +6,8 @@ $('#tag').autocomplete({
     'select': function(e, ui) {
         $('#tags').append("<span class='category btn'>" + ui.item.label) + "</span>";
         $('#tags').append("<input type='hidden' name='tagvalues[]' value='" + ui.item.id + "'>");
-        $('#tag').val("");
+        $(this).val("");
+        return false;
     }
 });
 
@@ -16,11 +17,12 @@ $('#tag').keydown(function(event) {
             $('#tags').append("<span class='category btn'>" + value + "</span>");
             $('#tags').append("<input type='hidden' name='tagvalues[]' value='" + value + "'>");
             $('#tag').val("");
+            return false;
         }
 });
 
 // Remove a tag from the list of tags
-$('.category').click(function() {
+$(document).on( 'click', 'span.category', function() {
     this.remove();
 });
 
