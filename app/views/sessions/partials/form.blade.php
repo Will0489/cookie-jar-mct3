@@ -1,6 +1,4 @@
-<div class="md-overlay"></div> 
-<div class="md-modal md-effect md-show" id="modal">
-	<div class="md-content">
+
 		{{ Form::open(['route' => 'sessions.store', 'class' => 'form-group']) }}
 			<h1>Sign In</h1>
 			<div class='btn fb big'>
@@ -30,5 +28,3 @@
 			<br/>
 		{{ Form::close() }}
 		<p class='xs'>Need an account? <a href="signup" class="link">Sign Up</a></p>
-	</div>	
-</div>

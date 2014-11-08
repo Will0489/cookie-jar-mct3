@@ -38,7 +38,9 @@ document.getElementById('menutoggle').onclick = function() {
 	}
 };
 
+$('#signup').modal('toggle');
 
+$('#signin').modal('toggle');
 
 
 

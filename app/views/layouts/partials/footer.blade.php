@@ -12,4 +12,7 @@
 	</div>
 	         
 </footer>
+
+{{ HTML::script('//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js') }}
+{{ HTML::script('assets/js/modal.js') }}
 {{ HTML::script('assets/js/main.min.js') }}

@@ -7,7 +7,11 @@
 	<body>
 		<div class="page-wrap">
 			@include('layouts.partials.navbar')
-				
+
+			@if (!Auth::check())
+				@include('sessions.partials.modal')
+			@endif
+
 			@yield('content')
 			
 			<div class="clearfix"></div>

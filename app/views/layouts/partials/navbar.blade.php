@@ -35,8 +35,12 @@
  				</a>
  			</li>
 	 		@else
-	 		<li><a href="login" class="btn small link-dark">Sign In</a></li>
-	 		<li><a href="signup" class="btn small red">Sign Up</a></li>
+<!-- 	 		<li><button type="button" class="btn small link-dark" data-toggle="modal" data-target="#signin">modal
+</button></li> -->
+	 	<!-- 	<li><button type="button" class="btn small link-dark" data-toggle="modal" data-target="#login">modal
+</button></li> -->
+	 		<li><a href="login" class="btn small link-dark" data-toggle="modal" data-target="#signin">Sign In</a></li>
+	 		<li><a href="signup" class="btn small red" data-toggle="modal" data-target="#signup">Sign Up</a></li>
  			@endif
  		</ul>
  		</nav>
