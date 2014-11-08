@@ -20,6 +20,7 @@ class QuestionController extends \BaseController {
     {
         $data = Input::all();
         $user = Auth::id();
+        $question = new Question();
 
         $rules = [
             'title' => 'required',
@@ -41,17 +42,39 @@ class QuestionController extends \BaseController {
         }
         else
         {
-            Question::create([
+            $question = Question::create([
                 'title' => $data['title'],
                 'body' => $data['body'],
                 'user_id' => $user,
                 'answered' => 0,
                 'deadline' => $data['deadline']
             ]);
-            /*foreach($data['tag'] as $tag)
+            foreach($data['tagvalues'] as $tag)
             {
-                //TODO: Iterate over tag array and create questionscategorieslink entry
-            }*/
+                //TODO: Iterate over tag array and create questionscategorieslink entry or new categories
+
+                /* If the value is a number, create a new link based on the category id
+                 * else create a new category based on the text value, store it and
+                 * use it in the creation of a new link afterwards.
+                 */
+                if(is_numeric($tag)) {
+                    QuestionsCategoriesLink::create([
+                        'question_id' => $question->id,
+                        'category_id' => $tag
+                    ]);
+                } else {
+                    $category = Category::create([
+                        'name' => $tag,
+                        'image_url' => null,
+                        'description' => ''
+                    ]);
+
+                    QuestionsCategoriesLink::create([
+                        'question_id' => $question->id,
+                        'category_id' => $category->id
+                    ]);
+                }
+            }
         }
         return Redirect::back();
 	}
@@ -74,7 +97,7 @@ class QuestionController extends \BaseController {
         {
             $tags[] = array(
                 'id' => $tag->id,
-                'label' => $tag->name,
+                'label' => Str::lower($tag->name),
                 'value' => $tag->id);
         }
 

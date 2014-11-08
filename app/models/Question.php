@@ -1,7 +1,7 @@
 <?php
 
 class Question extends \Eloquent {
-	protected $fillable = [];
+	protected $fillable = ['title', 'body', 'user_id', 'answered', 'deadline'];
 
     public function user()
     {

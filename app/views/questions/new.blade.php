@@ -24,10 +24,10 @@
 				{{ Form::textarea('body', null, [ 'rows' => 6, 'placeholder' => 'Specify your question in 300 characters', 'class' => 'form-field', 'required' => 'required']) }}
 			</div>
 			<div>
-				{{ Form::text('tag', null, ['placeholder' => 'Start typing some tags...', 'class' => 'form-field', 'required' => 'required', 'id' => 'tag']) }}
+				{{ Form::text('tag', null, ['placeholder' => 'Start typing some tags...', 'class' => 'form-field', 'id' => 'tag']) }}
 			    <div id="tags">
 			    </div>
-				<small>Is your tag not showing up? Enter it and we'll create it for you!</small>
+				<small>Is your tag not showing up in the list? Enter yours, hit space and we'll add it for you!</small>
 				<br><br>
 			</div>
 
