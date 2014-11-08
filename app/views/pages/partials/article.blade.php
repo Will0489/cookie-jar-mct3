@@ -1,10 +1,10 @@
 <div class="section">
 	<div class="col span_3_of_3">
-		<h2>Story: Natan van Boven</h2>
-		<p>Student of engineering Natan helped Alison with her art project and this is how their friendship was born!</p>
+		<h2>Story: Barbara the photoqueen</h2>
+		<p>If you think that this site is born without any collaborations - you are totally wrong!</p>
 		<br/>
 		<div class="read">
-			<div><a href="" class="btn white">Read The Story</a></div>
+			<div><a href="story" class="btn white">Read The Story</a></div>
 		</div>
 	</div>
 </div>

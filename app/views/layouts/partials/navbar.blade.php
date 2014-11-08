@@ -21,7 +21,7 @@
 	 		</li>
 	 		<li>
 	 			<a href="/profile" class="btn small link-dark" alt="Profile">
-	 				<span class="icon"> {{ $data['username'] }}</span>
+	 				<span class="icon"> {{ $data['first_name'] }}</span>
 	 			</a>
 	 		</li>
 	 		<li>

@@ -43,7 +43,6 @@ $('#signup').hideModal();
 $('#signin').hideModal();
 
 $('#signup').modal('toggle');
-
 $('#signin').modal('toggle');
 
 

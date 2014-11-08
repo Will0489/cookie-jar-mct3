@@ -472,3 +472,16 @@ a {
 		padding-left: 0.1%;
 	}
 }
+// Static pages
+.section-content {
+	width: 80%;
+	@include center-block;
+	margin: 0 3em;
+	.msg-body {
+		p {
+			font-size: 18px;
+			line-height: 30px;
+			margin-bottom: 30px;
+		}
+	}
+}
