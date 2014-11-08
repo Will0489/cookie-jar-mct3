@@ -26,7 +26,6 @@
 			<div>
 				{{ Form::text('tag', null, ['placeholder' => 'Start typing some tags...', 'class' => 'form-field', 'required' => 'required', 'id' => 'tag']) }}
 			    <div id="tags">
-                    <span class="category btn">Example</span>
 			    </div>
 				<small>Is your tag not showing up? Enter it and we'll create it for you!</small>
 				<br><br>

@@ -65,18 +65,19 @@ class QuestionController extends \BaseController {
 
     public function tags()
     {
-        $request = Request::instance();
-        // Access the post info to this route
-        $term = $request->getContent();
-        // Display the post info
-        dd($term);
+        $term = Input::get('term');
         $tags = array();
 
-        $query = DB::table('categories')->where('name', 'LIKE', $term.'%')->get();
+        $query = Category::where("name", "LIKE", "$term%")->get();
+
         foreach($query as $results => $tag)
         {
-            $tags[] = array('id' => $tag->id, 'label' => $tag->name, 'value' => $tag->id);
+            $tags[] = array(
+                'id' => $tag->id,
+                'label' => $tag->name,
+                'value' => $tag->id);
         }
+
         return Response::json($tags);
     }
 }
