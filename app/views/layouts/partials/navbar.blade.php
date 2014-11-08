@@ -14,7 +14,7 @@
  				</a>
  			</li>
 	 		@if(Auth::check())
-	 		 <li>
+	 		 <li class='no'>
 	 			<a href="/profile" class="" alt="Profile">
 	 				<img src="{{ $data['photo']}}" class="thumbnail"/>
 	 			</a>

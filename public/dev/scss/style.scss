@@ -112,7 +112,11 @@ header {
 	
 	// hiding/showing menu link 
 	.nav {
-		height: 50px;
+		height: 60px;
+		// max-width: 1250px;
+		.no{
+			display:none;
+		}
 		li{
 			a {
 				display: none;
@@ -126,14 +130,18 @@ header {
 			width: 100%;
 			background-color: darken($white,2%);
 			// border-bottom: 2px solid lighten($gray,20%);
-			width: 200px;
-			height: 30px;
+			width: 470px;
+			height: 20px;
 			padding: 20px;
 			z-index: 1114;
 			position: relative;
 			&:hover,
 			&:focus {
 				background-color: darken($white,10%);
+			}
+
+			img {
+				display: none;
 			}
 		}
 		.navtoggle {
@@ -158,6 +166,7 @@ header {
 	}
 
 	.logo {
+		margin-bottom: 20px;
 		margin-left: 5px !important; 
 	}
 	
@@ -167,7 +176,7 @@ header {
 	}
 	
 	.sb-search-input:focus {
-		width: 170px;
+		width: 380px;
 	}
 
 	header {
