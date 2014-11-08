@@ -39,6 +39,9 @@ document.getElementById('menutoggle').onclick = function() {
 };
 
 // Modal forms
+$('#signup').hideModal();
+$('#signin').hideModal();
+
 $('#signup').modal('toggle');
 
 $('#signin').modal('toggle');

@@ -5,13 +5,12 @@
 	</head>
 
 	<body>
+	@if (!Auth::check())
+			@include('sessions.partials.modal')
+			@include('users.partials.modal')
+	 @endif	
 		<div class="page-wrap">
 			@include('layouts.partials.navbar')
-
-			@if (!Auth::check())
-				@include('sessions.partials.modal')
-				@include('users.partials.modal')
-			@endif
 
 			@yield('content')
 			

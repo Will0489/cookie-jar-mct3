@@ -35,8 +35,8 @@
  				</a>
  			</li>
 	 		@else
-	 		<li><a href="login" class="btn small link-dark" data-toggle="modal" data-target="#signin">Sign In</a></li>
-	 		<li><a href="signup" class="btn small red" data-toggle="modal" data-target="#signup">Sign Up</a></li>
+	 		<li><a href="#" class="btn small link-dark" data-toggle="modal" data-target="#signin">Sign In</a></li>
+	 		<li><a href="#" class="btn small red" data-toggle="modal" data-target="#signup">Sign Up</a></li>
  			@endif
  		</ul>
  		</nav>

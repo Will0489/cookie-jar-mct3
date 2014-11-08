@@ -1,7 +1,4 @@
 .md-modal {
-	position: absolute;
-	top: 18%;
-	left: 40%;
 	width: 253px;
 	max-width:100%; 
 	max-height:100%;
@@ -11,16 +8,4 @@
 	background: $white;
 	border-radius: $border-radius-base;
 	z-index: 10;
-	// visibility: visible;
-	// backface-visibility: visible;
-	//transform: translateX(-50%) translateY(-50%);
-}
-
-
-@media only screen and (max-width: 980px) {
- 
-  .md-modal {
-    left: 20%;
-  }
-
 }
