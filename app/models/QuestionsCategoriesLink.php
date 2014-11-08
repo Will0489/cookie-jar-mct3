@@ -1,7 +1,8 @@
 <?php
 
 class QuestionsCategoriesLink extends \Eloquent {
-	protected $fillable = [];
+	protected $fillable = ['question_id', 'category_id'];
+    protected $table = 'questionscategorieslink';
 
     public function question()
     {

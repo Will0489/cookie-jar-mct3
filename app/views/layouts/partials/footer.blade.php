@@ -13,3 +13,6 @@
 	         
 </footer>
 {{ HTML::script('assets/js/main.min.js') }}
+{{ HTML::script('https://code.jquery.com/jquery-2.1.1.min.js') }}
+{{ HTML::script('https://code.jquery.com/ui/1.11.2/jquery-ui.min.js') }}
+{{ HTML::script('assets/js/autocomplete.js') }}
