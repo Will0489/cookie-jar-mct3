@@ -1,1 +1,1 @@
-/home/vagrant/Code/cookiejar/app/views/questions/detail.blade.php
+This shouldn't be showing yet.

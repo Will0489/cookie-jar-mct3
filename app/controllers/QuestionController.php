@@ -44,7 +44,7 @@ class QuestionController extends \BaseController {
             Question::create([
                 'title' => $data['title'],
                 'body' => $data['body'],
-                'user_id' => $data['user_id'],
+                'user_id' => $user,
                 'answered' => 0,
                 'deadline' => $data['deadline']
             ]);
