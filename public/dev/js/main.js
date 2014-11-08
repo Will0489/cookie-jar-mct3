@@ -38,6 +38,7 @@ document.getElementById('menutoggle').onclick = function() {
 	}
 };
 
+// Modal forms
 $('#signup').modal('toggle');
 
 $('#signin').modal('toggle');

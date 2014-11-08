@@ -1,6 +1,4 @@
-<div class="md-overlay"></div> 
-<div class="md-modal md-effect md-show" id="modal">
-    <div class="md-content">
+
         {{ Form::open(['route' => 'user.store', 'method' => 'post', 'files' => true, 'class' => 'form-group']) }}
         <h1>Sign Up</h1>
             <div class='btn fb big'>

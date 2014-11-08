@@ -186,9 +186,9 @@ $zindex-modal:             1050 !default;
 }
 
 // Scale up the modal
-@media (min-width: 680px) {
+@media (min-width: 480px) {
   // Automatically set modal's width for larger viewports
-  .modal-dialog {
+  .modal-dialog,  {
     width: $modal-md;
     margin: 30px auto;
   }

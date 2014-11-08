@@ -10,6 +10,7 @@
 
 			@if (!Auth::check())
 				@include('sessions.partials.modal')
+				@include('users.partials.modal')
 			@endif
 
 			@yield('content')
