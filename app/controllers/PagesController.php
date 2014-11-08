@@ -4,22 +4,26 @@ class PagesController extends \BaseController {
 
 	public function about()
 	{
-		return View::make('pages.about');
+        $data = Auth::user();
+		return View::make('pages.about', compact('data'));
 	}
 
 	public function help()
 	{
-		return View::make('pages.help');
+        $data = Auth::user();
+		return View::make('pages.help', compact('data'));
 	}
 
 	public function tos()
 	{
-		return View::make('pages.tos');
+        $data = Auth::user();
+		return View::make('pages.tos', compact('data'));
 	}
 
 	public function story()
 	{
-		return View::make('pages.story');
+        $data = Auth::user();
+		return View::make('pages.story', compact('data'));
 	}
 
 }

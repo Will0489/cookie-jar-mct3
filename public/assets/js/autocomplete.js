@@ -1,4 +1,3 @@
-// Generate a list of tags based on what the user types
 $('#tag').autocomplete({
     'dataType': 'json',
     'minlength': '1',
@@ -21,7 +20,6 @@ $('#tag').keydown(function(event) {
         }
 });
 
-// Remove a tag from the list of tags
 $(document).on( 'click', 'span.category', function() {
     this.remove();
 });

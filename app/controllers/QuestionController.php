@@ -40,6 +40,10 @@ class QuestionController extends \BaseController {
         {
             return Redirect::back()->withInput()->withErrors($validator);
         }
+        elseif(!isset($data['tagvalues']))
+        {
+            return Redirect::back()->withInput()->withErrors('Please enter at least one tag for your questions.');
+        }
         else
         {
             $data['deadline'] = str_replace('/', '-', $data['deadline']);
