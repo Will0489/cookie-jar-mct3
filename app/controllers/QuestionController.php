@@ -146,7 +146,7 @@ class QuestionController extends \BaseController {
         }
         else
         {
-            return Redirect::back()->with('errors', 'You are not the owner of this question!');
+            return Redirect::back()->withErrors(['You are not the owner of this question!']);
         }
     }
 
@@ -163,7 +163,7 @@ class QuestionController extends \BaseController {
         }
         else
         {
-            return Redirect::back()->with('errors', 'You are not the owner of this question!');
+            return Redirect::back()->withErrors(['You are not the owner of this question!']);
         }
     }
 }

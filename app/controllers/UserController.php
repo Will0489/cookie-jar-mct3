@@ -49,4 +49,21 @@ class UserController extends \BaseController {
 
         return Redirect::back()->withInput()->withErrors(['Failed to register.']);
 	}
+
+    public function edit()
+    {
+        $data = Auth::user();
+
+        if(!Auth::check())
+        {
+            return Redirect::back()->withErrors(['You need to log in to edit your profile']);
+        }
+
+        return View::make('users.editprofile', compact('data'));
+    }
+
+    public function update()
+    {
+
+    }
 }
