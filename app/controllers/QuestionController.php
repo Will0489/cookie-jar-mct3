@@ -86,9 +86,10 @@ class QuestionController extends \BaseController {
 
 	public function show($id)
 	{
+        $data = Auth::user();
         $question = Question::find($id);
 
-        return View::make('questions.detail', compact('question'));
+        return View::make('questions.detail', compact('question', 'data'));
 	}
 
     public function tags()
@@ -107,5 +108,16 @@ class QuestionController extends \BaseController {
         }
 
         return Response::json($tags);
+    }
+
+    public function markFinished($id)
+    {
+        $question = Question::find($id);
+
+        $question->answered = 1;
+
+        $question->save();
+
+        return Redirect::back()->with('message', 'Marked as finished!');
     }
 }
