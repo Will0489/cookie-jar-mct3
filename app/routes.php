@@ -23,7 +23,7 @@ Route::get('questions/{id}/i-can-help', 'QuestionController@help');
 Route::get('questions/tags', 'QuestionController@tags');
 
 // Message routes
-Route::get('messages', 'MessageController@home');
+Route::get('messages', 'MessageController@index');
 Route::post('messages/reply', 'MessageController@reply')->before('auth');
 
 // Static page routes

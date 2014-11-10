@@ -406,6 +406,12 @@ a {
 	@include center-block;
 }
 
+.msg-avatar {
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+}
+
 .center-block {
 	@include center-block;
 }
@@ -502,3 +508,84 @@ ul {
 		}
 	}
 }
+
+// messages
+.msgBox {
+	width:100%;
+	max-width: 900px;
+	height: 600px;
+	border: 1px solid lighten($gray, 50%);
+    	border-radius: $border-radius-base;
+
+    	.usersCol {
+    		display: block;
+    		padding: 0px;
+		margin: 0px;
+    		width: 33.33%;
+		max-width: 300px;
+		height: 600px;
+		float: left;
+		//position: relative;
+		border-right: 1px solid lighten($gray, 50%);
+
+		ul {
+			margin: 0px;
+			padding: 0px;
+			li {
+				padding: 16px;
+				.user-name {
+					//margin-left: 90px;
+					margin-top: -40px;
+					margin-left: 36%;
+					// margin-top: -15%;
+					span {
+						font-size: $font-size-xl;
+					}
+				}
+				border-bottom: 1px solid lighten($gray, 50%);
+			}
+		}
+	}
+	.msgsCol {
+		display: block;
+		padding: 0px;
+		margin: 0px;
+		width: 66.66%;
+		max-width: 600px;
+		height: 600px;
+		float: right;
+		margin-top: -600px;
+		
+		.msgs{
+			margin-top: 373px;
+			ul {
+				margin: 0px;
+				padding: 0px;
+				li {
+					padding: 16px;
+					.msg {
+						//margin-top: 373px;
+						//margin-top: 66%;
+					}
+					.user-name {
+						margin-left: 70px;
+						margin-top: -54px;
+						span {
+							font-weight: 400;
+						}
+					}
+					.msg-body{
+						width: 100%;
+					}
+				}
+			}
+		}
+		.msgsRow {
+			//margin-top: 373px;
+			padding: 20px 30px 0px 60px;
+			border-top: 1px solid lighten($gray, 50%);
+		}
+	}
+}
+
+
