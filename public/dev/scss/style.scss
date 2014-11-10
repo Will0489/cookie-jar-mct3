@@ -406,6 +406,12 @@ a {
 	@include center-block;
 }
 
+.msg-avatar {
+	width: 70px;
+	height: 70px;
+	border-radius: 50%;
+}
+
 .center-block {
 	@include center-block;
 }
@@ -512,4 +518,32 @@ ul {
 	border: 1px solid lighten($gray, 50%);
     	border-radius: $border-radius-base;
 
+    	.usersCol {
+    		display: block;
+    		padding: 0px;
+		margin: 0px;
+    		width: 33.33%;
+		max-width: 300px;
+		height: 600px;
+		float: left;
+		//position: relative;
+		border-right: 1px solid lighten($gray, 50%);
+
+    	}
+	.msgsCol {
+		display: block;
+		padding: 0px;
+		margin: 0px;
+		width: 66.66%;
+		max-width: 600px;
+		height: 600px;
+		float: right;
+		margin-top: -600px;
+	    	.msgsRow {
+	    		margin-top: 518px;
+	    		padding: 20px 30px 0px 60px;
+	    		border-top: 1px solid lighten($gray, 50%);
+		}
+	}
 }
+

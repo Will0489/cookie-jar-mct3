@@ -7,15 +7,22 @@
 			<h2 class="qHeading s-tag">Messages</h2>
 			<div class="msgBox">
 				<!-- column for open dialogs with users -->
-				<div>
-					
+				<div class="usersCol">
+					<ul>
+						@include('messages.partials.user')
+					</ul>	
 				</div>
+				<div class="clearfix"></div>
 				<!-- column for messaging -->
-				<div>
-
+				<div class="msgsCol">
+					<ul>
+						@include('messages.partials.message')
+					</ul>
 					<!-- row for msg input field -->
-					<div>
-						
+					<div class="msgsRow">
+						{{ Form::open() }}
+							{{ Form::text('msg', null, ['placeholder' => 'Message...', 'class' => 'form-field']) }}
+						{{ Form::close() }}
 					</div>
 				</div>
 
