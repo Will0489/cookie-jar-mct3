@@ -1,26 +1,38 @@
+// Global autocomplete functionality
+var cache = {};
+
 $('#tag').autocomplete({
     'dataType': 'json',
-    'minlength': '1',
-    'source': '/questions/tags',
-    'select': function(e, ui) {
+    'minlength': '2',
+    'source': "/questions/tags",
+    'select' : function(e, ui) {
         $('#tags').append("<span class='category btn'>" + ui.item.label + "</span>");
         $('#tags').append("<input type='hidden' name='tagvalues[]' value='" + ui.item.id + "'> ");
-        $(this).val(" ");
+        $(this).val("");
         return false;
     }
 });
 
+
+// Add tag to list after pressing space
 $('#tag').keydown(function(event) {
     var value = $('#tag').val();
+    $.trim(value);
         if(event.which ===  32) {
-            $('#tags').append("<span class='category btn'>" + value + " </span>");
-            $('#tags').append("<input type='hidden' name='tagvalues[]' value='" + value + "'>");
+            if(!value == '') {
+                $('#tags').append("<span class='category btn'>" + value + " </span>");
+                $('#tags').append("<input type='hidden' name='tagvalues[]' value='" + value + "'>");
+                $('#tag').val("");
+                return false;
+            }
             $('#tag').val("");
             return false;
         }
 });
 
+// Whenever a tag is clicked, remove it and its corresponding hidden input from DOM
 $(document).on( 'click', 'span.category', function() {
-    this.remove();
+    $(this).next("input").remove();
+    $(this).remove();
 });
 
