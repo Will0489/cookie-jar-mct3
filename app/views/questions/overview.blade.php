@@ -10,12 +10,7 @@
 		<h2 class="qHeading "> Explore All Questions </h2>
 	</div>
 	<div class="col span_5_of_5">
-		
 		@include('questions.partials.question')
-
-		
-		@include('questions.partials.question')
-		
 		@if (!empty($data))
 		<!-- TODO: QUESTION OVERVIEW DISPLAY -->
 		@endif

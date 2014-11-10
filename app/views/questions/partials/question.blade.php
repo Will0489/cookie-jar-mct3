@@ -1,3 +1,4 @@
+@foreach($questions as $question)
 <div class="block">
 	<div class="block-image">
 		<img src="{{ $data['photo']}}" class="post-avatar"/>
@@ -6,14 +7,19 @@
 	</div>
 	
 	<div class="block-body">
-		<h2>Photographer wanted!<span class="xs date"> till 21.12.14 <span class="xs date right">submited 2 hours ago</span></span> </h2>
+		<h2>{{ $question->title }}<span class="xs date"> till {{ date('d/m/Y', strtotime($question->deadline)) }} <span class="xs date right">submited 2 hours ago</span></span> </h2>
 		<div class="msg-body s-tag">
-			<p>Hi! I'm looking for a photographer to shoot some pictures for my web development project. Pictures should reflect the creative and working atmosphere and be rich in colours. I'm from Antwerp, it's nice if you are too. Contact me asap! It's a good opportunity for you to get hands dirty:)</p>
+			<p>{{ $question->body }}</p>
 		</div>
-		<p><a class='category btn' href="">web</a> <a class='category btn' href="">photography</a> <a href="" class='category btn'>design</a></p>
+		<p>
+		    @foreach($question->categories as $category)
+		    <a class='category btn' href="">{{ $category->name }}</a>
+		    @endforeach
+	    </p>
 	</div>
 	
 	<div class="block-button">
 		<a href="" class="btn small blue">I can help!</a>
 	</div>
 </div>
+@endforeach

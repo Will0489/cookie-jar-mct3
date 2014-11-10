@@ -19,6 +19,7 @@ Route::get('edit', 'UserController@edit');
 // Question routes
 Route::get('questions', 'QuestionController@index');
 Route::get('questions/new', 'QuestionController@create');
+Route::get('questions/{id}/i-can-help', 'QuestionController@help');
 Route::get('questions/tags', 'QuestionController@tags');
 
 // Message routes
