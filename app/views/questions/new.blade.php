@@ -24,9 +24,10 @@
 			</div>
 			<div class="s-tag">
 				{{ Form::text('tag', null, ['placeholder' => 'Start typing some tags...', 'class' => 'form-field tag', 'id' => 'tag']) }}
+				<br>
 			    <div id="tags">
 			    </div>
-				<small>Is your tag not showing up in the list? Enter yours, hit space and we'll add it for you!</small>
+				<small>Tag not showing up in the list? Enter yours, hit space and we'll add it for you!</small>
 				<br><br>
 			</div>
 
