@@ -10,14 +10,18 @@
 				<div class="usersCol">
 					<ul>
 						@include('messages.partials.user')
+						@include('messages.partials.user')
 					</ul>	
 				</div>
 				<div class="clearfix"></div>
 				<!-- column for messaging -->
 				<div class="msgsCol">
-					<ul>
-						@include('messages.partials.message')
-					</ul>
+					<div class="msgs">
+						<ul>
+							@include('messages.partials.message')
+						</ul>
+					</div>
+					<div class="clearfix"></div>
 					<!-- row for msg input field -->
 					<div class="msgsRow">
 						{{ Form::open() }}
