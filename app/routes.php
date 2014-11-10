@@ -14,6 +14,7 @@ Route::get('profile', 'UserController@profile');
 Route::get('profile/{id}', 'UserController@profilebyid');
 Route::get('signup', 'UserController@create');
 Route::post('signup', 'UserController@store');
+Route::get('edit', 'UserController@edit');
 
 // Question routes
 Route::get('questions', 'QuestionController@index');
