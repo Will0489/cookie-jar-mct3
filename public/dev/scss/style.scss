@@ -529,7 +529,22 @@ ul {
 		//position: relative;
 		border-right: 1px solid lighten($gray, 50%);
 
-    	}
+		ul {
+			margin: 0px;
+			padding: 0px;
+			li {
+				padding: 16px;
+				.user-name {
+					margin-left: 90px;
+					margin-top: -48px;
+					span {
+						font-size: $font-size-xl;
+					}
+				}
+				border-bottom: 1px solid lighten($gray, 50%);
+			}
+		}
+	}
 	.msgsCol {
 		display: block;
 		padding: 0px;

@@ -1,6 +1,12 @@
 <li>
-	<a href="/profile" class="center-block" alt="Profile">
-		<img src="{{ $data['photo']}}" class="msg-avatar"/>
-		<span class="right center-block"> {{ $data['first_name'] }}</span>
+	<a href="/profile" class="" alt="Profile">
+		<div class="left">
+			<img src="{{ $data['photo']}}" class="msg-avatar"/>
+		</div>
+		<div class="clearfix"></div>
+		<div class="user-name">
+			<span> {{ $data['first_name'] }}</span>
+		</div>
+		<div class="clearfix"></div>
 	</a>
 </li>
