@@ -10,7 +10,7 @@ class Question extends \Eloquent {
 
     public function categories()
     {
-        return $this->hasMany('Category', 'questionscategorieslink', 'question_id', 'category_id');
+        return $this->belongsToMany('Category', 'questionscategorieslink', 'question_id', 'category_id');
     }
 
     public function questioncategories()
