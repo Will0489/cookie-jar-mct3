@@ -12,8 +12,14 @@ class QuestionController extends \BaseController {
 
 	public function create()
 	{
-        $data = Auth::user();
-		return View::make('questions.new', compact('data'));
+        if (Auth::user()) {
+            $data = Auth::user();
+            return View::make('questions.new', compact('data'));
+        }
+        else
+        {
+            return View::make('error.guest');
+        }
 	}
 
 	public function store()

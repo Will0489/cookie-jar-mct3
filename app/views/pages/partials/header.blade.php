@@ -9,9 +9,9 @@
 		<br/>
 		<br/>
 		@if(Auth::check())
-			<a href="signup" class="btn xxxl red">Ask your question</a>
+			<a href="questions/new" class="btn xxxl red">Ask your question</a>
 		@else
-			<a href="signup" class="btn xxxl red">Sign Up</a>
+			<a href="#" class="btn xxxl red" data-toggle="modal" data-target="#signup">Sign Up</a>
 		@endif
 	</div>
 </div>

@@ -27,4 +27,4 @@
 			</div>
 			<br/>
 		{{ Form::close() }}
-		<p class='xs'>Need an account? <a href="signup" class="link">Sign Up</a></p>
+		<p class='xs'>Need an account? <a href="#" class="link" data-toggle="modal" data-target="#signup">Sign Up</a></p>

@@ -25,7 +25,7 @@
                 <p class='xs'>{{$errors}}</p>
                 @endif
             </div>
-            <p class='xs'>Creating an account means you agree with our <a class="link">Terms of Service</a> and <a class="link">Privacy Policy</a>.</p>
+            <p class='xs'>Creating an account means you agree with our <a class="link" href="/tos">Terms of Service</a> and <a class="link" href="/tos">Privacy Policy</a>.</p>
             <br/>
-            <p class='xs'>Already have an account? <a href="login" class="link">Sign in</a></p>
+            <p class='xs'>Already have an account? <a href="" class="link" data-toggle="modal" data-target="#signin">Sign in</a></p>
         {{ Form::close() }}

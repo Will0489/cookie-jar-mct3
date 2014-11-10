@@ -40,9 +40,9 @@ document.getElementById('menutoggle').onclick = function() {
 
 // Modal forms
 $('#signup').hideModal();
-$('#signin').hideModal();
-
 $('#signup').modal('toggle');
+
+$('#signin').hideModal();
 $('#signin').modal('toggle');
 
 
