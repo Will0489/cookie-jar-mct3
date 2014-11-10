@@ -5,7 +5,7 @@ class QuestionController extends \BaseController {
 	public function index()
 	{
         $data = Auth::user();
-        $questions = Question::where('answered', '=','0')->with('user','questioncategories');
+        $questions = Question::where('answered', '=','0')->with('user', 'categories')->get();
 
 		return View::make('questions.overview', compact('data', 'questions'));
 	}
