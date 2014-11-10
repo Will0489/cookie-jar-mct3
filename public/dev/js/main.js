@@ -39,12 +39,28 @@ document.getElementById('menutoggle').onclick = function() {
 };
 
 // Modal forms
-$('#signup').hideModal();
+$(document).ready(function(){
+	// hiding annoying modals as we reload pages for unauth user
+	$('#signup').modal('hide');
+	$('#signin').modal('hide');
+
+	// only one modal should be opened at the time
+	$(function() {
+		return $(".modal").on("show.bs.modal", function() {
+			var currentModal;
+			currentModal = this;
+			$(".modal").each(function() {
+				if (this !== currentModal) {
+					$(this).modal("hide");
+				}
+			});
+		});
+	});
+});
+
+// toggling modals while button with corresponding id hitted
 $('#signup').modal('toggle');
-
-$('#signin').hideModal();
 $('#signin').modal('toggle');
-
 
 
 
