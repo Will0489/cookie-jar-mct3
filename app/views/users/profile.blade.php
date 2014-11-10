@@ -7,7 +7,7 @@
 		</div>
 		<div class="col span_2_of_3">
 			<div >
-				<h2 class="qHeading"> {{ $data->username }} <p class='right'><a class="link-dark xs" href="">Edit</a></p></h2>
+				<h2 class="qHeading"> {{ $data->first_name . ' ' . $data->last_name }} <p class='right'><a class="link-dark xs" href="">Edit</a></p></h2>
 				<br/>
 				<p>Studying MTA, web dev & UX '@KdG' </p>
 				<p>My portfolio</p>
@@ -23,10 +23,7 @@
 			<h2 class="qHeading push"> My Questions </h2>
 		</div>
 		<div class="col span_5_of_5">
-			
 			@include('users.partials.question')
-			@include('users.partials.question')
-			
 		</div>
 	</div>
 @stop

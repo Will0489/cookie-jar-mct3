@@ -86,9 +86,10 @@ class QuestionController extends \BaseController {
 
 	public function show($id)
 	{
+        $data = Auth::user();
         $question = Question::find($id);
 
-        return View::make('questions.detail', compact('question'));
+        return View::make('questions.detail', compact('question', 'data'));
 	}
 
     public function tags()
@@ -107,5 +108,62 @@ class QuestionController extends \BaseController {
         }
 
         return Response::json($tags);
+    }
+
+    public function markFinished($id)
+    {
+        $question = Question::findOrFail($id);
+
+        $question->answered = 1;
+
+        $question->save();
+
+        return Redirect::back()->with('message', 'Marked as finished!');
+    }
+
+    public function edit($id)
+    {
+        $data = Auth::user();
+        return View::make('questions.edit', compact('question', 'data'));
+    }
+
+    public function update($id)
+    {
+        $data = Input::all();
+        $user = Auth::id();
+        $question = Question::findOrFail($id);
+
+        //Check if the currently logged on user is the actual question owner
+        if($user == $question->user_id)
+        {
+            $question->title = $data['title'];
+            $question->body = $data['body'];
+            $question->answered = $data['answered'];
+            $question->deadline = $data['deadline'];
+
+            $question->save();
+            return Redirect::back()->with('message', 'Your question has been updated.');
+        }
+        else
+        {
+            return Redirect::back()->withErrors(['You are not the owner of this question!']);
+        }
+    }
+
+    public function delete($id)
+    {
+        //TODO: Implement soft delete
+        $question = Question::findOrFail($id);
+        $user = Auth::id();
+
+        if($user == $question->user_id) {
+            $question->delete();
+
+            return Redirect::back()->with('message', 'Your question has been removed.');
+        }
+        else
+        {
+            return Redirect::back()->withErrors(['You are not the owner of this question!']);
+        }
     }
 }
