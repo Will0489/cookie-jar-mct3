@@ -13,14 +13,13 @@ class QuestionController extends \BaseController {
     public function help($id)
     {
         $helper = Auth::user();
-        $question = Question::find($id)->with('user');
+        $question = Question::find($id)->with('user')->first();
 
         // Check if there is an existing conversation for this question with this helper, if so, redirect to messages
-        $conversation = Conversation::where('question_id', '=', $question->id)->where('user_id', '=', $helper->id)->firstOrFail();
+        $conversation = Conversation::where('question_id', '=', $question->id)->where('user_id', '=', $helper->id)->first();
 
         // If not, create a new conversation with this helper for the given question and send initial message, then redirect to messages
-        dd($conversation);
-        if($conversation->isEmpty())
+        if($conversation === null)
         {
             $conversation = Conversation::create([
                 'question_id' => $question->id,
@@ -31,7 +30,7 @@ class QuestionController extends \BaseController {
             ]);
 
             $initial_message = Message::create([
-                'content' => 'Hey there, I can help you!',
+                'content' => 'Hey there, I can help you with "' . $question->title . '"!',
                 'sender_id' => $helper->id,
                 'conversation_id' => $conversation->id,
                 'date_sent' => null

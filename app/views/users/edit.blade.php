@@ -9,7 +9,7 @@
         <div class="col span_1_of_5"></div>
         <div class="col span_3_of_5">
             <h2>Edit Profile</h2>
-            {{ Form::open(['route' => 'user.update', 'method' => 'PUT']) }}
+            {{ Form::open(['route' => 'user.update', 'method' => 'PUT', 'files' => true]) }}
 
                 @if(isset($data['photo']))
                 Your current profile picture<br><br>

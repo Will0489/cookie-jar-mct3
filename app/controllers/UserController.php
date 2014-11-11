@@ -77,35 +77,46 @@ class UserController extends \BaseController {
             'portfolio_link.required' => "Please fill in an url to your portfolio.",
         ];
 
+        if(Input::hasFile('photo'))
+        {
+            $file = Input::file('photo');
+            // $file->crop(200,200);
+            $filename = $file->getClientOriginalName();
+            $destpath = '/images/'.str_random(16).'/';
+
+            $file->move(public_path().$destpath, $filename);
+            $data['photo'] = $destpath . $filename;
+        } else {
+            $data['photo'] = $user->photo;
+        }
+
         $validator = Validator::make(Input::all(), $rules, $feedback);
 
         if($validator->fails())
         {
             return Redirect::back()->withInput()->withErrors($validator);
         }
-        elseif(!isset($data['tagvalues']))
-        {
-            return Redirect::back()->withInput()->withErrors('Please enter at least one tag for your skills/passions.');
-        }
         else
         {
             $user->studies_at = $data['school'];
             $user->portfolio = $data['portfolio_link'];
-
+            $user->photo = $data['photo'];
             $user->save();
 
-            foreach($data['tagvalues'] as $tag)
+            if(isset($data['tagvalues']))
             {
-                if(is_numeric($tag)) {
-                    $user->categories()->attach($tag);
-                } else {
-                    $category = Category::create([
-                        'name' => $tag,
-                        'image_url' => null,
-                        'description' => ''
-                    ]);
+                foreach ($data['tagvalues'] as $tag) {
+                    if (is_numeric($tag)) {
+                        $user->categories()->attach($tag);
+                    } else {
+                        $category = Category::create([
+                            'name' => $tag,
+                            'image_url' => null,
+                            'description' => ''
+                        ]);
 
-                    $user->categories()->attach($category->id);
+                        $user->categories()->attach($category->id);
+                    }
                 }
             }
         }
