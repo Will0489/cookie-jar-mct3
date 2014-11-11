@@ -18,7 +18,7 @@ class Conversation extends \Eloquent {
         return $this->belongsTo('User', 'owner_id');
     }
 
-    public function sender()
+    public function collaborator()
     {
         return $this->belongsTo('User', 'user_id');
     }

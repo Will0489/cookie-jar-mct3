@@ -4,6 +4,7 @@
 Route::resource('sessions', 'SessionController');
 Route::resource('question', 'QuestionController');
 Route::resource('user', 'UserController');
+Route::resource('message', 'MessageController');
 
 // Search routes
 Route::post('search', 'SearchController@search');
@@ -24,7 +25,7 @@ Route::get('questions/tags', 'QuestionController@tags');
 
 // Message routes
 Route::get('messages', 'MessageController@index');
-Route::post('messages/reply', 'MessageController@reply')->before('auth');
+Route::post('messages/reply', 'MessageController@reply')->before('auth'); // TODO: Implement AJAX/WebSockets messaging
 
 // Static page routes
 Route::get('help', 'PagesController@help');
