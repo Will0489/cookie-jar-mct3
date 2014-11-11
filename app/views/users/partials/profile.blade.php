@@ -8,12 +8,15 @@
 		
 		@if($data->studies_at)
 		<p>  Studying {{ $data->studies_at  }} </p>
+		<br/>
 		@else
 		<p> Tell the world where the best place for the makers is! (We mean where you are studying) </p>
+		<br/>
 		@endif
 		
 		@if($data->portfolio)
 		<p>  Check my portfolio @<a href="http://{{ $data->portfolio }}">{{$data->portfolio}}</a> </p>
+		<br/>
 		@endif
 		
 		@if($data->categories)

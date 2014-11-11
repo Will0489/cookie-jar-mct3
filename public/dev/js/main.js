@@ -19,28 +19,10 @@ var changeClass = function (r, className1, className2) {
 var menuElements = document.getElementById('menu');
 	menuElements.insertAdjacentHTML('afterBegin','<button type="button" id="menutoggle" class="navtoggle" aria-hidden="true"><i aria-hidden="true" class="icon-menu"></i></button>');
 
-//  Toggle the class on click to show / hide the menu
-// document.getElementById('menutoggle').onclick = function() {
-
-// 	var menuIcons = menuElements.getElementsByTagName('a');
-// 	var num = menuIcons.length;
-
-// 	for (var i = 0; i < num; i++) {
-// 		if (menuIcons[i].className == 'navtoggle' || menuIcons[i].className == ' navtoggle active ') {
-// 			changeClass(this, 'navtoggle active', 'navtoggle');
-// 		}else{
-// 			if (menuIcons[i].className == 'show') {
-// 				menuIcons[i].setAttribute("class", "hide");
-// 			}else{
-// 				menuIcons[i].setAttribute("class", "show");
-// 			}
-// 		}
-// 	}
-// };
 
 document.getElementById('menutoggle').onclick = function() {
 				changeClass(this, 'navtoggle active', 'navtoggle');
-			}
+};
 
 // Modal forms
 $(document).ready(function(){
