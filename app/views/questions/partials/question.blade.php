@@ -1,13 +1,13 @@
 @foreach($questions as $question)
 <div class="block">
 	<div class="block-image">
-		<img src="{{ $data['photo']}}" class="post-avatar"/>
+		<img src="{{ $question->user->photo}}" class="post-avatar"/>
 		<br/>
-		<a href="/profile" class="btn small center-block s-tag" alt="your profile">{{ $data['username'] }}</a>
+		<a href="/profile" class="btn small center-block s-tag" alt="your profile">{{ $question->user->first_name . ' ' . $question->user->last_name}}</a>
 	</div>
 	
 	<div class="block-body">
-		<h2>{{ $question->title }}<span class="xs date"> till {{ date('d/m/Y', strtotime($question->deadline)) }} <span class="xs date right">submited 2 hours ago</span></span> </h2>
+		<h2>{{ $question->title }}<span class="xs date"> till {{ date('d/m/Y', strtotime($question->deadline)) }} <span class="xs date right">submitted 2 hours ago</span></span> </h2>
 		<div class="msg-body s-tag">
 			<p>{{ $question->body }}</p>
 		</div>
@@ -19,7 +19,7 @@
 	</div>
 	
 	<div class="block-button">
-		<a href="" class="btn small blue">I can help!</a>
+		<a href="/questions/{{$question->id}}/help" class="btn small blue">I can help!</a>
 	</div>
 </div>
 @endforeach

@@ -12,7 +12,7 @@ Route::get('search', array('as' => 'results', 'uses' => 'SearchController@result
 
 // User routes
 Route::get('profile', 'UserController@profile');
-Route::get('profile/{id}', 'UserController@profilebyid');
+Route::get('profile/{id}', 'UserController@show');
 Route::get('signup', 'UserController@create');
 Route::post('signup', 'UserController@store');
 Route::get('edit', 'UserController@edit');
@@ -20,7 +20,7 @@ Route::get('edit', 'UserController@edit');
 // Question routes
 Route::get('questions', 'QuestionController@index');
 Route::get('questions/new', 'QuestionController@create');
-Route::get('questions/{id}/i-can-help', 'QuestionController@help');
+Route::get('questions/{id}/help', 'QuestionController@help');
 Route::get('questions/tags', 'QuestionController@tags');
 
 // Message routes

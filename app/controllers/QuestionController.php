@@ -10,6 +10,38 @@ class QuestionController extends \BaseController {
 		return View::make('questions.overview', compact('data', 'questions'));
 	}
 
+    public function help($id)
+    {
+        $helper = Auth::user();
+        $question = Question::find($id)->with('user');
+
+        // Check if there is an existing conversation for this question with this helper, if so, redirect to messages
+        $conversation = Conversation::where('question_id', '=', $question->id)->where('user_id', '=', $helper->id)->firstOrFail();
+
+        // If not, create a new conversation with this helper for the given question and send initial message, then redirect to messages
+        dd($conversation);
+        if($conversation->isEmpty())
+        {
+            $conversation = Conversation::create([
+                'question_id' => $question->id,
+                'owner_id' => $question->user->id,
+                'user_id' => $helper->id,
+                'started_on' => null,
+                'archived' => 0
+            ]);
+
+            $initial_message = Message::create([
+                'content' => 'Hey there, I can help you!',
+                'sender_id' => $helper->id,
+                'conversation_id' => $conversation->id,
+                'date_sent' => null
+            ]);
+        }
+
+        return Redirect::to('/messages');
+
+    }
+
 	public function create()
 	{
         if (Auth::user()) {
