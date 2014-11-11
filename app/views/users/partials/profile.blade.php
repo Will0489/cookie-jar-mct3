@@ -5,10 +5,12 @@
 	<div >
 		<h2 class="qHeading"> {{ $data->first_name . ' ' . $data->last_name }} <p class='right'><a class="link-dark xs" href="edit">Edit</a></p></h2>
 		<br/>
-		<p>Studying MTA, web dev & UX '@KdG' </p>
-		<p>My portfolio</p>
-		<p>I'm passionate about:</p>
-
-		<p><a class='category btn' href="">web</a> <a class='category btn' href="">photography</a> <a href="" class='category btn'>design</a></p>
+		<p>{{ $data->studies_at }} </p>
+		<p><a href="http://{{ $data->portfolio }}">{{$data->portfolio}}</a></p>
+		<p>
+		    @foreach($data->categories as $category)
+                <span class="category btn">{{$category->name}}</span>
+		    @endforeach
+		</p>
 	</div>
 </div>

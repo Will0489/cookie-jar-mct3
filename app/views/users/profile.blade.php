@@ -3,7 +3,7 @@
 @section('content')
     	<div class="section group">
 		@include('users.partials.profile')
-	</div>
+	    </div>
 
 	<div class="section group">
 		<div class="col span_5_of_5">

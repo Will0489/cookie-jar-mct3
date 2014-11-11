@@ -7,9 +7,10 @@ class UserController extends \BaseController {
         if(Auth::check())
         {
             $data = Auth::user();
-            $questions = Question::where("user_id", "=", Auth::id())->get();
+            $user = User::find(Auth::id());
+            $questions = Question::where("user_id", "=", Auth::id())->with('categories')->get();
 
-            return View::make('users.profile', compact('data', 'questions'));
+            return View::make('users.profile', compact('data', 'user', 'questions'));
         } else {
             return View::make('error.guest');
         }

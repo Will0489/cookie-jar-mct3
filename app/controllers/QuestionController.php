@@ -41,6 +41,26 @@ class QuestionController extends \BaseController {
 
     }
 
+    public function done($id)
+    {
+        $question = Question::find($id)->with('user')->first();
+
+        // Check if the person sending this request is actually the owner
+        if($question->user_id == Auth::id())
+        {
+            $question->answered = 1;
+            $question->save();
+
+            return Redirect::back()->with('message', 'Your question has been marked as done!');
+        }
+        else
+        {
+            return Redirect::back()->withErrors('You tried to mark a question as done that doesn\'t belong to you!');
+        }
+
+
+    }
+
 	public function create()
 	{
         if (Auth::user()) {
