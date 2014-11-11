@@ -19,7 +19,7 @@ class SearchController extends \BaseController {
 		}
 		else
 		{
-			"There is nothing like this:( ";
+			return "There is nothing like this:( ";
 		}
 
 		return View::make('search.results', compact('data','query'))->withQuestions($questions);
