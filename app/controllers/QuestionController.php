@@ -138,7 +138,7 @@ class QuestionController extends \BaseController {
                 }
             }
         }
-        return Redirect::back();
+        return Redirect::to('/questions');
 	}
 
 	public function show($id)
@@ -165,17 +165,6 @@ class QuestionController extends \BaseController {
         }
 
         return Response::json($tags);
-    }
-
-    public function markFinished($id)
-    {
-        $question = Question::findOrFail($id);
-
-        $question->answered = 1;
-
-        $question->save();
-
-        return Redirect::back()->with('message', 'Marked as finished!');
     }
 
     public function edit($id)

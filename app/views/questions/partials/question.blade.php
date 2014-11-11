@@ -19,7 +19,11 @@
 	</div>
 	
 	<div class="block-button">
+	    @if($question->user->id == Auth::id())
+	    <span>This is yours</span>
+	    @else
 		<a href="/questions/{{$question->id}}/help" class="btn small blue">I can help!</a>
+		@endif
 	</div>
 </div>
 @endforeach

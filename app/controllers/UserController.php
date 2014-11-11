@@ -130,6 +130,6 @@ class UserController extends \BaseController {
                 }
             }
         }
-        return Redirect::back();
+        return Redirect::to('/profile');
     }
 }
