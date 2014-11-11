@@ -53,29 +53,28 @@ class UserController extends \BaseController {
     public function edit()
     {
         $data = Auth::user();
+        $categories_data = Auth::user()->with('categories');
 
         if(!Auth::check())
         {
             return Redirect::back()->withErrors(['You need to log in to edit your profile']);
         }
 
-        return View::make('users.edit', compact('data'));
+        return View::make('users.edit', compact('data', 'categories_data'));
     }
 
     public function update()
     {
         $data = Input::all();
-        $user = Auth::id();
+        $user = User::findOrFail(Auth::id());
 
         $rules = [
-            'first_name' => 'required',
-            'last_name' => 'required',
-            'email' => 'required'
+            'school' => 'required',
+            'portfolio_link' => 'required',
         ];
         $feedback = [
-            'first_name.required' => 'Please enter your first name.',
-            'last_name.required' => 'Please enter your last name.',
-            'email.required' => 'Please enter a valid email address.',
+            'school.required' => "Please fill in where you're currently studying.",
+            'portfolio_link.required' => "Please fill in a url to your portfolio.",
         ];
 
         $validator = Validator::make(Input::all(), $rules, $feedback);
@@ -90,11 +89,10 @@ class UserController extends \BaseController {
         }
         else
         {
-            $user = User::findOrFail(Auth::id());
+            $user->studies_at = $data['school'];
+            $user->portfolio = $data['portfolio_link'];
 
-            $user->first_name = $data['first_name'];
-            $user->last_name = $data['last_name'];
-            $user->email = $data['email'];
+            $user->save();
 
             foreach($data['tagvalues'] as $tag)
             {

@@ -10,7 +10,6 @@
 				<div class="usersCol">
 					<ul>
 						@include('messages.partials.user')
-						@include('messages.partials.user')
 					</ul>	
 				</div>
 				<div class="clearfix"></div>
