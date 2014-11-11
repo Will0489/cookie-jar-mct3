@@ -13,7 +13,7 @@
 
                 @if(isset($data['photo']))
                 Your current profile picture<br><br>
-                <img src="{{$data->photo}}" alt="{{$data->first_name}}'s profile picture"><br><br>
+                <img src="{{$data->photo}}" alt="{{$data->first_name}}'s profile picture" class="avatar"><br><br>
                 @else
                 You don't have a profile picture yet!<br><br>
                 @endif

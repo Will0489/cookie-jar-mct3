@@ -1,5 +1,7 @@
 <?php
 
+use Intervention\Image\ImageServiceProvider;
+
 class UserController extends \BaseController {
 
     public function profile()
@@ -80,7 +82,6 @@ class UserController extends \BaseController {
         if(Input::hasFile('photo'))
         {
             $file = Input::file('photo');
-            // $file->crop(200,200);
             $filename = $file->getClientOriginalName();
             $destpath = '/images/'.str_random(16).'/';
 

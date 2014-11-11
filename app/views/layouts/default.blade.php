@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html lang="en" class="no-js">
 	<head>
 		@include('layouts.partials.head')
 	</head>

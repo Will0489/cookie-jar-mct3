@@ -1,0 +1,116 @@
+.header {
+ 	min-height: 60px;
+ 	background-color: $white;
+	border-bottom: 1px solid #e5e5e5;
+}
+
+
+// DANGER!!
+.nav ul {
+	list-style: none;
+	float: right;
+	margin-top: 18px;
+	margin-right: 60px;
+}
+
+.nav li {
+	float: left;
+	margin-right: 20px;
+	a {
+		color: $dark-gray;
+		.icon {
+			width: $icon-size;
+			padding-top: $padding-base-vertical;
+			padding-right: $padding-xs-horizontal;
+			cursor: pointer;
+			i {
+				font-size: $font-size-h1;
+				color: $gray;
+			}
+		}
+	}
+}
+
+
+/* Styling the toggle menu link and hiding it */
+.nav .navtoggle{
+	display: none;
+	width: 100%;
+	padding: 1.2em 0.8em 0.8em;
+	font-weight: normal;
+	text-align: left;
+	font-size: 1.2em;
+	background: none;	
+	cursor: pointer;
+}
+
+.navtoggle i{
+	// z-index:-1;
+}
+
+.icon-menu {
+	position: relative;
+	top: 3px;
+	line-height: 0;
+	font-size: 1.6em;
+}
+
+@media (max-width: 980px) {
+	/* Unhiding the styled menu link */
+	.nav .navtoggle{
+		margin: 0;
+		display: block;
+	}
+
+	// Style of opened menu
+	.nav ul {
+		max-width: 1240px;
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		width: 100%;
+	}
+	.nav li {
+		float: left;
+		width: 100%;
+		text-align: center;
+		padding: 20px;
+		.sb-search {
+			margin-right: 80px;
+		}
+		a.btn {
+			margin-bottom: 0;
+		}
+		&:hover,
+		&:focus {
+			background-color: darken($white,10%);
+		}
+		a:after {
+			content: attr(data-alt);
+		}
+	}
+	
+	/* Animating the height of the navigation when the button is clicked */
+	
+	/* When JavaScript is disabled, we hide the menu */
+	.no-js .nav ul {
+		max-height: 30em;
+		overflow: hidden;
+	}
+	
+	/* When JavaScript is enabled, we hide the menu */
+	.js .nav ul {
+		max-height: 0em;
+		overflow: hidden;
+	}
+	
+	/* Displaying the menu when the user has clicked on the button*/
+	.js .nav .active + ul {		
+		max-height: 30em;
+		overflow: hidden;
+	}
+
+	.no{
+		display: none;
+	}
+}

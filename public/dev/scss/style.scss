@@ -7,6 +7,7 @@
 @import 'search';
 @import 'modals';
 @import 'modal';
+@import 'nav';
 
 
 html, body {
@@ -39,10 +40,6 @@ h2 {
 	margin-top: 0px;
 }
 
-.qHeading{
-	margin-bottom: 0px;
-}
-
 h4 {
 	margin-bottom: 0px;
 }
@@ -51,148 +48,19 @@ p {
 	margin: 0;
 }
 
-header {
-	width: 100%;
-	height: 60px;
-	background-color: $white;
-	border-bottom: 1px solid #e5e5e5;
-	ul {
-		list-style: none;
-		float: right;
-		margin-top: 18px;
-		margin-right: 60px;
-		li {
-			float: left;
-			a {
-				margin-right: 20px;
-				color: $dark-gray;
-				display: block;
-				.icon {
-					width: $icon-size;
-					padding-top: $padding-base-vertical;
-					padding-right: $padding-xs-horizontal;
-					cursor: pointer;
-						i {
-							font-size: $font-size-h1;
-							color: $gray;
-						}
-
-				}
-			}
-			
-		}
-	}
+// remove safari highliting
+a, button {
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
 }
-
 
 .textarea {
 	resize: none;
 	height: auto;
 }
 
-.nav{
-	.navtoggle {
-		display: none;
-		cursor: pointer;
-		float:right;
-		padding: 0.5em 0.5em 0.8em;
-		text-align: right;
-		color: $gray;
-		font-size: $font-size-h1;
-		background: none;	
-		border: none;
-		cursor: pointer;
-			i {
-				z-index: -1;
-			}
-	}
-}
 
-
-// smaller than 980px
-@media (max-width: 980px) {
-	
-	// hiding/showing menu link 
-	.nav {
-		height: 60px;
-		// max-width: 1250px;
-		.no{
-			display:none;
-		}
-		li{
-			a {
-				display: none;
-			}
-		}
-		.hide {
-			display: none;
-		}
-		.show {
-			display: block;
-			width: 100%;
-			background-color: darken($white,2%);
-			// border-bottom: 2px solid lighten($gray,20%);
-			width: 470px;
-			height: 20px;
-			padding: 20px;
-			z-index: 1114;
-			position: relative;
-			&:hover,
-			&:focus {
-				background-color: darken($white,10%);
-			}
-
-			img {
-				display: none;
-			}
-		}
-		.navtoggle {
-			display: block;
-		}
-	}
-	
-	// styling logo + btn
-	ul.left {
-		display: none;
-	}
-
-	.nav {
-		margin-right: 0;
-		ul {
-			margin: 0;
-			max-height: 30em;
-		}
-		li {
-			float: none;
-		}
-	}
-
-	.logo {
-		margin-bottom: 20px;
-		margin-left: 5px !important; 
-	}
-	
-	// showing alt-data
-	.show:after {
-		content: attr(data-alt);
-	}
-	
-	.sb-search-input:focus {
-		width: 380px;
-	}
-
-	header {
-		width: auto;
-		ul {
-			margin-right: 0px;
-			li {
-				float: left;
-				a {
-					margin-right: 0px;
-				}
-			}
-		}
-	}	
+.qHeading{
+	margin-bottom: 0px;
 }
 
 
@@ -278,7 +146,6 @@ a {
 // home page
 .cover {
 	margin-top: -20px;
-	//background-image:url("http://cookie.local:8000/assets/images/header.gif"); 
 }
 .image {
 	display: inline-block;
@@ -291,7 +158,7 @@ a {
 #welcome {
 	z-index: 10;
 	position: absolute;
-	margin-top: -30%;
+	margin-top: -33%;
 }
 .read {
 	background-image: url("../images/article.gif");
@@ -362,6 +229,7 @@ a {
 	.xxxl {
 		@include button-size($padding-xl-vertical, $padding-xl-horizontal, $font-size-xl, $line-height-xl, $border-radius-xl);
 	}
+
 }
 
 @media only screen and (max-width: 980px) {
@@ -369,6 +237,11 @@ a {
 	#welcome {
 		display: none;
 	}
+
+	.cover {
+		margin-top: 0px;
+	}
+
 	footer {
 		padding-top: 20px;
 		height: 100px;
@@ -525,7 +398,6 @@ ul {
 		max-width: 300px;
 		height: 600px;
 		float: left;
-		//position: relative;
 		border-right: 1px solid lighten($gray, 50%);
 
 		ul {
@@ -535,10 +407,8 @@ ul {
 				padding: 16px;
 				min-height: 70px;
 				.user-name {
-					//margin-left: 90px;
 					margin-top: -40px;
 					margin-left: 36%;
-					// margin-top: -15%;
 					span {
 						font-size: $font-size-xl;
 					}
@@ -558,7 +428,6 @@ ul {
 		margin-top: -600px;
 		overflow: auto;
 		.msgs{
-			//margin-top: 373px;
 			height: 510px;
 			overflow: auto;
 			ul {
@@ -567,10 +436,6 @@ ul {
 				padding: 0px;
 				li {
 					padding: 16px;
-					.msg {
-						//margin-top: 373px;
-						//margin-top: 66%;
-					}
 					.user-name {
 						margin-left: 70px;
 						margin-top: -54px;
@@ -585,7 +450,6 @@ ul {
 			}
 		}
 		.msgsRow {
-			// position: fixed;
 			padding: 20px 30px 0px 60px;
 			border-top: 1px solid lighten($gray, 50%);
 		}
