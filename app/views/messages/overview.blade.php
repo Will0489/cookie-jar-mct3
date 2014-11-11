@@ -23,10 +23,9 @@
 					<div class="clearfix"></div>
 					<!-- row for msg input field -->
 					<div class="msgsRow">
-						{{ Form::open(['route' => 'message.store', 'method' => 'post']) }}
-						    {{ Form::hidden('conversation_id', 1) }}
+						{{ Form::open(['route' => 'message.store', 'method' => 'post', 'class' => 'add_msg_form']) }}
+						    	{{ Form::hidden('conversation_id', 1) }}
 							{{ Form::text('msg', null, ['placeholder' => 'Message...', 'class' => 'form-field']) }}
-							{{ Form::submit('Send') }}
 						{{ Form::close() }}
 					</div>
 				</div>

@@ -62,5 +62,10 @@ $(document).ready(function(){
 $('#signup').modal('toggle');
 $('#signin').modal('toggle');
 
-
+$('.add_msg_form').on('keydown', function(e){
+                  if(e.keyCode == 13){
+                        e.preventDefault();
+                        $(this).submit();
+                  }
+            });
 
