@@ -4,7 +4,7 @@
             <li>
                 <div class="msg">
                     <div class="left">
-                        <img src="{{ $message->user->photo}}" class="msg-avatar"/>
+                        <img src="{{ $message->user->photo }}" class="msg-avatar"/>
                     </div>
                     <div class="clearfix"></div>
                     <div class="user-name">
@@ -23,10 +23,9 @@
 @else
 <li>
 	<div class="msg">
-
 				<p>No messages so far.</p>
-
-		<div class="clearfix"></div>
-	</div>
+    </div>
+	<div class="clearfix"></div>
+	
 </li>
 @endif
