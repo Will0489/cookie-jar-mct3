@@ -37,3 +37,9 @@ $(document).on( 'click', 'span.category', function() {
     $(this).remove();
 });
 
+// Whenever a conversation item is clicked, make that conversation active, hide the current active one
+$(document).on( 'click', 'li.conversation', function() {
+    $("ul.active-chat").removeClass('active-chat').addClass('hidden-chat').fadeOut();
+    $("ul[data-id='"+ $(this).attr('data-conversation') + "']").removeClass('hidden-chat').addClass('active-chat').fadeIn();
+});
+

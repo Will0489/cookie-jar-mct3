@@ -1,31 +1,40 @@
 @if(!$conversations->isEmpty())
     @foreach($conversations as $conversation)
-        @foreach($conversation->messages as $message)
-            <li>
-                <div class="msg">
-                    <div class="left">
-                        <img src="{{ $message->user->photo }}" class="msg-avatar"/>
-                    </div>
-                    <div class="clearfix"></div>
-                    <div class="user-name">
-                        <span> {{ $message->user->first_name}}</span>
-                        <div class="msg-body">
-                            <p>
-                                {{$message->content}}
-                            </p>
+        @if($conversations->first()->id == $conversation->id)
+        <ul class="active-chat" data-id="{{$conversation->id}}" style="display:block">
+        @else
+        <ul class="hidden-chat" data-id="{{$conversation->id}}" style="display:none">
+        @endif
+            <li>{{$conversation->question->title}}</li>
+            @foreach($conversation->messages as $message)
+                <li>
+                    <div class="msg">
+                        <div class="left">
+                            <img src="{{ $message->user->photo }}" class="msg-avatar"/>
                         </div>
+                        <div class="clearfix"></div>
+                        <div class="user-name">
+                            <span> {{ $message->user->first_name}} sent on {{ $message->created_at }}</span>
+                            <div class="msg-body">
+                                <p>
+                                    {{$message->content}}
+                                </p>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
                     </div>
-                    <div class="clearfix"></div>
-                </div>
-            </li>
-        @endforeach
+                </li>
+            @endforeach
+        </ul>
     @endforeach
 @else
-<li>
-	<div class="msg">
-				<p>No messages so far.</p>
-    </div>
-	<div class="clearfix"></div>
-	
-</li>
+    <ul>
+        <li>
+            <div class="msg">
+                        <p>No messages so far.</p>
+            </div>
+            <div class="clearfix"></div>
+
+        </li>
+    </ul>
 @endif
