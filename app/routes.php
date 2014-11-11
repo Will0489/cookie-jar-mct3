@@ -36,12 +36,13 @@ Route::get('story', 'PagesController@story');
 Route::get('/', function()
 {
     $data = array();
-    $latest = Question::orderBy('created_at', 'desc')->take(6)->get();
+    $latest_top = Question::orderBy('created_at', 'desc')->with('user')->take(3)->get();
+    $latest_bot = Question::orderBy('created_at', 'desc')->with('user')->take(3)->skip(3)->get();
 
     if (Auth::check()) {
         $data = Auth::user();
     }
-    return View::make('pages.home', compact('data', 'latest'));
+    return View::make('pages.home', compact('data', 'latest_top', 'latest_bot'));
 });
 
 Route::get('logout', function() {

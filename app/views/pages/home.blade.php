@@ -11,17 +11,7 @@
 		</div>
 	</div>
 
-	<div class="section group">
-		@include('pages.partials.question')
-		@include('pages.partials.question')
-		@include('pages.partials.question')
-	</div>
-	
-	<div class="section group">
-		@include('pages.partials.question')
-		@include('pages.partials.question')
-		@include('pages.partials.question')
-	</div>
+    @include('pages.partials.question')
 
 	@include('pages.partials.article')
 	
