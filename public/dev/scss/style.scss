@@ -533,6 +533,7 @@ ul {
 			padding: 0px;
 			li {
 				padding: 16px;
+				min-height: 70px;
 				.user-name {
 					//margin-left: 90px;
 					margin-top: -40px;
@@ -555,10 +556,13 @@ ul {
 		height: 600px;
 		float: right;
 		margin-top: -600px;
-		
+		overflow: auto;
 		.msgs{
-			margin-top: 373px;
+			//margin-top: 373px;
+			height: 510px;
+			overflow: auto;
 			ul {
+				margin-top: 373px;
 				margin: 0px;
 				padding: 0px;
 				li {
@@ -581,7 +585,7 @@ ul {
 			}
 		}
 		.msgsRow {
-			//margin-top: 373px;
+			// position: fixed;
 			padding: 20px 30px 0px 60px;
 			border-top: 1px solid lighten($gray, 50%);
 		}
