@@ -37,8 +37,8 @@ Route::get('story', 'PagesController@story');
 Route::get('/', function()
 {
     $data = array();
-    $latest_top = Question::orderBy('created_at', 'desc')->with('user')->take(3)->get();
-    $latest_bot = Question::orderBy('created_at', 'desc')->with('user')->take(3)->skip(3)->get();
+    $latest_top = Question::orderBy('created_at', 'desc')->with('user', 'categories')->take(3)->get();
+    $latest_bot = Question::orderBy('created_at', 'desc')->with('user', 'categories')->take(3)->skip(3)->get();
 
     if (Auth::check()) {
         $data = Auth::user();
