@@ -1,7 +1,8 @@
+@foreach($conversations as $conversation)
 <li>
 	<a href="/profile" class="" alt="Profile">
 		<div class="left">
-			<img src="{{ $data['photo']}}" class="msg-avatar"/>
+			<img src="{{ $conversation->user_id->photo}}" class="msg-avatar"/>
 		</div>
 		<div class="clearfix"></div>
 		<div class="user-name">
@@ -10,3 +11,4 @@
 		<div class="clearfix"></div>
 	</a>
 </li>
+@endforeach

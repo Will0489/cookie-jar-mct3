@@ -7,9 +7,9 @@ class MessageController extends \BaseController {
 		if(Auth::check())
         {
             $data = Auth::user();
-            $questions = Question::where("user_id", "=", Auth::id())->get();
+            $conversations = Conversation::where("owner_id", "=", Auth::id())->with('messages.user')->get();
 
-            return View::make('messages.overview', compact('data', 'questions'));
+            return View::make('messages.overview', compact('data', 'conversations'));
         } else {
             return View::make('error.guest');
         }
@@ -18,7 +18,9 @@ class MessageController extends \BaseController {
 	public function store()
 	{
 		$data = Input::all();
-        $question
+        $conversation = Conversation::findOrFail($data['conversation_id'])->with('question')->get();
+
+
 
 	}
 }

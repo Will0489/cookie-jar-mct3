@@ -50,8 +50,11 @@ class DropCollaboration extends Migration {
 
         Schema::table('conversations', function(Blueprint $table)
         {
+            $table->dropForeign('conversations_question_id_foreign');
             $table->dropColumn('question_id');
+            $table->dropForeign('conversations_owner_id_foreign');
             $table->dropColumn('owner_id');
+            $table->dropForeign('conversations_user_id_foreign');
             $table->dropColumn('user_id');
             $table->integer('collaboration_id')->unsigned();
             $table->foreign('collaboration_id')->references('id')->on('collaborations')->onDelete('cascade');
