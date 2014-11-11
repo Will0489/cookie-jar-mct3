@@ -17,7 +17,7 @@
                             <span> {{ $message->user->first_name}} sent on {{ $message->created_at }}</span>
                             <div class="msg-body">
                                 <p>
-                                    {{$message->content}}
+                                    {{{$message->content}}}
                                 </p>
                             </div>
                         </div>

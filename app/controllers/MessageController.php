@@ -19,12 +19,11 @@ class MessageController extends \BaseController {
 	{
 		$data = Input::all();
         $user = Auth::user();
-
         $conversation = Conversation::findOrFail($data['conversation_id'])->with('owner', 'collaborator')->first();
 
 
             $message = Message::create([
-                'conversation_id' => $conversation->id,
+                'conversation_id' => $data['conversation_id'],
                 'sender_id' => $user->id,
                 'content' => $data['msg'],
             ]);

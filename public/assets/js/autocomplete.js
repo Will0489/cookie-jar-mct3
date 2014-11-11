@@ -41,5 +41,7 @@ $(document).on( 'click', 'span.category', function() {
 $(document).on( 'click', 'li.conversation', function() {
     $("ul.active-chat").removeClass('active-chat').addClass('hidden-chat').fadeOut();
     $("ul[data-id='"+ $(this).attr('data-conversation') + "']").removeClass('hidden-chat').addClass('active-chat').fadeIn();
+    $("input[name=conversation_id]").val($(this).attr('data-conversation'));
+    console.log("Current value of hidden field" + $("input[name=conversation_id]").val());
 });
 
