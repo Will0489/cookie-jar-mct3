@@ -1,8 +1,11 @@
 <div class="section group">
 @foreach($latest_top as $latest)
     <div class="col span_1_of_3">
+        @if($latest->categories->first()->image_url === null)
         <img src="assets/images/q1.gif" class="question">
-
+        @else
+        <img src="{{$latest->categories->first()->image_url}}" class="question">
+        @endif
         <h4><a href="" class="link">{{ $latest->title }}</a></h4>
         <p class="date">I need your help until {{ date('d/m/Y', strtotime($latest->deadline)) }} Get more <span class="link">info</span>!</p>
         <br/>
@@ -12,9 +15,12 @@
 </div>
 <div class="section group">
 @foreach($latest_bot as $latest)
-    <div class="col span_1_of_3">
+   <div class="col span_1_of_3">
+        @if($latest->categories->first()->image_url === null)
         <img src="assets/images/q1.gif" class="question">
-
+        @else
+        <img src="{{$latest->categories->first()->image_url}}" class="question">
+        @endif
         <h4><a href="" class="link">{{ $latest->title }}</a></h4>
         <p class="date">I need your help until {{ date('d/m/Y', strtotime($latest->deadline)) }} Get more <span class="link">info</span>!</p>
         <br/>

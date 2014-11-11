@@ -10,7 +10,11 @@
 		<div class="msg-body s-tag">
 			<p>{{ $question->body }}</p>
 		</div>
-		<p><a class='category btn' href="">web</a> <a class='category btn' href="">photography</a> <a href="" class='category btn'>design</a></p>
+		<p>
+		    @foreach($question->categories as $category)
+		        <span class="category btn">{{$category->name}}</span>
+		    @endforeach
+		</p>
 	</div>
 
 	<div class="block-button">

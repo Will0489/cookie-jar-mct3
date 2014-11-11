@@ -16,9 +16,7 @@
 				<!-- column for messaging -->
 				<div class="msgsCol">
 					<div class="msgs">
-						<ul>
-							@include('messages.partials.message')
-						</ul>
+						@include('messages.partials.message')
 					</div>
 					<div class="clearfix"></div>
 					<!-- row for msg input field -->

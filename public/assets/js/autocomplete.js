@@ -32,7 +32,16 @@ $('#tag').keydown(function(event) {
 
 // Whenever a tag is clicked, remove it and its corresponding hidden input from DOM
 $(document).on( 'click', 'span.category', function() {
+    $('#deletedtags').append("<input type='hidden' name='delvalues[]' value='" + $(this).next("input").val() + "'>");
     $(this).next("input").remove();
     $(this).remove();
+});
+
+// Whenever a conversation item is clicked, make that conversation active, hide the current active one
+$(document).on( 'click', 'li.conversation', function() {
+    $("ul.active-chat").removeClass('active-chat').addClass('hidden-chat').fadeOut();
+    $("ul[data-id='"+ $(this).attr('data-conversation') + "']").removeClass('hidden-chat').addClass('active-chat').fadeIn();
+    $("input[name=conversation_id]").val($(this).attr('data-conversation'));
+    console.log("Current value of hidden field" + $("input[name=conversation_id]").val());
 });
 

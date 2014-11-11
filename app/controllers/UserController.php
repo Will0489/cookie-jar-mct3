@@ -9,9 +9,10 @@ class UserController extends \BaseController {
         if(Auth::check())
         {
             $data = Auth::user();
-            $questions = Question::where("user_id", "=", Auth::id())->get();
+            $user = User::find(Auth::id());
+            $questions = Question::where("user_id", "=", Auth::id())->with('categories')->get();
 
-            return View::make('users.profile', compact('data', 'questions'));
+            return View::make('users.profile', compact('data', 'user', 'questions'));
         } else {
             return View::make('error.guest');
         }
@@ -76,7 +77,7 @@ class UserController extends \BaseController {
         ];
         $feedback = [
             'school.required' => "Please fill in where you're currently studying.",
-            'portfolio_link.required' => "Please fill in an url to your portfolio.",
+            'portfolio_link.required' => "Please fill in a url to your portfolio.",
         ];
 
         if(Input::hasFile('photo'))
@@ -106,7 +107,8 @@ class UserController extends \BaseController {
 
             if(isset($data['tagvalues']))
             {
-                foreach ($data['tagvalues'] as $tag) {
+                foreach ($data['tagvalues'] as $tag)
+                {
                     if (is_numeric($tag)) {
                         $user->categories()->attach($tag);
                     } else {
@@ -117,6 +119,13 @@ class UserController extends \BaseController {
                         ]);
 
                         $user->categories()->attach($category->id);
+                    }
+                }
+            }
+            if(isset($data['delvalues'])) {
+                foreach($data['delvalues'] as $tag) {
+                    if(is_numeric($tag)) {
+                        $user->categories()->detach($tag);
                     }
                 }
             }

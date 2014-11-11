@@ -42,12 +42,15 @@
                 {{ Form::label('tag', "I'm passionate about") }}
                 {{ Form::text('tag', null, ['placeholder' => 'Add some tags!', 'class' => 'form-field tag', 'id' => 'tag']) }}
                 <br>
-                <div id="tags">
-                @foreach($data->categories as $category)
-                <span class="category btn">{{$category['name']}}</span>
-                <input type="hidden" name="tagvalues[]" value="{{$category['id']}}">
-                @endforeach
+                <div id="existing tags">
+                    @foreach($data->categories as $category)
+                        <span class="category btn">{{$category['name']}}</span>
+                        <input type="hidden" name="existingvalues[]" value="{{$category['id']}}">
+                    @endforeach
                 </div>
+                <div id="tags">
+                </div>
+                <div id="deletedtags"></div>
                 <small>Tag not showing up in the list? Enter yours, hit space and we'll add it for you!</small>
                 <br><br>
             </div>
