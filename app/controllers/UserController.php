@@ -74,7 +74,7 @@ class UserController extends \BaseController {
         ];
         $feedback = [
             'school.required' => "Please fill in where you're currently studying.",
-            'portfolio_link.required' => "Please fill in an url to your portfolio.",
+            'portfolio_link.required' => "Please fill in a url to your portfolio.",
         ];
 
         if(Input::hasFile('photo'))
@@ -105,7 +105,8 @@ class UserController extends \BaseController {
 
             if(isset($data['tagvalues']))
             {
-                foreach ($data['tagvalues'] as $tag) {
+                foreach ($data['tagvalues'] as $tag)
+                {
                     if (is_numeric($tag)) {
                         $user->categories()->attach($tag);
                     } else {
@@ -116,6 +117,13 @@ class UserController extends \BaseController {
                         ]);
 
                         $user->categories()->attach($category->id);
+                    }
+                }
+            }
+            if(isset($data['delvalues'])) {
+                foreach($data['delvalues'] as $tag) {
+                    if(is_numeric($tag)) {
+                        $user->categories()->detach($tag);
                     }
                 }
             }

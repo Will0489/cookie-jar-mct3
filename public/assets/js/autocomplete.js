@@ -32,6 +32,7 @@ $('#tag').keydown(function(event) {
 
 // Whenever a tag is clicked, remove it and its corresponding hidden input from DOM
 $(document).on( 'click', 'span.category', function() {
+    $('#deletedtags').append("<input type='hidden' name='delvalues[]' value='" + $(this).next("input").val() + "'>");
     $(this).next("input").remove();
     $(this).remove();
 });
