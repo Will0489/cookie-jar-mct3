@@ -17,6 +17,8 @@ class MessageController extends \BaseController {
 
 	public function store()
 	{
-		//TODO: Add new message
+		$data = Input::all();
+        $question
+
 	}
 }
