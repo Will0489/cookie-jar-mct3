@@ -1,1 +1,19 @@
-app/views/search/results.blade.php
+@extends('layouts.default')
+
+@section('content')
+@if(Session::has('message'))
+{{ Session::get('message')}}
+@endif
+
+<div class="section group">
+	<div class="col span_5_of_5">
+		<h2 class="qHeading ">We could find these for ya!</h2>
+	</div>
+	<div class="col span_5_of_5">
+		@include('questions.partials.question')
+		@if (!empty($data))
+		<!-- TODO: QUESTION OVERVIEW DISPLAY -->
+		@endif
+	</div>		
+</div>
+@stop

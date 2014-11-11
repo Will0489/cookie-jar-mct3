@@ -8,9 +8,21 @@ class SearchController extends \BaseController {
 	 *
 	 * @return Response
 	 */
-	public function index()
+	public function results()
 	{
-		//
+		$data = Auth::user();
+		$query = Request::get('q');
+		
+		if ($query) 
+		{
+			$questions = Question::where('title', 'LIKE', "%$query%")->get();
+		}
+		else
+		{
+			"There is nothing like this:( ";
+		}
+
+		return View::make('search.results', compact('data','query'))->withQuestions($questions);
 	}
 
 	/**

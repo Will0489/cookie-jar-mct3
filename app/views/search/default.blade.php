@@ -1,1 +1,0 @@
-app/views/search/default.blade.php

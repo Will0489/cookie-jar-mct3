@@ -74,7 +74,7 @@ class UserController extends \BaseController {
         ];
         $feedback = [
             'school.required' => "Please fill in where you're currently studying.",
-            'portfolio_link.required' => "Please fill in a url to your portfolio.",
+            'portfolio_link.required' => "Please fill in an url to your portfolio.",
         ];
 
         $validator = Validator::make(Input::all(), $rules, $feedback);

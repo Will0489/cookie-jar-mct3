@@ -7,7 +7,7 @@ Route::resource('user', 'UserController');
 
 // Search routes
 Route::post('search', 'SearchController@search');
-Route::get('search/results', 'SearchController@results');
+Route::get('search', array('as' => 'results', 'uses' => 'SearchController@results'));
 
 // User routes
 Route::get('profile', 'UserController@profile');
