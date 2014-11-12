@@ -12,10 +12,10 @@ Route::get('search', array('as' => 'results', 'uses' => 'SearchController@result
 
 // User routes
 Route::get('profile', 'UserController@profile');
-Route::get('profile/{id}', 'UserController@show');
 Route::get('signup', 'UserController@create');
 Route::post('signup', 'UserController@store');
-Route::get('edit', 'UserController@edit');
+Route::get('profile/edit', 'UserController@edit');
+Route::get('profile/{id}', 'UserController@show');
 
 // Question routes
 Route::get('questions', 'QuestionController@index');

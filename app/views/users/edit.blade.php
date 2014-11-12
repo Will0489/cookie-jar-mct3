@@ -59,5 +59,4 @@
             {{ Form::close() }}
     	</div>
     </div>
->>>>>>> afdf3c72dd003af67750a9fee7bafbaf01a056c3
 @stop

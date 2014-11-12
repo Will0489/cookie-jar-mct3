@@ -5,7 +5,7 @@
 </div>
 <div class="col span_2_of_3">
 	<div>
-		<h2 class="qHeading"> {{ $data->first_name . ' ' . $data->last_name }} <p class='right'><a class="link-dark xs" href="edit">Edit</a></p></h2>
+		<h2 class="qHeading"> {{ $data->first_name . ' ' . $data->last_name }} <p class='right'><a class="link-dark xs" href="/profile/edit">Edit</a></p></h2>
 		<br>
 		
 		@if($data->studies_at)

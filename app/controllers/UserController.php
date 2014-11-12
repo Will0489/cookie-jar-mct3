@@ -25,11 +25,16 @@ class UserController extends \BaseController {
 
     public function show($id)
     {
-        $data = Auth::user();
-        $user = User::find($id);
-        $questions = Question::where("user_id", "=", $id)->with('categories')->get();
+        if(Auth::check())
+        {
+            $data = Auth::user();
+            $user = User::find($id);
+            $questions = Question::where("user_id", "=", $id)->with('categories')->get();
 
-        return View::make('users.profile', compact('data', 'user', 'questions'));
+            return View::make('users.profile', compact('data', 'user', 'questions'));
+        } else {
+            return View::make('error.guest');
+        }
     }
 
 	public function store()
