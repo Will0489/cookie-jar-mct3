@@ -4,19 +4,22 @@
 <div class="col span_2_of_3">
 	<div>
 		<h2 class="qHeading"> {{ $data->first_name . ' ' . $data->last_name }} <p class='right'><a class="link-dark xs" href="edit">Edit</a></p></h2>
-		<br/>
+		<br>
 		
 		@if($data->studies_at)
 		<p>  Studying {{ $data->studies_at  }} </p>
-		<br/>
+		<br>
 		@else
-		<p> Tell the world where the best place for the makers is! (We mean where you are studying) </p>
-		<br/>
+		<p> Tell the world where the best place for the makers is. (We mean where you're studying) </p>
+		<br>
 		@endif
 		
 		@if($data->portfolio)
 		<p>  Check my portfolio @<a href="http://{{ $data->portfolio }}">{{$data->portfolio}}</a> </p>
-		<br/>
+		<br>
+		@else
+		<p>Add a portfolio link to display your projects and skills.</p>
+		<br>
 		@endif
 		
 		@if($data->categories)
@@ -27,6 +30,8 @@
 			<input type="hidden" name="tagvalues[]" value="{{$category['id']}}">
 			@endforeach
 		</div>
+		@else
+		<p>Add some tags to show people what you're passionate about.</p>
 		@endif
 	</div>
 </div>

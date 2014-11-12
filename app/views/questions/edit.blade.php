@@ -30,7 +30,7 @@
 				<br>
                 <div id="existing tags">
                     @foreach($question->categories as $category)
-                        <span class="category btn">{{$category['name']}}</span>
+                        <span class="category btn deletable">{{$category['name']}}</span>
                         <input type="hidden" name="existingvalues[]" value="{{$category['id']}}">
                     @endforeach
                 </div>

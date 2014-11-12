@@ -7,13 +7,13 @@
 	</div>
 	
 	<div class="block-body">
-		<h2>{{ $question->title }}<span class="xs date"> till {{ date('d/m/Y', strtotime($question->deadline)) }} <span class="xs date right">submitted 2 hours ago</span></span> </h2>
+		<h2>{{ $question->title }}<span class="xs date"> till {{ date('d/m/Y', strtotime($question->deadline)) }} <span class="xs date right">Submitted at {{ date('H:m', strtotime($question->created_at))}} on {{ date('d/m/Y', strtotime($question->created_at)) }}</span></span> </h2>
 		<div class="msg-body s-tag">
 			<p>{{ $question->body }}</p>
 		</div>
 		<p>
 		    @foreach($question->categories as $category)
-		    <a class='category btn' href="">{{ $category->name }}</a>
+		    <span class='category btn'>{{ $category->name }}</span>
 		    @endforeach
 	    </p>
 	</div>

@@ -6,7 +6,7 @@ $('#tag').autocomplete({
     'minlength': '2',
     'source': "/questions/tags",
     'select' : function(e, ui) {
-        $('#tags').append("<span class='category btn'>" + ui.item.label + "</span>");
+        $('#tags').append("<span class='category btn deletable'>" + ui.item.label + "</span>");
         $('#tags').append("<input type='hidden' name='tagvalues[]' value='" + ui.item.id + "'> ");
         $(this).val("");
         return false;
@@ -20,7 +20,7 @@ $('#tag').keydown(function(event) {
     $.trim(value);
         if(event.which ===  32) {
             if(!value == '') {
-                $('#tags').append("<span class='category btn'>" + value + " </span>");
+                $('#tags').append("<span class='category btn deletable'>" + value + " </span>");
                 $('#tags').append("<input type='hidden' name='tagvalues[]' value='" + value + "'>");
                 $('#tag').val("");
                 return false;
@@ -31,7 +31,7 @@ $('#tag').keydown(function(event) {
 });
 
 // Whenever a tag is clicked, remove it and its corresponding hidden input from DOM
-$(document).on( 'click', 'span.category', function() {
+$(document).on( 'click', 'span.deletable', function() {
     $('#deletedtags').append("<input type='hidden' name='delvalues[]' value='" + $(this).next("input").val() + "'>");
     $(this).next("input").remove();
     $(this).remove();
