@@ -51,13 +51,13 @@ return array(
 			'database' => __DIR__.'/../database/production.sqlite',
 			'prefix'   => '',
 		),
-
+        // mysql://b914dcd8498725:d7b37e98@us-cdbr-iron-east-01.cleardb.net/heroku_fe1041a1d75de97?reconnect=true
 		'mysql' => array(
 			'driver'    => 'mysql',
-			'host'      => 'localhost',
-			'database'  => 'homestead',
-			'username'  => 'homestead',
-			'password'  => 'secret',
+			'host'      => 'us-cdbr-iron-east-01.cleardb.net',
+			'database'  => 'heroku_fe1041a1d75de97',
+			'username'  => 'b914dcd8498725',
+			'password'  => 'd7b37e98',
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',
