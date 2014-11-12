@@ -22,7 +22,11 @@
 					<!-- row for msg input field -->
 					<div class="msgsRow">
 						{{ Form::open(['route' => 'message.store', 'method' => 'post', 'class' => 'add_msg_form']) }}
+						        @if(!$conversations->isEmpty())
 						    	{{ Form::hidden('conversation_id', $conversations->first()->id) }}
+						    	@else
+						    	{{ Form::hidden('conversation_id', 0) }}
+						    	@endif
 							{{ Form::text('msg', null, ['placeholder' => 'Message...', 'class' => 'form-field']) }}
 						{{ Form::close() }}
 					</div>
