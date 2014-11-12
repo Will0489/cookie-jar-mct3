@@ -1,4 +1,5 @@
 @import 'variables';
+@import 'elements';
 @import 'icons';
 @import 'buttons';
 @import 'forms';
@@ -8,60 +9,8 @@
 @import 'modals';
 @import 'modal';
 @import 'nav';
+@import 'avatars';
 
-
-html, body {
-  height: 100%;
-}
-
-body { 
-	width: 100%;
-	font-weight: 300;
-	font-family: $lato;
-	font-size: $font-size-base;
- }
-
- button {
- 	border: 0;
- 	background: none;
- 	color: none;
- }
-
- h1 {
-	color: $gray;
-	font-weight: 300;
-	font-size: $font-size-h1;
-	margin-top: 0px;
-}
-h2 {
-	color: $gray;
-	font-weight: 400;
-	font-size: $font-size-h2;
-	margin-top: 0px;
-}
-
-h4 {
-	margin-bottom: 0px;
-}
-
-p {
-	margin: 0;
-}
-
-// remove safari highliting
-a, button {
-	-webkit-tap-highlight-color: rgba(0,0,0,0);
-}
-
-.textarea {
-	resize: none;
-	height: auto;
-}
-
-
-.qHeading{
-	margin-bottom: 0px;
-}
 
 
 // Footer
@@ -81,37 +30,6 @@ footer {
   content: "";
   display: block;
   height: 70px;
-}
-
-
-// Link Style
-a {
-	text-decoration: none;
-}
-
-.link {
-	color: $red;
-	&:hover,
-	&:focus {
-		color: darken($red, 5%);
-		text-decoration: underline;
-		cursor: pointer;
-	}
-}
-
-.link-dark {
-	color: $dark-gray;
-	&:hover,
-	&:focus {
-		color: darken($dark-gray, 5%);
-		text-decoration: underline;
-		cursor: pointer;
-	}
-}
-
-.xs {
-	font-size: $font-size-xs;
-	font-weight: 300;
 }
 
 
@@ -206,48 +124,6 @@ a {
 	margin-left: 60px;
 }
 
-//position el in the center of a div
-.centered {
-	background-size: auto;  
-	margin-left: 45%;
-	margin-right: 15%; 
-	width: 25%;
-}
-
-@media only screen and (max-width: 1380px) {
-	#welcome {
-		margin-top: -36%;
-	}
-	.h-white {
-		font-size: $font-size-xxxl - 6;
-	}
-	.p-white {
-		font-size: $font-size-xxl - 8;
-		letter-spacing: 0.5px;
-	}
-
-	.xxxl {
-		@include button-size($padding-xl-vertical, $padding-xl-horizontal, $font-size-xl, $line-height-xl, $border-radius-xl);
-	}
-
-}
-
-@media only screen and (max-width: 980px) {
-
-	#welcome {
-		display: none;
-	}
-
-	.cover {
-		margin-top: 0px;
-	}
-
-	footer {
-		padding-top: 20px;
-		height: 100px;
-		@include center-block;
-	}
-}
 
 .tag {
 	margin-bottom: 2px;
@@ -255,34 +131,6 @@ a {
 
 .s-tag {
 	margin-bottom: 20px;
-}
-
-.avatar {
-	width: 200px;
-	height: 200px;
-	border-radius: 50%;
-	@include center-block;
-}
-
-.thumbnail {
-	padding: 4px 0px;
-	margin-top: -5px;
-	width: 30px;
-	height: 30px;
-	border-radius: 50%;
-}
-
-.post-avatar {
-	width: 100px;
-	height: 100px;
-	border-radius: 50%;
-	@include center-block;
-}
-
-.msg-avatar {
-	width: 50px;
-	height: 50px;
-	border-radius: 50%;
 }
 
 .center-block {
@@ -336,21 +184,7 @@ a {
 	padding-left: 1.6%;
 }
 
-@media only screen and (max-width: 980px) {
 
-	.block-image {
-		display: none;
-	}
-	.block-body {
-		margin-left: 0px;
-	}
-	.block-button {
-		margin-top: -220px; 
-	}
-	.push {
-		padding-left: 0.1%;
-	}
-}
 // Static pages
 .section-content {
 	width: 80%;
@@ -382,7 +216,11 @@ ul {
 	}
 }
 
-// messages
+// messages pg and msgin system
+.msg-block {
+	padding-left: 10%;
+}
+
 .msgBox {
 	width:100%;
 	max-width: 900px;
@@ -456,4 +294,4 @@ ul {
 	}
 }
 
-
+@import 'media';

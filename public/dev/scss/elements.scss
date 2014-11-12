@@ -1,0 +1,81 @@
+html, body {
+  height: 100%;
+}
+
+body { 
+	width: 100%;
+	font-weight: 300;
+	font-family: $lato;
+	font-size: $font-size-base;
+ }
+
+ button {
+ 	border: 0;
+ 	background: none;
+ 	color: none;
+ }
+
+ h1 {
+	color: $gray;
+	font-weight: 300;
+	font-size: $font-size-h1;
+	margin-top: 0px;
+}
+h2 {
+	color: $gray;
+	font-weight: 400;
+	font-size: $font-size-h2;
+	margin-top: 0px;
+}
+
+h4 {
+	margin-bottom: 0px;
+}
+
+p {
+	margin: 0;
+}
+
+// remove safari highliting
+a, button {
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+// Link Style
+a {
+	text-decoration: none;
+}
+
+.link {
+	color: $red;
+	&:hover,
+	&:focus {
+		color: darken($red, 5%);
+		text-decoration: underline;
+		cursor: pointer;
+	}
+}
+
+.link-dark {
+	color: $dark-gray;
+	&:hover,
+	&:focus {
+		color: darken($dark-gray, 5%);
+		text-decoration: underline;
+		cursor: pointer;
+	}
+}
+
+.xs {
+	font-size: $font-size-xs;
+	font-weight: 300;
+}
+
+.textarea {
+	resize: none;
+	height: auto;
+}
+
+.qHeading{
+	margin-bottom: 0px;
+}
