@@ -5,7 +5,7 @@
         @else
         <ul class="hidden-chat" data-id="{{$conversation->id}}" style="display:none">
         @endif
-            <li>{{$conversation->question->title}}</li>
+            <li class="msg-title"><div><p>{{$conversation->question->title}}</p></div></li>
             @foreach($conversation->messages as $message)
                 <li>
                     <div class="msg">

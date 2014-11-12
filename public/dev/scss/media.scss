@@ -48,4 +48,10 @@
 		@include button-size($padding-xl-vertical, $padding-xl-horizontal, $font-size-xl, $line-height-xl, $border-radius-xl);
 	}
 
+	.msg-title {
+	div {
+    		width: 50%;
+	}
+}
+
 }
