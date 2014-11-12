@@ -1,15 +1,14 @@
 @extends('layouts.default')
 
 @section('content')
-    @if(Session::has('message'))
-        {{ Session::get('message')}}
-    @endif
+@if(Session::has('message'))
+{{ Session::get('message')}}
+@endif
 
-    @if (!empty($data))
-       
-       {{ Form::open(['route' => 'question.store', 'method' => 'post']) }}
-       <div class="section group">
-       	<div class="col span_1_of_5"></div>
+@if (!empty($data))
+	{{ Form::open(['route' => 'question.store', 'method' => 'post']) }}
+	<div class="section group">
+		<div class="col span_1_of_5"></div>
 		<div class="col span_3_of_5">
 			<h2>Feeling lucky? Ask your question!</h2>
 			<div>
@@ -25,8 +24,8 @@
 			<div class="s-tag">
 				{{ Form::text('tag', null, ['placeholder' => 'Start typing some tags...', 'class' => 'form-field tag', 'id' => 'tag']) }}
 				<br>
-			    <div id="tags">
-			    </div>
+				<div id="tags">
+				</div>
 				<small>Tag not showing up in the list? Enter yours, hit space and we'll add it for you!</small>
 				<br><br>
 			</div>
@@ -41,9 +40,8 @@
 				@endif
 			</div>
 			<br/>
-		{{ Form::close() }}
+			{{ Form::close() }}
+		</div>
 	</div>
-</div>
-
-    @endif
+@endif
 @stop

@@ -8,7 +8,6 @@
 @import 'search';
 @import 'modals';
 @import 'modal';
-
 @import 'avatars';
 @import 'elements';
 
@@ -26,14 +25,14 @@ footer {
 	@include center-block; 
 }
 .page-wrap {
-  min-height: 100%;
+	min-height: 100%;
   /* equal to footer height */
-  margin-bottom: -120px; 
+	margin-bottom: -120px; 
 }
 .page-wrap:after {
-  content: "";
-  display: block;
-  height: 70px;
+	content: "";
+	display: block;
+	height: 70px;
 }
 
 
@@ -43,17 +42,17 @@ footer {
 
 // Separator pop-up sign in and sign up
 .separator {
-    width:100%;
-    text-align:center;
-    box-sizing:border-box;
-    margin-top: -5px;
+	width:100%;
+	text-align:center;
+	box-sizing:border-box;
+	margin-top: -5px;
 }
 
 .divider {
 	padding-right: 10px;
-    	display: inline-block;
-    	padding: 0 5px;
-    	vertical-align: middle;
+	display: inline-block;
+	padding: 0 5px;
+	vertical-align: middle;
 }
 
 .div-line {
@@ -62,7 +61,7 @@ footer {
 	width: 45%;
 	height: 3px;
 	display: inline-block;
-    	vertical-align: middle;
+	vertical-align: middle;
 }
 
 // home page
@@ -230,13 +229,13 @@ ul {
 	max-width: 900px;
 	height: 600px;
 	border: 1px solid lighten($gray, 50%);
-    	border-radius: $border-radius-base;
+	border-radius: $border-radius-base;
 
-    	.usersCol {
-    		display: block;
-    		padding: 0px;
+	.usersCol {
+		display: block;
+		padding: 0px;
 		margin: 0px;
-    		width: 33.33%;
+		width: 33.33%;
 		max-width: 300px;
 		height: 600px;
 		float: left;
@@ -304,8 +303,8 @@ ul {
 	border-bottom: 1px solid lighten($gray, 50%);
 	div {
 		margin-left: auto;
-    		margin-right: auto;
-    		width: 20%;
+		margin-right: auto;
+		width: 20%;
 		p {
 			font-weight: 400;
 		}

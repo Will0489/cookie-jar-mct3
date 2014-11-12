@@ -1,15 +1,15 @@
 // Styles for buttons
 @mixin button-size($padding-vertical, $padding-horizontal, $font-size, $line-height, $border-radius) {
-  padding: $padding-vertical $padding-horizontal;
-  font-size: $font-size;
-  line-height: $line-height;
-  border-radius: $border-radius;
+	padding: $padding-vertical $padding-horizontal;
+	font-size: $font-size;
+	line-height: $line-height;
+	border-radius: $border-radius;
 }
 
 @mixin center-block() {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 input[type="submit"] {
@@ -19,9 +19,9 @@ input[type="submit"] {
 .btn {
 	display: inline-block;
 	text-align: center;
-  	vertical-align: middle;
-  	cursor: pointer;
-  	color: $dark-gray;
+	vertical-align: middle;
+	cursor: pointer;
+	color: $dark-gray;
 }
 .red {
 	background-color: $red;

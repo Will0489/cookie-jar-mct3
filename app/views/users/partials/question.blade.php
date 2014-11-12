@@ -11,14 +11,14 @@
 			<p>{{ $question->body }}</p>
 		</div>
 		<p>
-		    @foreach($question->categories as $category)
-		        <span class="category btn">{{$category->name}}</span>
-		    @endforeach
+			@foreach($question->categories as $category)
+			<span class="category btn">{{$category->name}}</span>
+			@endforeach
 		</p>
 	</div>
 
 	<div class="block-button">
-	    @if($question->answered == 0)
+		@if($question->answered == 0)
 		<a href="/questions/{{$question->id}}/done" class="btn small blue">Done!</a>
 		<a href="/questions/{{$question->id}}/edit" class="btn small blue">Edit</a>
 		@else

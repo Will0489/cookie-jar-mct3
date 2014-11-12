@@ -1,4 +1,3 @@
-
 <img src="assets/images/header-dark.gif" class="cover image"/>
 <div class="section group" id="welcome">
 	<div class="col span_3_of_3">
