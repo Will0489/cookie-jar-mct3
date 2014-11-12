@@ -25,7 +25,7 @@ input[type="submit"] {
 }
 .red {
 	background-color: $red;
-	color: $white;
+	color: $white !important;
 	&:hover,
 	&:focus {
 		background-color: darken($red, 5%);

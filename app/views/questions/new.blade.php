@@ -20,7 +20,7 @@
 				{{ Form::text('deadline', null, ['placeholder' => 'I can use some help till  dd.mm.yyyy', 'class' => 'form-field', 'required' => 'required']) }}
 			</div>
 			<div>
-				{{ Form::textarea('body', null, ['placeholder' => 'Specify your question in 300 characters', 'class' => 'form-field textarea', 'required' => 'required', 'rows' => 8 ]) }}
+				{{ Form::textarea('body', null, ['placeholder' => 'Specify your question in 300 characters', 'class' => 'form-field textarea', 'required' => 'required', 'rows' => 6 ]) }}
 			</div>
 			<div class="s-tag">
 				{{ Form::text('tag', null, ['placeholder' => 'Start typing some tags...', 'class' => 'form-field tag', 'id' => 'tag']) }}
