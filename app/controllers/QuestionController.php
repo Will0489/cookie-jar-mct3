@@ -179,7 +179,7 @@ class QuestionController extends \BaseController {
         $data = Input::all();
         $user = Auth::id();
         $question = Question::find($data['question_id']);
-
+        $data['deadline'] = str_replace('/', '-', $data['deadline']);
         //Check if the currently logged on user is the actual question owner
         if($user == $question->user_id)
         {
