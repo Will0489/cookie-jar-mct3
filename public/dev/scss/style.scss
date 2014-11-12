@@ -1,6 +1,6 @@
 @import 'variables';
-@import 'elements';
 @import 'icons';
+@import 'nav';
 @import 'buttons';
 @import 'forms';
 @import 'clearfix';
@@ -8,10 +8,14 @@
 @import 'search';
 @import 'modals';
 @import 'modal';
-@import 'nav';
+
 @import 'avatars';
+@import 'elements';
 
-
+.textarea {
+	resize: none;
+	height: auto;
+}
 
 // Footer
 footer {
