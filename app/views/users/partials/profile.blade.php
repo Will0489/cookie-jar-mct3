@@ -56,10 +56,10 @@
 		<br>
 		@endif
 
-		@if($data->categories)
+		@if($user->categories)
 		<p>I'm passionate about:</p>
 		<div id="tags">
-			@foreach($data->categories as $category)
+			@foreach($user->categories as $category)
 			<span class="category btn">{{$category['name']}}</span>
 			<input type="hidden" name="tagvalues[]" value="{{$category['id']}}">
 			@endforeach
