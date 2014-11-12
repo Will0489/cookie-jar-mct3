@@ -36,3 +36,4 @@
         <p><a href="/questions/new" class="btn small red">Ask your question!</a></p>
     </div>
 @endif
+

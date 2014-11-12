@@ -1,0 +1,57 @@
+
+@media only screen and (max-width: 980px) {
+
+	.block-image {
+		display: none;
+	}
+	.block-body {
+		margin-left: 0px;
+	}
+	.block-button {
+		margin-top: -220px; 
+	}
+	.push {
+		padding-left: 0.1%;
+	}
+
+	.msg-block {
+		padding-left: 0;
+	}
+
+	#welcome {
+		display: none;
+	}
+
+	.cover {
+		margin-top: 0px;
+	}
+
+	footer {
+		padding-top: 20px;
+		height: 100px;
+		@include center-block;
+	}
+}
+@media only screen and (max-width: 1380px) {
+	#welcome {
+		margin-top: -36%;
+	}
+	.h-white {
+		font-size: $font-size-xxxl - 6;
+	}
+	.p-white {
+		font-size: $font-size-xxl - 8;
+		letter-spacing: 0.5px;
+	}
+
+	.xxxl {
+		@include button-size($padding-xl-vertical, $padding-xl-horizontal, $font-size-xl, $line-height-xl, $border-radius-xl);
+	}
+
+	.msg-title {
+	div {
+    		width: 50%;
+	}
+}
+
+}

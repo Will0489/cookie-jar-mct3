@@ -19,8 +19,7 @@
 		</div>
 		<div class="col span_5_of_5">
 			<p>We couldn't find anything like that matched your wish :(</p>
-		</div>		
-
+		</div>
 	@endif
 </div>
 @stop
