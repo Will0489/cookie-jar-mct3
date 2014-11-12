@@ -3,8 +3,6 @@
 /app/config/local
 /public/images
 composer.phar
-composer.json
-composer.lock
 .env.*.php
 .env.php
 .DS_Store
