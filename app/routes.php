@@ -22,6 +22,7 @@ Route::get('questions', 'QuestionController@index');
 Route::get('questions/new', 'QuestionController@create');
 Route::get('questions/{id}/help', 'QuestionController@help');
 Route::get('questions/{id}/done', 'QuestionController@done');
+Route::get('questions/{id}/edit', 'QuestionController@edit');
 Route::get('questions/tags', 'QuestionController@tags');
 
 // Message routes
@@ -38,8 +39,8 @@ Route::get('story', 'PagesController@story');
 Route::get('/', function()
 {
     $data = array();
-    $latest_top = Question::orderBy('created_at', 'desc')->with('user', 'categories')->take(3)->get();
-    $latest_bot = Question::orderBy('created_at', 'desc')->with('user', 'categories')->take(3)->skip(3)->get();
+    $latest_top = Question::orderBy('created_at', 'desc')->where('answered', '=', '0')->with('user', 'categories')->take(3)->get();
+    $latest_bot = Question::orderBy('created_at', 'desc')->where('answered', '=', '0')->with('user', 'categories')->take(3)->skip(3)->get();
 
     if (Auth::check()) {
         $data = Auth::user();

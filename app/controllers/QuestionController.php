@@ -43,7 +43,7 @@ class QuestionController extends \BaseController {
 
     public function done($id)
     {
-        $question = Question::find($id)->with('user')->first();
+        $question = Question::find($id);
 
         // Check if the person sending this request is actually the owner
         if($question->user_id == Auth::id())
@@ -170,24 +170,48 @@ class QuestionController extends \BaseController {
     public function edit($id)
     {
         $data = Auth::user();
+        $question = Question::find($id);
         return View::make('questions.edit', compact('question', 'data'));
     }
 
-    public function update($id)
+    public function update()
     {
         $data = Input::all();
         $user = Auth::id();
-        $question = Question::findOrFail($id);
+        $question = Question::find($data['question_id']);
 
         //Check if the currently logged on user is the actual question owner
         if($user == $question->user_id)
         {
             $question->title = $data['title'];
             $question->body = $data['body'];
-            $question->answered = $data['answered'];
-            $question->deadline = $data['deadline'];
-
+            $question->deadline = date('Y-m-d', strtotime($data['deadline']));
             $question->save();
+
+            if(isset($data['tagvalues']))
+            {
+                foreach ($data['tagvalues'] as $tag)
+                {
+                    if (is_numeric($tag)) {
+                        $question->categories()->attach($tag);
+                    } else {
+                        $category = Category::create([
+                            'name' => $tag,
+                            'image_url' => null,
+                            'description' => ''
+                        ]);
+
+                        $question->categories()->attach($category->id);
+                    }
+                }
+            }
+            if(isset($data['delvalues'])) {
+                foreach ($data['delvalues'] as $tag) {
+                    if (is_numeric($tag)) {
+                        $question->categories()->detach($tag);
+                    }
+                }
+            }
             return Redirect::back()->with('message', 'Your question has been updated.');
         }
         else

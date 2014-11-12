@@ -18,8 +18,13 @@
 	</div>
 
 	<div class="block-button">
-		<a href="" class="btn small blue">Done!</a>
+	    @if($question->answered == 0)
+		<a href="/questions/{{$question->id}}/done" class="btn small blue">Done!</a>
+		<a href="/questions/{{$question->id}}/edit" class="btn small blue">Edit</a>
 		<!-- Delete / Edit / Mark as done links -->
+		@else
+		<span class="small blue">Finished</span>
+		@endif
 	</div>
 </div>
 @endforeach
