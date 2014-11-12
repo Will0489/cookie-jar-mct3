@@ -5,7 +5,7 @@
 
 	<div class="section">
 	    <h1>Need help?</h1>
-	    <p>To be added</p>
+	    <p>E-mail us: cookie@jar.be</p>
 	</div>
 
 @stop

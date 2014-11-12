@@ -2,7 +2,6 @@
 
 @section('content')
 
-
     @if (!empty($data))
        
        {{ Form::open(['route' => 'question.update', 'method' => 'PUT']) }}
@@ -38,22 +37,22 @@
 			    </div>
 			    <div id="deletedtags"></div>
 				<small>Tag not showing up in the list? Enter yours, hit space and we'll add it for you!</small>
-				<br><br>
-			</div>
+					<br><br>
+				</div>
 
-			<div>
-				{{ Form::submit('Update', ['class' => 'btn blue big']) }}
-			</div>
-			<div>
-				@if($errors->any())
-				<p class='xs'>{{$errors->first()}}</p>
+				<div>
+					{{ Form::submit('Update', ['class' => 'btn blue big']) }}
+				</div>
+				<div>
+					@if($errors->any())
+					<p class='xs'>{{$errors->first()}}</p>
+					<br/>
+					@endif
+				</div>
 				<br/>
-				@endif
+				{{ Form::close() }}
 			</div>
-			<br/>
-		{{ Form::close() }}
-	</div>
-</div>
+		</div>
 
-    @endif
+	@endif
 @stop

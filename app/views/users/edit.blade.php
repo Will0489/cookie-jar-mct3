@@ -1,35 +1,34 @@
 @extends('layouts.default')
 
 @section('content')
-    @if(Session::has('message'))
-        {{ Session::get('message')}}
-    @endif
+@if(Session::has('message'))
+{{ Session::get('message')}}
+@endif
 
-    <div class="section group">
-        <div class="col span_1_of_5"></div>
-        <div class="col span_3_of_5">
-            <h2>Edit Profile</h2>
-            {{ Form::open(['route' => 'user.update', 'method' => 'PUT', 'files' => true]) }}
+<div class="section group">
+	<div class="col span_1_of_5"></div>
+	<div class="col span_3_of_5">
+		<h2>Edit Profile</h2>
+		{{ Form::open(['route' => 'user.update', 'method' => 'PUT', 'files' => true]) }}
 
-                @if(isset($data['photo']))
-                Your current profile picture<br><br>
-                <img src="{{$data->photo}}" alt="{{$data->first_name}}'s profile picture" class="avatar"><br><br>
-                @else
-                You don't have a profile picture yet!<br><br>
-                @endif
-            <div class="btn">
-                {{ Form::label('photo', 'Choose a nice picture of yourself') }} {{ Form::file('photo', null, ['class' => 'form-field']) }}
-            </div>
+		@if(isset($data['photo']))
+		Your current profile picture<br><br>
+		<img src="{{$data->photo}}" alt="{{$data->first_name}}'s profile picture" class="avatar"><br><br>
+		@else
+		You don't have a profile picture yet!<br><br>
+		@endif
+		<div class="btn">
+			{{ Form::label('photo', 'Choose a nice picture of yourself') }} {{ Form::file('photo', null, ['class' => 'form-field']) }}
+		</div>
 
-            <div>
-                {{ Form::label('school', "I'm studying") }}
-                @if(isset($data['studies_at']))
-                {{ Form::text('school', $data['studies_at'], ['class' => 'form-field', 'placeholder' => 'Web Dev & UX @ KdG']) }}
-                @else
-                {{ Form::text('school', null, ['class' => 'form-field', 'placeholder' => 'Web Dev & UX @ KdG']) }}
-                @endif
-            </div>
-
+		<div>
+			{{ Form::label('school', "I'm studying") }}
+			@if(isset($data['studies_at']))
+			{{ Form::text('school', $data['studies_at'], ['class' => 'form-field', 'placeholder' => 'Web Dev & UX @ KdG']) }}
+			@else
+			{{ Form::text('school', null, ['class' => 'form-field', 'placeholder' => 'Web Dev & UX @ KdG']) }}
+			@endif
+		</div>
             <div >
                 {{ Form::label('portfolio_link', 'My portfolio') }}
                 @if(isset($data['portfolio']))
@@ -60,4 +59,5 @@
             {{ Form::close() }}
     	</div>
     </div>
+>>>>>>> afdf3c72dd003af67750a9fee7bafbaf01a056c3
 @stop
