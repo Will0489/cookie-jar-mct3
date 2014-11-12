@@ -2,7 +2,7 @@
  		<a href="/" class="logo left no"><img src="/assets/images/logo.gif"></a>
  		@if(Auth::check())
  		<ul class="left no">
- 			<li><a href="questions/new" class="btn small red">Ask your question!</a></li>
+ 			<li><a href="/questions/new" class="btn small red">Ask your question!</a></li>
  		</ul>
  		@endif
  		<nav id="menu" class="nav">

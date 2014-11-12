@@ -123,12 +123,12 @@ class UserController extends \BaseController {
                 }
             }
             if(isset($data['delvalues'])) {
-                foreach($data['delvalues'] as $tag) {
-                    if(is_numeric($tag)) {
-                        $user->categories()->detach($tag);
-                    }
+            foreach($data['delvalues'] as $tag) {
+                if(is_numeric($tag)) {
+                    $user->categories()->detach($tag);
                 }
             }
+        }
         }
         return Redirect::to('/profile');
     }
