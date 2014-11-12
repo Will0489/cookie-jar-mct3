@@ -24,10 +24,12 @@
 						{{ Form::open(['route' => 'message.store', 'method' => 'post', 'class' => 'add_msg_form']) }}
 						        @if(!$conversations->isEmpty())
 						    	{{ Form::hidden('conversation_id', $conversations->first()->id) }}
+						    	{{ Form::text('msg', null, ['placeholder' => 'Message...', 'class' => 'form-field']) }}
 						    	@else
 						    	{{ Form::hidden('conversation_id', 0) }}
+						    	{{ Form::text('msg', null, ['placeholder' => 'Message...', 'class' => 'form-field', 'disabled']) }}
 						    	@endif
-							{{ Form::text('msg', null, ['placeholder' => 'Message...', 'class' => 'form-field']) }}
+
 						{{ Form::close() }}
 					</div>
 				</div>

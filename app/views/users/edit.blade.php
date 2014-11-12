@@ -29,35 +29,35 @@
 			{{ Form::text('school', null, ['class' => 'form-field', 'placeholder' => 'Web Dev & UX @ KdG']) }}
 			@endif
 		</div>
-
-		<div >
-			{{ Form::label('portfolio_link', 'My portfolio') }}
-			@if(isset($data['portfolio']))
-			{{ Form::text('portfolio_link', $data['portfolio'], ['class' => 'form-field', 'placeholder' => 'ksenia.be']) }}
-			@else
-			{{ Form::text('portfolio_link', null, ['class' => 'form-field', 'placeholder' => 'ksenia.be']) }}
-			@endif
-		</div>
-		<div class="s-tag">
-			{{ Form::label('tag', "I'm passionate about") }}
-			{{ Form::text('tag', null, ['placeholder' => 'Add some tags!', 'class' => 'form-field tag', 'id' => 'tag']) }}
-			<br>
-			<div id="existing tags">
-				@foreach($data->categories as $category)
-				<span class="category btn">{{$category['name']}}</span>
-				<input type="hidden" name="existingvalues[]" value="{{$category['id']}}">
-				@endforeach
-			</div>
-			<div id="tags">
-			</div>
-			<div id="deletedtags"></div>
-			<small>Tag not showing up in the list? Enter yours, hit space and we'll add it for you!</small>
-			<br><br>
-		</div>
-		<div>
-			{{ Form::submit('Update Profile', ['class' => 'btn small blue'])}}
-		</div>
-		{{ Form::close() }}
-	</div>
-</div>
+            <div >
+                {{ Form::label('portfolio_link', 'My portfolio') }}
+                @if(isset($data['portfolio']))
+                {{ Form::text('portfolio_link', $data['portfolio'], ['class' => 'form-field', 'placeholder' => 'ksenia.be']) }}
+                @else
+                {{ Form::text('portfolio_link', null, ['class' => 'form-field', 'placeholder' => 'ksenia.be']) }}
+                @endif
+            </div>
+            <div class="s-tag">
+                {{ Form::label('tag', "I'm passionate about") }}
+                {{ Form::text('tag', null, ['placeholder' => 'Add some tags!', 'class' => 'form-field tag', 'id' => 'tag']) }}
+                <br>
+                <div id="existing tags">
+                    @foreach($data->categories as $category)
+                        <span class="category btn deletable">{{$category['name']}}</span>
+                        <input type="hidden" name="existingvalues[]" value="{{$category['id']}}">
+                    @endforeach
+                </div>
+                <div id="tags">
+                </div>
+                <div id="deletedtags"></div>
+                <small>Tag not showing up in the list? Enter yours, hit space and we'll add it for you!</small>
+                <br><br>
+            </div>
+            <div>
+                {{ Form::submit('Update Profile', ['class' => 'btn small blue'])}}
+            </div>
+            {{ Form::close() }}
+    	</div>
+    </div>
+>>>>>>> afdf3c72dd003af67750a9fee7bafbaf01a056c3
 @stop

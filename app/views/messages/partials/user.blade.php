@@ -28,9 +28,9 @@
 @endforeach
 @else
 <li>
-		<div>
-			<span>No conversations so far.</span>
-		</div>
-		<div class="clearfix"></div>
+    <div>
+        <span>No conversations so far.</span>
+    </div>
+    <div class="clearfix"></div>
 </li>
 @endif
