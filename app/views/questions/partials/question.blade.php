@@ -19,11 +19,15 @@
 	</div>
 	
 	<div class="block-button">
+	@if(Auth::check())
 	    @if($question->user->id == Auth::id())
-	    <span>This is yours</span>
+	    <span>This is yours.</span>
 	    @else
 		<a href="/questions/{{$question->id}}/help" class="btn small blue">I can help!</a>
 		@endif
+	@else
+	    <a href="#" class="btn small blue" data-toggle="modal" data-target="#signin">Sign in to help!</a>
+	@endif
 	</div>
 </div>
 @endforeach
