@@ -23,6 +23,15 @@ class UserController extends \BaseController {
 		return View::make('users.register');
 	}
 
+    public function show($id)
+    {
+        $data = Auth::user();
+        $user = User::find($id);
+        $questions = Question::where("user_id", "=", $id)->with('categories')->get();
+
+        return View::make('users.profile', compact('data', 'user', 'questions'));
+    }
+
 	public function store()
 	{
         $rawdata = Input::only(['firstname','lastname','email','photo','password']);

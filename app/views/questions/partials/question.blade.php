@@ -3,7 +3,7 @@
 	<div class="block-image">
 		<img src="{{ $question->user->photo}}" class="post-avatar"/>
 		<br/>
-		<a href="/profile" class="btn small center-block s-tag" alt="your profile">{{ $question->user->first_name . ' ' . $question->user->last_name}}</a>
+		<a href="/profile/{{$question->user->id}}" class="btn small center-block s-tag" alt="their profile">{{ $question->user->first_name . ' ' . $question->user->last_name}}</a>
 	</div>
 	
 	<div class="block-body">

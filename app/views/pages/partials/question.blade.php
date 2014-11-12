@@ -9,7 +9,7 @@
         <h4><a href="/questions" class="link">{{ $latest->title }}</a></h4>
         <p class="date">I need your help until {{ date('d/m/Y', strtotime($latest->deadline)) }} Get more <a href="/questions"><span class="link">info</span></a>!</p>
         <br/>
-        <small><span class="left">by <a class="link-dark" href="">{{ $latest->user->first_name }} {{$latest->user->last_name}}</a></span> <span class="right">Submitted at {{ date('H:m', strtotime($latest->created_at))}} on {{ date('d/m/Y', strtotime($latest->created_at)) }}</span></small>
+        <small><span class="left">by <a class="link-dark" href="/profile/{{$latest->user->id}}">{{ $latest->user->first_name }} {{$latest->user->last_name}}</a></span> <span class="right">Submitted at {{ date('H:m', strtotime($latest->created_at))}} on {{ date('d/m/Y', strtotime($latest->created_at)) }}</span></small>
     </div>
 @endforeach
 </div>
@@ -24,7 +24,7 @@
         <h4><a href="/questions" class="link">{{ $latest->title }}</a></h4>
         <p class="date">I need your help until {{ date('d/m/Y', strtotime($latest->deadline)) }} Get more <a href="/questions"><span class="link">info</span></a>!</p>
         <br/>
-        <small><span class="left">by <a class="link-dark" href="">{{ $latest->user->first_name }} {{$latest->user->last_name}}</a></span> <span class="right">Submitted at {{ date('H:m', strtotime($latest->created_at))}} on {{ date('d/m/Y', strtotime($latest->created_at)) }}</span></small>
+        <small><span class="left">by <a class="link-dark" href="/profile/{{$latest->user->id}}">{{ $latest->user->first_name }} {{$latest->user->last_name}}</a></span> <span class="right">Submitted at {{ date('H:m', strtotime($latest->created_at))}} on {{ date('d/m/Y', strtotime($latest->created_at)) }}</span></small>
     </div>
 @endforeach
 </div>
