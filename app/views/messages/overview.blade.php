@@ -22,7 +22,7 @@
 					<!-- row for msg input field -->
 					<div class="msgsRow">
 						{{ Form::open(['route' => 'message.store', 'method' => 'post', 'class' => 'add_msg_form']) }}
-						    	{{ Form::hidden('conversation_id', 1) }}
+						    	{{ Form::hidden('conversation_id', $conversations->first()->id) }}
 							{{ Form::text('msg', null, ['placeholder' => 'Message...', 'class' => 'form-field']) }}
 						{{ Form::close() }}
 					</div>

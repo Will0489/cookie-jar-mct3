@@ -14,7 +14,7 @@
                         </div>
                         <div class="clearfix"></div>
                         <div class="user-name">
-                            <span> {{ $message->user->first_name}} sent on {{ $message->created_at }}</span>
+                            <span> {{ $message->user->first_name}} sent on {{ date('d/m/Y', strtotime($message->created_at)) }} at {{ date('H:m', strtotime($message->created_at)) }}</span>
                             <div class="msg-body">
                                 <p>
                                     {{{$message->content}}}
