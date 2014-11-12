@@ -8,13 +8,13 @@ class SearchController extends \BaseController {
 		$data = Auth::user();
 		$query = Request::get('q');
 		
-		if ($query) 
+		if ($query && $query != '')
 		{
 			$questions = Question::where('title', 'LIKE', "%$query%")->get();
 		}
-		else
+		elseif($query == '')
 		{
-			return "There is nothing like this:( ";
+            return Redirect::to('/questions')->with('message', 'Because you entered an empty search we directed you to the overview page ;)');
 		}
 
 		return View::make('search.results', compact('data','query'))->withQuestions($questions);
