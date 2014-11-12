@@ -21,7 +21,7 @@
 	<div class="block-button">
 	@if(Auth::check())
 	    @if($question->user->id == Auth::id())
-	    <span>This is yours.</span>
+	    <span class="btn small blue">This is yours.</span>
 	    @else
 		<a href="/questions/{{$question->id}}/help" class="btn small blue">I can help!</a>
 		@endif
